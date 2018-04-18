@@ -4,7 +4,7 @@
             <div class="inner fix-width">
               <a class="scroll-up"></a>
               <ul>
-                <div class="title"><? _e('Overige', 'smitwolf')?></div>
+                <div class="title"><?php _e('Overige', 'smitwolf')?></div>
                 <?php
                 wp_nav_menu(array(
                     'menu' => 'footer_menu',
@@ -25,7 +25,7 @@
                     <a href="https://www.linkedin.com/company/smit-en-de-wolf-b.v." target="_blank" class="linkedin"></a>
                     <a href="https://api.whatsapp.com/send?phone=31654322917" target="_blank" class="whatsapp"></a>
                 </div>
-                <div class="copyright"><? _e('©2017 ALL RIGHTS RESERVED', 'smitwolf')?></div>
+                <div class="copyright"><?php _e('©2017 ALL RIGHTS RESERVED', 'smitwolf')?></div>
             </div>
         </div>
 </div>
