@@ -81,6 +81,9 @@ function enqueue_scripts() {
     /* General styles */
     wp_enqueue_style('OwlThemeStyle', get_template_directory_uri() . '/css/owl.theme.default.css');
     wp_enqueue_style('OwlSliderStyle', get_template_directory_uri() . '/css/owl.carousel.min.css');
+    wp_enqueue_style('BootstrapStyle', get_template_directory_uri().'/assets/bootstrap/css/bootstrap.min.css');
+    wp_enqueue_style('HamburgersStyle', get_template_directory_uri().'/assets/hamburger/hamburgers.css');
+    wp_enqueue_style('ThemeStyle', get_template_directory_uri().'/css/theme-style.css');
     wp_enqueue_style('MainStyle', get_template_directory_uri() . '/style.css');
 
     /* General scripts */
@@ -88,6 +91,7 @@ function enqueue_scripts() {
     wp_enqueue_script('TweenMaxDefer', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('EasePackDefer', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/easing/EasePack.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('ScrollToPluginDefer', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/ScrollToPlugin.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('BootstrapJs', get_template_directory_uri().'/assets/bootstrap/js/bootstrap.min.js', array(), false, true);
 
     /* Custom scripts */
     wp_enqueue_script('CustomJSDefer', get_template_directory_uri() . '/js/j.js', array('jquery'), '1.0.0', true);
@@ -444,6 +448,15 @@ function footersidebars() {
   'before_title' => '',
   'after_title' => '',
   ) );
+  register_sidebar( array(
+      'name' => 'Header Text',
+      'id' => 'header-text',
+      'description' => '',
+      'before_widget' => '',
+      'after_widget' => '',
+      'before_title' => '',
+      'after_title' => '',
+  ) );
 }
 
 add_action('widgets_init', 'footersidebars');
@@ -549,5 +562,21 @@ function disable_emojicons_tinymce($plugins) {
         return array_diff($plugins, array('wpemoji'));
     } else {
         return array();
+    }
+}
+
+function language_selector_flags(){
+    if (function_exists('icl_get_languages')) {
+        $languages = icl_get_languages('skip_missing=0&orderby=code&order=desc');           
+        echo '<div class="lang_selector">';
+            if(!empty($languages)){
+                foreach($languages as $l){
+                    $class = $l['active'] ? ' class="active"' : NULL;
+                    $langs .=  '<a ' . $class . ' href="'.$l['url'].'">' . strtoupper ($l['language_code']). '</a> | ';
+                }
+                $langs = substr($langs,0,-3);
+                echo $langs;
+            }
+        echo '</div>';
     }
 }
