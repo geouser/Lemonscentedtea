@@ -1,33 +1,37 @@
 <div id="footer">
-
-        <div class="top">
-            <div class="inner fix-width">
-              <a class="scroll-up"></a>
-              <ul>
-                <div class="title"><?php _e('Overige', 'smitwolf')?></div>
-                <?php
-                wp_nav_menu(array(
-                    'menu' => 'footer_menu',
-                    'menu_class' => 'menu footer-menu'
-                ));
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-2 col-xs-4 logo">
+                <?php the_custom_logo(); ?>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-8 contact-info">
+                <?php if(is_active_sidebar('footer-sidebar-1')){
+                        dynamic_sidebar('footer-sidebar-1');
+                    }
                 ?>
-                </ul>
-                <ul>
-                 <?php if(is_active_sidebar('footer-sidebar-1')){
-                  dynamic_sidebar('footer-sidebar-1');
-                  } ?>
-                </ul>
+            </div>
+            <div class="col-md-2"></div>
+            
+            <div class="col-md-2 col-sm-2 col-xs-4 footer-menu">
+                <?php
+                    wp_nav_menu(array(
+                        'menu' => 'footer_menu',
+                        'menu_class' => 'menu footer-menu'
+                    ));
+                ?>
+            </div>
+            
+            <div class="col-md-3 col-sm-4 col-xs-8 subscribe">
+                <div class="title">Subcribe to our newsletter</div>
+                <form id="form_subcribe">
+                    <div><input id="email" placeholder="your e-mail"></div>
+                    <div class="subcribe-submit"><input type="submit" value="Submit"></div>
+                </form>
+                <!--<div class="disclaimer">Disclaimer</div>-->
             </div>
         </div>
-        <div class="bottom">
-            <div class="inner fix-width">
-                <div class="social-media">
-                    <a href="https://www.linkedin.com/company/smit-en-de-wolf-b.v." target="_blank" class="linkedin"></a>
-                    <a href="https://api.whatsapp.com/send?phone=31654322917" target="_blank" class="whatsapp"></a>
-                </div>
-                <div class="copyright"><?php _e('©2017 ALL RIGHTS RESERVED', 'smitwolf')?></div>
-            </div>
-        </div>
+    </div>
 </div>
 <?php wp_footer(); ?>
 </body>
