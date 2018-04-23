@@ -16,7 +16,8 @@ get_header();
 	<section class="single-case">
 		
 		<div class="container">
-			<article>
+
+			<article class="single-case__aticle">
 				
 				<div class="single-case-heading">
 					<h1 class="single-case__title">Vist Twente</h1>
@@ -79,6 +80,12 @@ get_header();
 				</div>
 
 			</article>	
+
+
+			<div class="single-case__footer">
+				<a href="#" class="large-button get-in-touch">Get in touch</a>
+				<a href="#" class="large-button next-case has-bg" style="background-image: url(https://unsplash.it/720/450?image=64);">Next case</a>
+			</div>
 		</div>
 		
 		

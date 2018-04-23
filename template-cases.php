@@ -57,7 +57,7 @@ get_header();
 			</a>	
 		</div>
 
-		<button class="loader-button">
+		<button class="large-button js-load-cases">
 			<span>More clients</span>
 		</button>
 
