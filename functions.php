@@ -502,6 +502,8 @@ add_action('init', function() {
 
 /* Custom image sizes */
 
+add_image_size('figure', 1440, 600);
+
 add_image_size('hero-imageL', 1600, 9999);
 add_image_size('hero-imageM', 1024, 9999);
 add_image_size('hero-imageS', 768, 9999);
