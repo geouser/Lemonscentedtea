@@ -1,8 +1,6 @@
 /*header*/
 header
-    background-color: $white-color 
-    position: relative
-    z-index: 100
+    background-color: $white-color
 
     .container-fluid
         & > .row
@@ -19,7 +17,7 @@ header
         position: fixed
         right: 30px
         top: 32px
-        z-index: 10
+        z-index: 102
 
         &.is-active
             position: fixed
@@ -47,6 +45,7 @@ header
         transition-delay: 1.2s, .6s, .6s, .6s, .6s, .6s
         transform-origin: center center
         overflow: hidden
+        z-index: 101
 
         &.fixed
             box-shadow: 0 0 10px rgba(0,0,0,.1)
@@ -92,7 +91,6 @@ header
                 
     // side emu opened
     .background-block-menu.menu-open
-        z-index: 9
         right: 0
         top: 0px
         bottom: 0px
