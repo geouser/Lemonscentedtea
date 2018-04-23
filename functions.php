@@ -73,7 +73,7 @@ function enqueue_scripts() {
     }
 
 
-    if (is_page_template('templates/template-contact.php')) {
+    if (is_page_template('template-contact.php')) {
         wp_enqueue_script('GoogleMaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGiM9Lk7ypP5rTKIP-1Dhp78Bd1CEpMgo&v=3', array(), '3.0.0', true);
         wp_enqueue_script('GoogleMapsCustom', get_template_directory_uri() . '/js/map.js', array('GoogleMaps'), '1.0.0', true);
     }

@@ -90,6 +90,15 @@
 		padding: 20px 65px
 		
 
+	&--double
+		display: flex
+		align-items: center
+		justify-content: center
+		
+		img
+			max-width: 50% 
+		
+
 
 
 
@@ -116,9 +125,36 @@
 			margin-bottom: 1.9em 
 			
 
+		address
+			font-style: normal
+			
+
 	&__columns
 		columns: 2
 		column-gap: 130px
+		
+
+
+	&__socials
+		list-style: none 
+		color: inherit
+		
+		a
+			color: inherit
+			position: relative
+			padding-left: 30px 
+			
+			&:hover
+				text-decoration: underline
+				
+
+
+			img
+				position: absolute
+				max-width: 16px
+				left: 0
+				top: 10px
+				transform: translateY(-50%) 
 	
 
 
@@ -206,3 +242,11 @@
 			
 		&__name
 			font-weight: 700 
+			
+
+
+
+
+
+.map
+	height: 700px
