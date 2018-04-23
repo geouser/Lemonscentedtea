@@ -62,16 +62,19 @@
 			
 			.slick-triangle
 				display: block
+				overflow: hidden
 				
 				path
 					fill: #fff
 					
 
 				polygon
-					fill: #fff
+					transform: translateX(0)
 					transition: all 0.3s ease
+					fill: #fff
+					width: 100%
 					
 			&.slick-active
 				.slick-triangle
 					polygon
-						fill: transparent
+						transform: translateX(100%)

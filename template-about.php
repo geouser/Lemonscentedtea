@@ -17,52 +17,7 @@ get_header();
 		
 		<div class="container">
 			
-			<article>
-				<figure class="figure">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/jpg/about.jpg">
-				</figure>
-
-				<div class="text-block">
-					<h2 class="text-block__title decorated-title">Ready to take your brand on a hero’s journey?</h2>
-					
-					<div class="text-block__content">
-						<div class="text-block__columns">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate at neque in sit accusamus placeat quisquam animi recusandae, itaque, fuga fugit, debitis autem tenetur impedit ipsa iusto praesentium nemo. Iusto.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, quod quasi autem, consequatur sit reiciendis voluptatibus, eaque dolores cum odio recusandae error! Alias quo mollitia quibusdam perferendis illum dicta numquam.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum reprehenderit aliquid, dolorum illo similique, enim minus ipsam amet expedita. Rem vero, natus fuga esse maiores assumenda enim mollitia, dolor velit.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum earum cum ad placeat veniam officiis expedita atque, dolores saepe adipisci, dolorem ea aliquam voluptas suscipit magnam enim tempore quas sit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat non, blanditiis architecto esse dignissimos dolorum aspernatur cum. Error sequi nulla officiis expedita, tenetur, ducimus temporibus. Dignissimos aperiam, id deleniti voluptate.</p>
-							<p><strong>Lorem ipsum dolor.</strong><br><i>Lorem ipsum dolor sit amet, consectetur.</i></p>
-						</div>	
-					</div>
-					
-				</div>
-
-				<div class="video-block">
-					<a href="https://www.youtube.com/watch?v=xS30bEO2aEU" class="fancybox" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/jpg/video-bg.jpg);"></a>
-				</div>
-				
-
-				<div class="text-block">
-
-					<div class="row">
-						<div class="col-12 col-md-6">
-							<h2 class="text-block__title decorated-title">Consistently great and exciting creative work can only be created when you know, feel and understand your brand.</h2>
-
-							<div class="text-block__content">
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore. veritatis et quasi architecto beatae vitae dicta sunt explicabo. emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-							</div>
-						</div>
-
-						<div class="col-12 col-md-6">
-							<div class="text-block__image">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/jpg/chart.jpg">
-							</div>
-						</div>
-					</div>
-					
-				</div>
-
-			</article>
+			<?php get_template_part('parts/part', 'flexible-content'); ?>
 
 		</div> <!-- end container -->
 		
