@@ -133,6 +133,12 @@
 		columns: 2
 		column-gap: 130px
 		
+	&__image
+		img
+			display: block
+			max-width: 100%
+			margin: 0 auto 
+		
 
 
 	&__socials
@@ -190,6 +196,22 @@
 		background-repeat: no-repeat 
 		background-position: 50% 50%
 		background-size: cover  
+		position: relative
+		
+
+		&:before
+			content: ''
+			width: 90px
+			height: 63px
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			background-image: url(../assets/svg/play.svg) 
+			transition: all 0.3s ease
+			
+		&:hover:before
+			transform: translate(-50%, -50%) scale(1.2)
 		
 
 

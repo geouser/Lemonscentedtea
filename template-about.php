@@ -19,7 +19,7 @@ get_header();
 			
 			<article>
 				<figure class="figure">
-					<img src="https://unsplash.it/1440/600?image=136" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/jpg/about.jpg">
 				</figure>
 
 				<div class="text-block">
@@ -38,7 +38,7 @@ get_header();
 				</div>
 
 				<div class="video-block">
-					<a href="https://www.youtube.com/watch?v=xS30bEO2aEU" class="fancybox" style="background-image: url(https://unsplash.it/1440/600?image=255);"></a>
+					<a href="https://www.youtube.com/watch?v=xS30bEO2aEU" class="fancybox" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/jpg/video-bg.jpg);"></a>
 				</div>
 				
 
@@ -55,7 +55,7 @@ get_header();
 
 						<div class="col-12 col-md-6">
 							<div class="text-block__image">
-								
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/jpg/chart.jpg">
 							</div>
 						</div>
 					</div>
