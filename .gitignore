@@ -1,0 +1,8 @@
+*.css
+*.config
+css/*.css
+css/*.css.map
+css/scss/*.css
+css/scss/*.css.map
+css/sass/*.css
+css/sass/*.css.map
