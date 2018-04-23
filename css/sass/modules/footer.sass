@@ -1,0 +1,113 @@
+#footer 
+    background-color: #a29165
+    padding: 40px 0 40px 0
+    color: white
+    
+    a 
+        color: white
+    
+    
+    .logo 
+        text-align: center
+        img 
+            border: 1px solid $white-color
+        
+    
+    
+    .contact-info 
+        font-size: 20px
+        .textwidget 
+            white-space: pre
+        
+    
+    
+    .footer-menu 
+        font-size: 24px
+        list-style: none
+    
+    
+    .subscribe 
+        font-size: 20px
+        .subcribe-submit 
+            input 
+                background-color: $theme-color
+                border: 1px solid $white-color
+                box-shadow: none
+                padding: 5px 20px
+                border-radius: 4px
+                visibility: hidden
+                opacity: 0
+                transition: opacity 0.5s, visibility 0.5s
+            
+        
+        #form_subcribe.error 
+            position: relative
+            &:before 
+                content: "\2718"
+                color: red
+                position: absolute
+                top: 12px
+            
+            #email 
+                padding-left: 20px
+            
+        
+        #form_subcribe.success 
+            position: relative
+            &:before 
+                content: "\2714"
+                color: green
+                position: absolute
+                top: 12px
+            
+            #email 
+                padding-left: 20px
+            
+            .subcribe-submit 
+                input 
+                    visibility: visible
+                    opacity: 1
+                    transition: opacity 0.5s
+                
+            
+        
+        
+        #email 
+            background-color: #a29165
+            border: none
+            border-bottom: white 1px solid
+            font-size: 18px
+            width: 85%
+            max-width: 275px
+            margin: 10px 0 10px 0
+        
+        
+        #email::placeholder  /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white
+            opacity: 1 /* Firefox */
+        
+        
+        #email:-ms-input-placeholder  /* Internet Explorer 10-11 */
+            color: white
+        
+        
+        #email::-ms-input-placeholder  /* Microsoft Edge */
+            color: white
+        
+        
+        .disclaimer 
+            opacity: 0.4
+        
+    
+@media (max-width: 400px)
+    
+    #footer
+        .footer-menu, .subscribe, .contact-info, .logo
+            width: 100%
+
+        .footer-menu, .logo
+            text-align: left
+
+        .footer-menu 
+            ul
+                padding-left: 0
