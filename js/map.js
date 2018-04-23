@@ -285,7 +285,7 @@ var mapOptions = {
   zoomControl: false,
   mapTypeControl: false,
   scaleControl: true,
-  draggable: false,
+  draggable: true,
   scrollwheel: false,
   streetViewControl: false,
   rotateControl: false,
@@ -299,10 +299,10 @@ mymap = new google.maps.Map(document.getElementById('google-map'),
 
 
 var image = {
-      url: templateurl+'/assets/svg/Icon_maps_pointer.svg',
-      size: new google.maps.Size(36, 60),
+      url: templateurl+'/assets/jpg/Icon_maps_pointer.png',
+      size: new google.maps.Size(68, 68),
       origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(18, 40)
+      anchor: new google.maps.Point(34, 0)
     };
 
 var smitwolf = new google.maps.Marker({
