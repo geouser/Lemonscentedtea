@@ -15,19 +15,26 @@
     
     
     .contact-info 
-        font-size: 20px
-        .textwidget 
-            white-space: pre
+        font-size: 16px
         
+        p:not(:last-child)
+            margin-bottom: 0.5em         
     
     
     .footer-menu 
-        font-size: 24px
-        list-style: none
+        font-size: 22px
+        
+        ul
+            list-style: none
+            
+            a
+                &:hover
+                    text-decoration: underline
     
     
     .subscribe 
-        font-size: 20px
+        font-size: 16px
+        
         .subcribe-submit 
             input 
                 background-color: $theme-color
@@ -38,6 +45,11 @@
                 visibility: hidden
                 opacity: 0
                 transition: opacity 0.5s, visibility 0.5s
+                color: #fff
+                
+        #email
+            color: #fff
+            font-size: 16px 
             
         
         #form_subcribe.error 

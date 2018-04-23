@@ -79,15 +79,15 @@ function enqueue_scripts() {
     }
 
     /* General styles */
-    wp_enqueue_style('OwlThemeStyle', get_template_directory_uri() . '/css/owl.theme.default.css');
-    wp_enqueue_style('OwlSliderStyle', get_template_directory_uri() . '/css/owl.carousel.min.css');
+    //wp_enqueue_style('OwlThemeStyle', get_template_directory_uri() . '/css/owl.theme.default.css');
+    //wp_enqueue_style('OwlSliderStyle', get_template_directory_uri() . '/css/owl.carousel.min.css');
     //wp_enqueue_style('BootstrapStyle', get_template_directory_uri().'/assets/bootstrap/css/bootstrap.min.css');
     //wp_enqueue_style('HamburgersStyle', get_template_directory_uri().'/assets/hamburger/hamburgers.css');
     wp_enqueue_style('ThemeStyle', get_template_directory_uri().'/css/main.css');
     //wp_enqueue_style('MainStyle', get_template_directory_uri() . '/style.css');
 
     /* General scripts */
-    wp_enqueue_script('OwlSliderDefer', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
+    //wp_enqueue_script('OwlSliderDefer', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('TweenMaxDefer', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('EasePackDefer', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/easing/EasePack.min.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('ScrollToPluginDefer', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/ScrollToPlugin.min.js', array('jquery'), '1.0.0', true);
@@ -95,7 +95,8 @@ function enqueue_scripts() {
     wp_enqueue_script('JqueryTouchSwipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js', array(), false, true);
 
     /* Custom scripts */
-    wp_enqueue_script('CustomJSDefer', get_template_directory_uri() . '/js/j.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('plugins-js', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('CustomJSDefer', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true);
 }
 
 /* ------------------------------------ */
@@ -487,8 +488,8 @@ add_filter('upload_mimes', 'cc_mime_types');
 add_action('init', function() {
     remove_post_type_support('team', 'editor');
     remove_post_type_support('team', 'thumbnail');
-    remove_post_type_support('page', 'editor');
-    remove_post_type_support('page', 'thumbnail');
+    //remove_post_type_support('page', 'editor');
+    //remove_post_type_support('page', 'thumbnail');
     remove_post_type_support('vacatures', 'editor');
     remove_post_type_support('vacatures', 'thumbnail');
 }, 99);
@@ -496,7 +497,7 @@ add_action('init', function() {
 /*
  * @description: Metaboxes initialization
  */
-require_once 'metaboxes.php';
+//require_once 'metaboxes.php';
 
 
 /* Custom image sizes */
@@ -521,7 +522,7 @@ add_image_size('productimage', 640, 300, array('center', 'center'));
  * @description: Remove Links and Comments from Admin menu
  */
 
-add_action('admin_menu', 'my_remove_menu_pages');
+//add_action('admin_menu', 'my_remove_menu_pages');
 
 function my_remove_menu_pages() {
     remove_menu_page('link-manager.php');

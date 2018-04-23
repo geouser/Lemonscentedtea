@@ -27,7 +27,7 @@
     </script>
     <header>
         <div class="mainheader">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-xs-10">
                         <div class="logo pull-left" id="header-image">

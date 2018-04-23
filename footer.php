@@ -1,5 +1,5 @@
 <div id="footer">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-2 col-xs-4 logo">
                 <?php the_custom_logo(); ?>
