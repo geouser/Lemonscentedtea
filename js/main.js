@@ -76,7 +76,34 @@ jQuery(document).ready(function($) {
 
 
 
+    /*---------------------------
+                                  Fancybox
+    ---------------------------*/
+    $('.fancybox').fancybox({
+        
+    });
 
+
+    /**
+     *
+     * Open popup
+     *
+     * @param popup {String} jQuery object (#popup)
+     *
+     * @return n/a
+     *
+    */
+    function openPopup(popup){
+        $.fancybox.open([
+            {
+                src  : popup,
+                type: 'inline',
+                opts : {}
+            }
+        ], {
+            loop : false
+        });
+    }
 
 
     $('.hero-slider').slick({
