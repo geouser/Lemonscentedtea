@@ -1,22 +1,21 @@
-@keyframes top
-    from
-        opacity: 0
-        transform: translateY(20%)
-    to
-        opacity: 1
-        transform: translateY(0)
-        
 .hero-slider
 	margin-bottom: 0!important 
 	opacity: 0
+	height: calc(100vh - 200px)
+	max-height: 800px
+	min-height: 400px
 
 	&.slick-initialized
 		opacity: 1
 		transition: all 1s ease
+	
+	.slick-list,
+	.slick-track
+		height: 100%
 
 	.slide
+		height: 100%
 		padding: 0 100px
-		height: 680px
 		background-position: 50% 50%
 		background-repeat: no-repeat 
 		background-size: cover  
@@ -89,3 +88,12 @@
 				.slick-triangle
 					polygon
 						transform: translateX(100%)
+
+@keyframes top
+    from
+        opacity: 0
+        transform: translateY(20%)
+    to
+        opacity: 1
+        transform: translateY(0)
+        

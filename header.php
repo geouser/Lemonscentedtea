@@ -34,6 +34,7 @@
                 <div class="col-auto">
                     <div class="logo pull-left" id="header-image">
                         <div class="wrapp-logo">
+                            <img src="<?php echo get_template_directory_uri();?>/assets/svg/logo.svg" alt="">
                             <?php the_custom_logo(); ?>
                         </div>
                         <div class="wrapp-header-text">
