@@ -34,6 +34,13 @@ header
             right: 30px
             top: 32px
             z-index: 10
+
+            &.is-active
+                position: fixed
+
+            .hamburger-box
+                display: block
+                margin: 0 auto
             
             &:focus
                 outline-style: none
@@ -41,17 +48,18 @@ header
        
         .background-block-menu
             background-color: $theme-color
-            position: absolute
+            position: fixed
             z-index: 9
             right: 30px
             top: 30px
             width: 90px
             height: 90px
             padding: 0px
-            transform: rotate(45deg)
-            transition: 0.2s
-            transition-property: width , height ,transform, top , right, padding
-            transition-delay: 0.8s , 0.8s ,1s ,0.8s ,0.8s, 0.8s 
+            transform: rotate(135deg)
+            transition: .4s, .6s, .6s, .6s, .6s, .6s
+            transition-property: transform, width, height, right, top, padding
+            transition-delay: .6s, .0s, .0s, .0s, .0s, .0s
+            transform-origin: center center
             .header-menu
                 margin-top: 80px
                 margin-right: 10px
@@ -116,20 +124,19 @@ header
             overflow-x: hidden
        
         .background-block-menu.menu-open
-            background-color: $theme-color
-            position: absolute
             z-index: 9
             right: 0
             top: 0px
+            bottom: 0px
             width: 25vw
-            height: 101vh
+            height: 100vh
             padding-right: 30px
             padding-top: 30px
             padding-bottom: 50px
             transform: rotate(0deg)
-            transition: 0.2s
-            transition-property: width , height ,transform, padding-right , padding-top, padding-bottom, top , right
-            transition-delay: 0.2s , 0.2s ,0s ,0.2s ,0.2s ,0.2s ,0.2s, 0.2s 
+            transition: .4s, .6s, .6s, .6s, .6s, .6s
+            transition-property: transform, width, height, right, top, padding
+            transition-delay: 0s, .4s, .4s, .4s, .4s, .4s
             .header-menu
                 
                 .lang_selector
