@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 	    $("body").toggleClass("body-fixed");
 
 	    var $target = $('#menu-main-menu >li ');
-		var hold = 200;
+		var hold = 100;
 		$.fn.reverse = [].reverse;
 
 		if ( $(".background-block-menu").hasClass("menu-open")){

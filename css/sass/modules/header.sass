@@ -21,7 +21,6 @@ header
             vertical-align: bottom
             padding-left: 15px
             p
-                font-family: Archer-BookItal
                 font-size: 16px
                 font-weight: 600
            
@@ -58,8 +57,14 @@ header
             transform: rotate(135deg)
             transition: .4s, .6s, .6s, .6s, .6s, .6s
             transition-property: transform, width, height, right, top, padding
-            transition-delay: .6s, .0s, .0s, .0s, .0s, .0s
+            transition-delay: 1.2s, .6s, .6s, .6s, .6s, .6s
             transform-origin: center center
+            overflow: hidden
+
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
             .header-menu
                 margin-top: 80px
                 margin-right: 10px
@@ -76,14 +81,11 @@ header
                         transition-delay: 0.7s
                         a
                           color: $white-color  
+
+            .list-menu-block
+                overflow: hidden
                        
                    
-               
-           
-            .list-menu-block
-                display: none
-                transition: 0.2s
-                transition-delay: 0.8s
            
             html
                 overflow: scroll
@@ -103,25 +105,25 @@ header
             padding-top: 50px
             li
                 line-height: 40px
-                padding: 15px 0
+                padding: 15px
                 opacity: 0
                 transform: translateX(100%)
-                transition: 0.2s
+                transition: opacity .4s, transform .6s
                 transition-delay: 0s
                 a
-                    font-family: Archer-BookItal
                     font-size: 40px
                     color: $white-color 
-                    font-weight: 100
+                    font-size: 65px
+                    font-weight: 300
                     &:hover
                         text-decoration: underline
                    
                
            
        
-        .background-block-menu.scroll
-            overflow-y: auto
-            overflow-x: hidden
+        // .background-block-menu.scroll
+        //     overflow-y: auto
+        //     overflow-x: hidden
        
         .background-block-menu.menu-open
             z-index: 9
@@ -150,20 +152,13 @@ header
                     transition: 0.4s
                     transition-delay: 0.3s
                
-           
-            .list-menu-block
-                display: block
-                transition: 0.2s
-                transition-delay: 0.4s
-                
-           
        
         #menu-main-menu
             li.list-menu-visible
                 opacity: 1
-                transform: translateX(10%)
-                transition: 0.2s
-                transition-delay: 0.6s
+                transform: translateX(0%)
+                transition: 0.4s ease-out
+                transition-delay: .6s
            
        
         
