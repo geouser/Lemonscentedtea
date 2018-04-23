@@ -8,6 +8,11 @@
         
 .hero-slider
 	margin-bottom: 0!important 
+	opacity: 0
+
+	&.slick-initialized
+		opacity: 1
+		transition: all 1s ease
 
 	.slide
 		padding: 0 100px
@@ -23,30 +28,36 @@
 		.slider-description 
 			font-style: italic 
 			width: 100%
-			transform: translateY(20%)
-			opacity: 0
-			transition: all 1s ease-out
 			
 			
+			.slider-title,
+			.slider-subtitle
+				transform: translateY(40%)
+				opacity: 0
+				transition: all 1s ease-out
+				
 			.slider-title 
 				font-size: 60px
 				color: #fff
 				font-weight: 100
 			
-			
 			.slider-subtitle 
 				font-size: 35px
 				color: #fff
 				font-weight: 100
-			
-		
-		
+				
 		&.slick-active
 			.slider-description 
-				transition-delay: 0.5s
-				transform: translateY(0)
-				opacity: 1
-				
+
+				.slider-title
+					transition-delay: 0.5s
+					transform: translateY(0)
+					opacity: 1
+					
+				.slider-subtitle 
+					transition-delay: 1s
+					transform: translateY(0)
+					opacity: 1
 
 	.slick-dots
 		position: absolute
