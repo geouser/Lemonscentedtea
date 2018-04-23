@@ -25,65 +25,61 @@
     var ajax_url = "<?php echo admin_url('admin-ajax.php'); ?>";
     var templateurl = "<?php echo get_template_directory_uri(); ?>";
     </script>
-    <header>
-        <div class="mainheader">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-10">
-                        <div class="logo pull-left" id="header-image">
-                            <div class="wrapp-logo">
-                                <?php the_custom_logo(); ?>
-                            </div>
-                            <div class="wrapp-header-text">
-                                <?php dynamic_sidebar( 'header-text' ); ?>
-                            </div>
+
+
+    <header class="mainheader">
+
+        <div class="container-fluid">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto">
+                    <div class="logo pull-left" id="header-image">
+                        <div class="wrapp-logo">
+                            <img src="<?php echo get_template_directory_uri()?>/assets/svg/logo.svg" alt="">
+                            <?php the_custom_logo(); ?>
                         </div>
-                    </div>
-                    <div class="col-xs-2">
-<<<<<<< HEAD
-
-                        <button class="hamburger hamburger--spin" type="button">
-=======
-                        <button class="hamburger hamburger--squeeze" type="button">
->>>>>>> 3f0fb197cabf29c8eb90a59e8c5bb271b514610b
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-<<<<<<< HEAD
-
-=======
->>>>>>> 3f0fb197cabf29c8eb90a59e8c5bb271b514610b
-                        <div class="background-block-menu">
-                            <div class="header-menu pull-right">
-                                
-                                <div class="lang-block">
-                                    <?php    
-                                    if ( function_exists('icl_object_id') ) {
-                                        
-                                        language_selector_flags();
-                                        
-                                    }                               
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="list-menu-block">
-                                <?php
-                                if ( has_nav_menu( 'main_menu' ) ) {
-                                    
-                                    wp_nav_menu(array(
-                                        'menu' => 'Main menu',
-                                        'menu_class' => 'menu main_menu'
-                                    ));
-                                    
-                                }
-                                ?>
-                            </div>
+                        <div class="wrapp-header-text">
+                            <?php dynamic_sidebar( 'header-text' ); ?>
                         </div>
                     </div>
                 </div>
-                
+                <div class="col-auto">
+
+                    <button class="hamburger hamburger--spin" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+
+                    <div class="background-block-menu">
+                        <div class="header-menu pull-right">
+                            
+                            <div class="lang-block">
+                                <?php    
+                                if ( function_exists('icl_object_id') ) {
+                                    
+                                    language_selector_flags();
+                                    
+                                }                               
+                                ?>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="list-menu-block">
+                            <?php
+                            if ( has_nav_menu( 'main_menu' ) ) {
+                                
+                                wp_nav_menu(array(
+                                    'menu' => 'Main menu',
+                                    'menu_class' => 'menu main_menu'
+                                ));
+                                
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
         </div>
+
     </header>

@@ -1,170 +1,126 @@
 /*header*/
 header
     background-color: $white-color 
-    height: 150px
+
+    .container-fluid
+        & > .row
+            height: 150px
+      
+    .logo
+        img 
+            display: block
     
-    .mainheader
-        .logo
-            padding: 17px 2px
-            .wrapp-logo
-                display: inline-block
-                position: relative
-                border: 1px solid #fff
-                img
-                    height: 115px
-                    width: auto
-               
-           
-       
-        .wrapp-header-text
-            display: inline-block
-            vertical-align: bottom
-            padding-left: 15px
-            p
-                font-family: Archer-BookItal
-                font-size: 16px
-                font-weight: 600
-           
-       
-        .hamburger
-            height: 90px
-            width: 90px
-            margin: 0
-            position: absolute
-            right: 30px
-            top: 32px
-            z-index: 10
+    .hamburger
+        height: 90px
+        width: 90px
+        margin: 0
+        position: fixed
+        right: 30px
+        top: 32px
+        z-index: 10
 
-            &.is-active
-                position: fixed
-
-            .hamburger-box
-                display: block
-                margin: 0 auto
-            
-            &:focus
-                outline-style: none
-           
-       
-        .background-block-menu
-            background-color: $theme-color
+        &.is-active
             position: fixed
-            z-index: 9
-            right: 30px
-            top: 30px
-            width: 90px
-            height: 90px
-            padding: 0px
-            transform: rotate(135deg)
-            transition: .4s, .6s, .6s, .6s, .6s, .6s
-            transition-property: transform, width, height, right, top, padding
-            transition-delay: .6s, .0s, .0s, .0s, .0s, .0s
-            transform-origin: center center
-            .header-menu
-                margin-top: 80px
-                margin-right: 10px
-                .lang-block
-                    position: absolute
-                    right: 40px
-                    .lang_selector
-                        color: $white-color
-                        text-align: center
-                        opacity: 0
-                        text-transform: uppercase
-                        font-size: 20px
-                        transition: 0.2s
-                        transition-delay: 0.7s
-                        a
-                          color: $white-color  
-                       
-                   
-               
-           
-            .list-menu-block
-                display: none
-                transition: 0.2s
-                transition-delay: 0.8s
-           
-            html
-                overflow: scroll
-                overflow-x: hidden
-           
-            ::-webkit-scrollbar
-                width: 0px  /* remove scrollbar space */
-                background: transparent  /* optional: just make scrollbar invisible */
-           
-            /* optional: show position indicator in red */
-            ::-webkit-scrollbar-thumb
-                background: transparent
-           
-       
-        #menu-main-menu
-            list-style: none
-            padding-top: 50px
-            li
-                line-height: 40px
-                padding: 15px 0
-                opacity: 0
-                transform: translateX(100%)
-                transition: 0.2s
-                transition-delay: 0s
-                a
-                    font-family: Archer-BookItal
-                    font-size: 40px
-                    color: $white-color 
-                    font-weight: 100
-                    &:hover
-                        text-decoration: underline
-                   
-               
-           
-       
-        .background-block-menu.scroll
-            overflow-y: auto
-            overflow-x: hidden
-       
-        .background-block-menu.menu-open
-            z-index: 9
-            right: 0
-            top: 0px
-            bottom: 0px
-            width: 25vw
-            height: 100vh
-            padding-right: 30px
-            padding-top: 30px
-            padding-bottom: 50px
-            transform: rotate(0deg)
-            transition: .4s, .6s, .6s, .6s, .6s, .6s
-            transition-property: transform, width, height, right, top, padding
-            transition-delay: 0s, .4s, .4s, .4s, .4s, .4s
-            .header-menu
-                
+
+        .hamburger-box
+            display: block
+            margin: 0 auto
+
+        &:focus
+            outline-style: none
+
+    // side menu not opened
+    .background-block-menu
+        background-color: $theme-color
+        position: fixed
+        z-index: 9
+        right: 30px
+        top: 30px
+        width: 90px
+        height: 90px
+        padding: 0px
+        transform: rotate(135deg)
+        transition: .4s, .6s, .6s, .6s, .6s, .6s
+        transition-property: transform, width, height, right, top, padding
+        transition-delay: 1.2s, .6s, .6s, .6s, .6s, .6s
+        transform-origin: center center
+        overflow: hidden
+
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        .header-menu
+            margin-top: 80px
+            margin-right: 10px
+            .lang-block
+                position: absolute
+                right: 40px
                 .lang_selector
-                    opacity: 1
-                    transition: 0.4s
-                    transition-delay: 0.3s
-               
-                .menu-main-menu-container
-                    opacity: 1
-                    height: auto
-                    transition: 0.4s
-                    transition-delay: 0.3s
-               
-           
-            .list-menu-block
-                display: block
-                transition: 0.2s
-                transition-delay: 0.4s
+                    color: $white-color
+                    text-align: center
+                    opacity: 0
+                    text-transform: uppercase
+                    font-size: 20px
+                    transition: 0.2s
+                    transition-delay: 0.7s
+                    a
+                        color: $white-color  
+    
+    #menu-main-menu
+        list-style: none
+        padding-top: 50px
+        li
+            line-height: 40px
+            padding: 15px
+            opacity: 0
+            transform: translateX(100%)
+            transition: opacity .4s, transform .6s
+            transition-delay: 0s
+            a
+                font-size: 40px
+                color: $white-color 
+                font-size: 65px
+                font-weight: 300
+                &:hover
+                    text-decoration: underline
                 
-           
-       
-        #menu-main-menu
-            li.list-menu-visible
+    // side emu opened
+    .background-block-menu.menu-open
+        z-index: 9
+        right: 0
+        top: 0px
+        bottom: 0px
+        width: 25vw
+        height: 100vh
+        padding-right: 30px
+        padding-top: 30px
+        padding-bottom: 50px
+        transform: rotate(0deg)
+        transition: .4s, .6s, .6s, .6s, .6s, .6s
+        transition-property: transform, width, height, right, top, padding
+        transition-delay: 0s, .4s, .4s, .4s, .4s, .4s
+        .header-menu
+            
+            .lang_selector
                 opacity: 1
-                transform: translateX(10%)
-                transition: 0.2s
-                transition-delay: 0.6s
-           
+                transition: 0.4s
+                transition-delay: 0.3s
+            
+            .menu-main-menu-container
+                opacity: 1
+                height: auto
+                transition: 0.4s
+                transition-delay: 0.3s
+            
+    
+    #menu-main-menu
+        li.list-menu-visible
+            opacity: 1
+            transform: translateX(0%)
+            transition: 0.4s ease-out
+            transition-delay: .6s
+        
        
         
    
@@ -192,21 +148,6 @@ header
     header
         height: 120px
         .mainheader
-            .logo
-                padding: 15px 0px
-                .wrapp-logo
-                    z-index: 15
-                    img
-                        height: 85px
-                   
-               
-           
-            .wrapp-header-text
-                padding-left: 5px
-                width: 45%
-                p
-                    margin-bottom: 0
-               
            
             .hamburger
                 right: 15px
