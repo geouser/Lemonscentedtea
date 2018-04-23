@@ -33,10 +33,10 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-auto">
                     <div class="logo pull-left" id="header-image">
-                        <div class="wrapp-logo">
+                        <a href="<?php echo site_url();?>" class="wrapp-logo">
                             <img src="<?php echo get_template_directory_uri();?>/assets/svg/logo.svg" alt="">
                             <?php the_custom_logo(); ?>
-                        </div>
+                        </a>
                         <div class="wrapp-header-text">
                             <?php dynamic_sidebar( 'header-text' ); ?>
                         </div>
