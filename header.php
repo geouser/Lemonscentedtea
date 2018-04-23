@@ -40,13 +40,20 @@
                         </div>
                     </div>
                     <div class="col-xs-2">
+<<<<<<< HEAD
 
                         <button class="hamburger hamburger--spin" type="button">
+=======
+                        <button class="hamburger hamburger--squeeze" type="button">
+>>>>>>> 3f0fb197cabf29c8eb90a59e8c5bb271b514610b
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
                             </span>
                         </button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f0fb197cabf29c8eb90a59e8c5bb271b514610b
                         <div class="background-block-menu">
                             <div class="header-menu pull-right">
                                 
