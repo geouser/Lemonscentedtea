@@ -4,13 +4,26 @@
 		font-size: 30px
 		line-height: 40px
 		
+		@media (max-width: 767px)
+			font-size: 26px
+			line-height: 1.2em  
+			
+		@media (max-width: 575px)
+			font-size: 14px 
+		
 	&__subtitle
 		font-weight: 400  
+
 		
 
 	&-heading
 		padding-top: 100px 
 		margin-bottom: 30px 
+		
+		@media (max-width: 767px)
+			padding-left: 15px
+			padding-right: 15px  
+			padding-top: 40px 
 		
 
 
@@ -26,6 +39,20 @@
 			padding-top: 210px
 			padding-bottom: 210px  
 			text-align: left
+			
+			@media (max-width: 1199px)
+				padding-top: 150px
+				padding-bottom: 150px 
+				
+			@media (max-width: 991px)
+				padding-top: 130px
+				padding-bottom: 130px  
+				font-size: 35px
+				
+			@media (max-width: 575px)
+				padding-top: 45px
+				padding-bottom: 45px
+				font-size: 20px     
 			
 			&.next-case
 				color: #fff
