@@ -1,5 +1,5 @@
 <?php
-
+show_admin_bar( false );
 define('SITEURL', site_url());
 define('THEMEURL', get_template_directory_uri());
 register_nav_menus(

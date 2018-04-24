@@ -34,12 +34,12 @@
                 <div class="col-auto">
                     <div class="logo pull-left" id="header-image">
 
-                        <div class="wrap-logo">
+                        <div class="logo__img">
                             <?php the_custom_logo(); ?>
                         </div>
                         
 
-                        <div class="wrapp-header-text">
+                        <div class="logo__text">
                             <?php dynamic_sidebar( 'header-text' ); ?>
                         </div>
                     </div>
