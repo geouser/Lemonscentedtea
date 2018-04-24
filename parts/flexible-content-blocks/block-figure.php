@@ -1,7 +1,7 @@
 <?php 
 	$image_array = get_sub_field('image');
 
-	$image_url = $image_array['sizes']['figure'];
+	$image_url = $image_array['url'];
 
 	$image_caption = get_sub_field('image_caption');
 ?>

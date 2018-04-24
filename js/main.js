@@ -76,14 +76,11 @@ jQuery(document).ready(function($) {
     $('.hero-slider').slick({
     	arrows: false,
     	fade: true,
-		dots: true,
-		autoplay: true,
-		autoplaySpeed: 4000,
-		speed: 900,
-		pauseOnHover: false,
-    	customPaging : function(slider, i) {
-	        return '<svg class="slick-triangle" x="0px" y="0px" viewBox="0 0 14 30" width="14" height="30" style="enable-background:new 0 0 14 30;" xml:space="preserve"><polygon class="st0" points="0.8,1.9 13,15.1 0.8,28.1 	"/><path class="st1" d="M1.5,3.8l2.2,2.4l8.3,8.9L1.5,26.2V3.8 M0,0c0,10,0,20,0,30l14-14.9C9.3,10.1,4.7,5,0,0L0,0z"/></svg>';
-	    },
+		  dots: true,
+		  autoplay: true,
+		  autoplaySpeed: 4000,
+		  speed: 900,
+		  pauseOnHover: false
     })
 
 });

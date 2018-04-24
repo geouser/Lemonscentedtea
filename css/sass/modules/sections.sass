@@ -1,4 +1,6 @@
-.cases
+.cases,
+.team,
+.vacancies
 
 	&-container
 		@extend .container
@@ -8,18 +10,12 @@
 		align-items: stretch
 		flex-wrap: wrap
 		
-
-
-
-.team
-
-	&-container
-		@extend .container
+		@media (max-width: 767px)
+			padding: 0
 		
-		display: flex
-		justify-content: flex-start
-		align-items: stretch
-		flex-wrap: wrap
+
+
+
 		
 
 
@@ -29,11 +25,38 @@
 		padding-top: 115px
 		padding-bottom: 35px
 		
+		@media (max-width: 1199px)
+			padding-top: 80px
+			padding-bottom: 30px
+			
+		@media (max-width: 767px)
+			padding-top: 50px
+			padding-bottom: 20px   
+			
+		@media (max-width: 420px)
+			.col-6
+				+col-width(100%)
+		
 		a
 			display: inline-block
 			margin-bottom: 80px 
+			
+			@media (max-width: 1199px)
+				margin-bottom: 50px 
+				
+			@media (max-width: 767px)
+				margin-bottom: 30px 
 			
 			img
 				display: block
 				max-width: 100%
 				margin: 0 auto 
+
+
+
+.about-us,
+.general-page
+	@media (max-width: 767px)
+		.container
+			padding: 0
+			

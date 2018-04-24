@@ -13,7 +13,7 @@ get_header();
 
 	<div id="google-map" class="map"></div> <!-- end google map -->
 
-	<section>
+	<section class="general-page">
 
 		<div class="container">
 
@@ -40,36 +40,44 @@ get_header();
 				</div>
 			</div>	
 
+		</div> <!-- end cantainer -->
 
-			<figure class="figure figure--double">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/jpg/contact-1.png">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/jpg/contact-2.png">
-			</figure>
-				
+	</section> <!-- end section -->
 
-			<div class="text-block">
-				<div class="row">
-					<div class="col-12 col-md-6 col-xl-5">
-						<h2 class="text-block__title decorated-title">Hiring: Social media expert</h2>
 
-						<div class="text-block__content">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic fuga laudantium praesentium, esse voluptatibus natus eum eos tempore sequi commodi, quo temporibus rerum sapiente repellat rem odio. Libero, tempora.</p>
-						</div>
-					</div>
-					<div class="col-xl-1"></div>
-					<div class="col-12 col-md-6 col-xl-5">
-						<h2 class="text-block__title decorated-title">Hiring: Nerd</h2>
 
-						<div class="text-block__content">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic fuga laudantium praesentium, esse voluptatibus natus eum eos tempore sequi commodi, quo temporibus rerum sapiente repellat rem odio. Libero, tempora.</p>
-						</div>
+
+	<section class="vacancies">
+		
+		<div class="vacancies-container">
+			
+			<a href="#" class="vacancy">
+				<img class="vacancy__cover" src="<?php echo get_template_directory_uri(); ?>/assets/jpg/contact-1.png">
+
+				<div class="text-block">
+					<h2 class="text-block__title decorated-title">Hiring: Nerd</h2>
+
+					<div class="text-block__content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic fuga laudantium praesentium, esse voluptatibus natus eum eos tempore sequi commodi, quo temporibus rerum sapiente repellat rem odio. Libero, tempora.</p>
 					</div>
 				</div>
-			</div>
+			</a>
+
+			<a href="#" class="vacancy">
+				<img class="vacancy__cover" src="<?php echo get_template_directory_uri(); ?>/assets/jpg/contact-2.png">
+
+				<div class="text-block">
+					<h2 class="text-block__title decorated-title">Hiring: Nerd</h2>
+
+					<div class="text-block__content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic fuga laudantium praesentium, esse voluptatibus natus eum eos tempore sequi commodi, quo temporibus rerum sapiente repellat rem odio. Libero, tempora.</p>
+					</div>
+				</div>
+			</a>
 
 		</div>
 
-	</section> <!-- end section -->
+	</section> <!-- end vacancies -->
 
 
 

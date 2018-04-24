@@ -504,7 +504,7 @@ add_action('init', function() {
 
 add_image_size('figure', 1440, 600);
 
-add_image_size('hero-imageL', 1600, 9999);
+/*add_image_size('hero-imageL', 1600, 9999);
 add_image_size('hero-imageM', 1024, 9999);
 add_image_size('hero-imageS', 768, 9999);
 
@@ -518,7 +518,7 @@ add_image_size('biggerthumb', 390, 390, array('center', 'center'));
 add_image_size('home-intro', 1200, 1010, array('center', 'center'));
 add_image_size('actualiteiten', 704, 550, array('center', 'center'));
 add_image_size('testimonialsimage', 990, 840, array('center', 'center'));
-add_image_size('productimage', 640, 300, array('center', 'center'));
+add_image_size('productimage', 640, 300, array('center', 'center'));*/
 
 /*
  * @description: Remove Links and Comments from Admin menu

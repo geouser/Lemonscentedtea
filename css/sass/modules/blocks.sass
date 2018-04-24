@@ -24,6 +24,9 @@
 .case
 	width: 50%
 	display: block
+	
+	@media (max-width: 767px)
+		width: 100%
 
 	&__cover
 		display: block
@@ -39,6 +42,29 @@
 		padding: 18px 65px
 		color: #000
 		line-height: 1.5em 
+		font-size: 20px
+		line-height: 30px  
+		
+		@media (max-width: 1199px)
+			padding: 18px 40px
+			font-size: 18px
+			line-height: 26px  
+			
+		@media (max-width: 991px)
+			padding: 18px 20px
+			
+		@media (max-width: 767px)
+			padding: 18px 65px
+			
+		@media (max-width: 575px)
+			padding: 10px 20px
+			font-size: 16px
+			line-height: 20px
+			
+		@media (max-width: 420px)
+			padding: 5px 20px
+			font-size: 12px
+			line-height: 16px  
 		
 		&__title
 			font-weight: 700 
@@ -59,6 +85,27 @@
 	padding: 65px
 	cursor: pointer
 	text-align: center
+	
+	@media (max-width: 1199px)
+		font-size: 60px
+		line-height: 1em
+		padding: 50px
+		
+	@media (max-width: 991px)
+		font-size: 50px
+		padding: 45px   
+		
+	@media (max-width: 767px)
+		font-size: 45px
+		padding: 40px
+		
+	@media (max-width: 575px)
+		font-size: 40px
+		padding: 35px  
+		
+	@media (max-width: 420px)
+		font-size: 20px
+		padding: 30px 15px 
 	
 	&.has-bg
 		background-position: 50%
@@ -106,12 +153,35 @@
 	padding: 100px 65px
 	font-size: 16px
 	
+	@media (max-width: 1199px)
+		padding: 80px 50px
+		
+	@media (max-width: 991px)
+		padding: 65px 60px
+		
+		[class*='col-']
+			&:not(:last-child)
+				margin-bottom: 2em 
+				
+	@media (max-width: 575px)
+		padding: 40px 30px
+		font-size: 12px 
+	
 	h3.text-block__title
 		font-size: 23px
 		
 	h2.text-block__title,
 	h1.text-block__title
 		font-size: 30px 
+		
+		@media (max-width: 1199px)
+			font-size: 26px
+			
+		@media (max-width: 991px)
+			font-size: 30px  
+			
+		@media (max-width: 575px)
+			font-size: 16px 
 		
 
 	&__title + &__content
@@ -122,6 +192,7 @@
 	&__content
 		line-height: 1.9em 
 		
+		
 		p:not(:last-child)
 			margin-bottom: 1.9em 
 			
@@ -129,10 +200,17 @@
 		address
 			font-style: normal
 			
+			
 
 	&__columns
 		columns: 2
 		column-gap: 130px
+		
+		@media (max-width: 1199px)
+			column-gap: 80px
+			
+		@media (max-width: 991px)
+			columns: 1
 		
 	&__image
 		img
@@ -183,6 +261,10 @@
 		top: 0.75em
 		transform: translateY(-50%)
 		
+		@media (max-width: 575px)
+			border-width: 8px 0 8px 8px
+			left: -15px
+		
 
 
 
@@ -192,7 +274,6 @@
 	a
 		display: block
 		width: 100%
-		height: 695px
 		padding-top: 50%
 		background-repeat: no-repeat 
 		background-position: 50% 50%
@@ -209,7 +290,12 @@
 			left: 50%
 			transform: translate(-50%, -50%)
 			background-image: url(../assets/svg/play.svg) 
+			background-size: 100% 
 			transition: all 0.3s ease
+			
+			@media (max-width: 575px)
+				width: 50px
+				height: 35px
 			
 		&:hover:before
 			transform: translate(-50%, -50%) scale(1.2)
@@ -226,9 +312,20 @@
 	z-index: 1 
 	margin-bottom: 80px 
 	
-	&:nth-last-of-type(-n+2)
-		margin-bottom: 0 
+	@media (max-width: 575px)
+		margin-bottom: 50px 
 	
+	@media (max-width: 767px)
+		width: 100%
+	
+	@media (min-width: 768px)
+		&:nth-last-of-type(-n+2)
+			margin-bottom: 0 
+			
+	@media (max-width: 767px)
+		&:last-child
+			margin-bottom: 0
+		
 	&:before
 		content: ''
 		width: 0
@@ -240,6 +337,10 @@
 		left: 0
 		bottom: 22px
 		z-index: 2
+		
+		@media (max-width: 575px)
+			border-width: 11px 0 11px 9px
+			bottom: 45px
 	
 	&__image
 		display: block
@@ -257,6 +358,10 @@
 		padding: 20px 65px
 		color: #fff
 		
+		@media (max-width: 575px)
+			padding: 20px 30px
+			font-size: 16px 
+		
 		&__name,
 		&__position
 			display: block
@@ -272,4 +377,33 @@
 
 .map
 	height: 700px
+	
+	.gmnoprint,
+	.gmnoscreen,
+	.gm-style-cc
+		display: none!important
+		
+	@media (max-width: 991px)
+		height: 500px
+	
+	@media (max-width: 575px)
+		height: 200px
 
+
+
+
+
+.vacancy
+	width: 50%
+	display: block
+	color: #000
+	
+	@media (max-width: 991px)
+		width: 100%
+	
+	&__cover
+		display: block
+		width: 100% 
+	
+	.text-block
+		color: inherit

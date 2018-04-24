@@ -6,7 +6,7 @@
 	?>
 	
 	<div class="row">
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-lg-6">
 			<?php if ( $title ) : ?>
 				<<?php echo $title_tag; ?> class="text-block__title decorated-title"><?php echo $title; ?></<?php echo $title_tag; ?>>
 			<?php endif; ?>
@@ -16,7 +16,7 @@
 			</div>
 		</div>
 
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-lg-6">
 
 			<?php if ( $image['url'] ) : ?>
 				<div class="text-block__image">

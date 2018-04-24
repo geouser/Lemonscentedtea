@@ -13,7 +13,7 @@ get_header();
 
 <div id="main">
 	
-	<section>
+	<section class="general-page">
 		
 		<div class="container">
 			
