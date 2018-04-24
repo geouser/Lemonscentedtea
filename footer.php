@@ -4,7 +4,7 @@
                 <div class="row">
                     
                     <div class="col-6 col-sm-7">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-auto logo">
                                 <?php the_custom_logo(); ?>
                             </div>
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="col-6 col-sm-5">
-                        <div class="row justify-content-end">
+                        <div class="row justify-content-end align-items-center">
                             <div class="col-auto footer-menu text-left">
                                 <?php
                                     wp_nav_menu(array(
