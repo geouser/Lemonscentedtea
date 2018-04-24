@@ -53,7 +53,7 @@
                     </button>
 
                     <div class="background-block-menu">
-                        <div class="header-menu pull-right">
+                        <!-- <div class="header-menu pull-right">
                             
                             <div class="lang-block">
                                 <?php    
@@ -64,7 +64,7 @@
                                 }                               
                                 ?>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="clearfix"></div>
                         <div class="list-menu-block">
                             <?php
