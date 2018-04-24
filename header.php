@@ -22,8 +22,8 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <script>
-    var ajax_url = "<?php echo admin_url('admin-ajax.php'); ?>";
-    var templateurl = "<?php echo get_template_directory_uri(); ?>";
+        var ajax_url = "<?php echo admin_url('admin-ajax.php'); ?>";
+        var templateurl = "<?php echo get_template_directory_uri(); ?>";
     </script>
 
 
