@@ -27,11 +27,14 @@
                                     ));
                                 ?>
                             </div>
-                            <div class="col-auto subscribe text-left">
+                            <div class="col-auto text-left">
                                 <div class="title">Subcribe to our newsletter</div>
-                                <form id="form_subcribe">
-                                    <div><input id="email" placeholder="your e-mail"></div>
-                                    <div class="subcribe-submit"><input type="submit" value="Submit"></div>
+                                <form class="subscribe-form" novalidate>
+                                    <input id="email" placeholder="your e-mail" type="email" autocomplete="off">
+                                    <div class="status-message">
+                                        <p class="status-message__success">Press enter to sent</p>
+                                        <p class="status-message__error">Something is wrong</p>
+                                    </div>
                                 </form>
                             </div>
                         </div>

@@ -42,6 +42,28 @@ jQuery(document).ready(function($) {
 		});
     });
 
+    // keyup event
+    $('.subscribe-form input').on( "keyup", function(){
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i,
+            value = $(this).val();
+        if (testEmail.test(value) ) {
+            $(this).closest('form').addClass('valid');
+            $(this).closest('form').removeClass('not-valid');
+        } else {
+            $(this).closest('form').removeClass('valid');
+        }
+    } )
+    // form submit
+    $('.subscribe-form').submit(function(event){
+        event.preventDefault();
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i,
+            value = $(this).find('input').val();
+        if (testEmail.test(value) ) {
+            // console.log('submit');
+        } else {
+            $(this).addClass('not-valid');
+        }
+    });
 
     /*---------------------------
                                   Fancybox

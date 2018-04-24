@@ -1,0 +1,35 @@
+.subscribe-form
+    font-size: 16px
+    input
+        color: #ffffff
+        background-color: transparent 
+        
+    &.not-valid
+        .status-message__error
+            opacity: 1
+            visibility: visible
+            transform: none
+            max-height: 100px
+
+    &.valid
+        .status-message__success
+            opacity: 1
+            visibility: visible
+            transform: none
+            max-height: 100px
+
+
+.status-message
+    position: absolute
+    top: 100%
+    p 
+        max-height: 0
+        opacity: 0
+        visibility: hidden
+        transform: translateY(10px)
+        transition: all .4s ease-out
+        font-weight: 700
+    .status-message__error
+        color: #DB0000
+    .status-message__success
+        color: green
