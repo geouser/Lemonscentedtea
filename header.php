@@ -53,19 +53,10 @@
                     </button>
 
                     <div class="background-block-menu">
-                        <!-- <div class="header-menu pull-right">
-                            
-                            <div class="lang-block">
-                                <?php    
-                                if ( function_exists('icl_object_id') ) {
-                                    
-                                    language_selector_flags();
-                                    
-                                }                               
-                                ?>
-                            </div>
-                        </div> -->
-                        <div class="clearfix"></div>
+                        <ul class="languages">
+                            <li><a href="#">NL</a></li>
+                            <li class="current"><a href="#">EN</a></li>
+                        </ul>
                         <div class="list-menu-block">
                             <?php
                             if ( has_nav_menu( 'main_menu' ) ) {
