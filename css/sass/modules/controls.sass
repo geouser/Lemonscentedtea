@@ -10,9 +10,9 @@
 .slick-arrow:hover
 	+transition(all, .2s)
 	width: 70px
-	height: 90px
+	height: 100%
 	z-index: 10
-	background-color:  peru
+	background-color:  transparent
 	-webkit-border-radius: 2px
 	border-radius: 2px
 	background-repeat: no-repeat
@@ -36,19 +36,19 @@
 		display: none
 
 .slick-arrow:hover
-	opacity: .8
+    background-color: rgba(255,255,255,.2)
 
 .slick-next,
 .slick-next:hover,
 .slick-next:focus
-	right: 0
-	background-image: url("../images/right-arrow.svg")
+    right: 0
+    background-image: url("../assets/svg/right-arrow.svg")
 
 .slick-prev,
 .slick-prev:hover,
 .slick-prev:focus
-	left: 0
-	background-image: url("../images/left-arrow.svg")
+    left: 0
+    background-image: url("../assets/svg/left-arrow.svg")
 
 
 .input.file

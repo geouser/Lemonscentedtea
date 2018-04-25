@@ -127,4 +127,14 @@ jQuery(document).ready(function($) {
 		  pauseOnHover: false
     })
 
+    $('.gallery-slider').slick({
+    	arrows: true,
+    	fade: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 900,
+        pauseOnHover: false
+    })
+
 });

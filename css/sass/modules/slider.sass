@@ -132,3 +132,24 @@
 					&:before
 						transform: translateX(-100%)
 						opacity: 0
+
+
+.gallery-slider 
+	&__slide
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
+		&:before
+			content: ''
+			display: block
+			padding-top: 41.7%
+		&__text
+			opacity: 0
+			visibility: hidden
+			transform: translateY(20px)
+			transition: .6s all 1s ease-out
+		&.slick-current
+			.gallery-slider__slide__text
+				opacity: 1
+				visibility: visible
+				transform: translateY(0px)
