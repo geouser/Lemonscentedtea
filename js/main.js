@@ -24,7 +24,17 @@ jQuery(document).ready(function($) {
 			     setTimeout(function(){ $(".background-block-menu").removeClass('scroll') },800);
 			});
 		}
-	});
+    });
+    
+    $(document).on('click', function(){
+        $(".background-block-menu").removeClass("menu-open");
+        $("body").removeClass("body-fixed");
+        $(".hamburger").toggleClass("is-active");
+        $('#menu-main-menu >li ').removeClass('list-menu-visible')
+    });
+    $( ".background-block-menu, .hamburger" ).click(function( event ) {
+        event.stopPropagation();
+    });
 
 	/*---------------------------
                                   ADD CLASS ON SCROLL
@@ -121,7 +131,7 @@ jQuery(document).ready(function($) {
     	arrows: false,
     	fade: true,
 		  dots: true,
-		  autoplay: true,
+		  autoplay: false,
 		  autoplaySpeed: 4000,
 		  speed: 900,
 		  pauseOnHover: false
