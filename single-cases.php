@@ -42,9 +42,8 @@ get_header();
 					</div>	
 				</div>
 
-				<div class="single-case-heading">
-					<h1 class="single-case__title">Slider example</h1>
-				</div>
+
+				<h1 class="gallery-slider__title decorated-title">Slider example</h1>
 
 				<div class="gallery-slider">
 					<figure class="figure gallery-slider__slide" style="background-image: url('https://unsplash.it/1440/600?image=65')">
