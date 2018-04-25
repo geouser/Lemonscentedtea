@@ -1,8 +1,12 @@
 #footer 
     background-color: #a29165
-    padding: 40px 0 40px 0
+    padding: 40px 50px
     color: white
-    
+    @media (max-width: 1199px)
+        padding: 40px 20px
+    @media (max-width: 800px)
+        padding-left: 15px
+        padding-right: 15px
     @media (max-width: 575px)
         padding: 25px 0
 
@@ -28,12 +32,21 @@
     .contact-info
         font-size: 16px
         font-weight: 300
-        line-height: 2.3        
+        line-height: 2.3   
+        padding-left: 100px     
+        @media (max-width: 1199px)
+            padding-left: 60px
+        @media (max-width: 800px)
+            padding-left: 40px
+        @media (max-width: 400px)
+            padding-left: 15px
     
     
     .footer-menu 
         list-style-type: none
-        padding-right: 40px
+        @media (max-width: 767px)
+            ul 
+                padding-top: 40px
         li 
             display: block
             a
@@ -56,4 +69,11 @@
                     background: #fff
                 &:hover:after
                     max-width: 100%
+
+    .subscribe-form
+        margin-left: 70px
+        @media (max-width: 1199px)
+            margin-left: 30px
+        @media (max-width: 991px)
+            display: none
     
