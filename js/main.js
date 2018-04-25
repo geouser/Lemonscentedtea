@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
     $(document).on('click', function(){
         $(".background-block-menu").removeClass("menu-open");
         $("body").removeClass("body-fixed");
-        $(".hamburger").toggleClass("is-active");
+        $(".hamburger").removeClass("is-active");
         $('#menu-main-menu >li ').removeClass('list-menu-visible')
     });
     $( ".background-block-menu, .hamburger" ).click(function( event ) {
