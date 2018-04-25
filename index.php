@@ -16,6 +16,10 @@ get_header();
 
 <div id="main">
 
+	<?php 
+		get_template_part('parts/part', 'flexible-content' ); 
+	?>
+	
     <section>
     	<div class="hero-slider">
 

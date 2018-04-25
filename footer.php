@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <small>Disclaimer</small>
+                                        <a href="#">Disclaimer</a>
                                     </div>
                                 </form>
                             </div>
