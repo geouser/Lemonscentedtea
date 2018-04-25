@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
     $(document).on('click', function(){
         $(".background-block-menu").removeClass("menu-open");
         $("body").removeClass("body-fixed");
-        $(".hamburger").toggleClass("is-active");
+        $(".hamburger").removeClass("is-active");
         $('#menu-main-menu >li ').removeClass('list-menu-visible')
     });
     $( ".background-block-menu, .hamburger" ).click(function( event ) {
@@ -170,10 +170,6 @@ jQuery(document).ready(function($) {
     });
 
 
-
-
-
-
     $('.gallery-slider').slick({
     	arrows: true,
     	fade: false,
@@ -183,5 +179,40 @@ jQuery(document).ready(function($) {
         speed: 900,
         pauseOnHover: false,
     })
+
+
+    // load more cases
+    $('.js-load-cases').click(function(){
+ 
+		var button = $(this),
+		    data = {
+			'action': 'loadmorecases',
+			'query': posts_cases, 
+			'page' : current_page_cases
+        };
+        
+		$.ajax({
+			url : theme.ajax_url, // AJAX handler
+			data : data,
+			type : 'POST',
+			beforeSend : function ( xhr ) {
+				button.addClass('loading'); // change the button text, you can also add a preloader image
+			},
+			success : function( data ){
+				if( data ) { 
+                    $(data).hide().appendTo('.cases-container').fadeIn(1000);
+                    current_page_cases++;
+ 
+                    if ( current_page_cases == max_page_cases ) 
+                        setTimeout(function(){ button.addClass('disabled'); }, 800);
+                    else 
+                        setTimeout(function(){ button.removeClass('loading'); }, 800);
+ 
+				} else {
+					button.addClass('disabled'); // if no data, remove the button as well
+				}
+			}
+		});
+	});
 
 });

@@ -14,51 +14,36 @@ get_header();
 <div id="main">
 	
 	<section class="cases">
-
 		<div class="cases-container">
-			<a href="#" class="case">
-				<figure class="case__cover">
-					<img src="https://unsplash.it/720/450?image=62">
-				</figure>
-				<div class="case__desc">
-					<h3 class="case__desc__title">Vist Twente</h3>
-					<span class="case__desc__excerpt">Twente helps the Randstad with their space time</span>
-				</div>
-			</a>
+		<?
+            $args = array(
+				'post_type' => 'cases',
+				'paged' => 1
+            );
 
-			<a href="#" class="case">
-				<figure class="case__cover">
-					<img src="https://unsplash.it/720/450?image=63">
-				</figure>
-				<div class="case__desc">
-					<h3 class="case__desc__title">Vist Twente</h3>
-					<span class="case__desc__excerpt">Twente helps the Randstad with their space time</span>
-				</div>
-			</a>
+			$query = new WP_Query($args);
+			?>
+			<script>
+				// {ID} is any unique name, example: b1, q9, qq, misha etc, it should be unique
+				var posts_cases = '<?php echo serialize( $query->query_vars ) ?>',
+					current_page_cases = <?php echo $query->query_vars['paged'] ?>,
+					max_page_cases = <?php echo $query->max_num_pages ?>
 
-			<a href="#" class="case">
-				<figure class="case__cover">
-					<img src="https://unsplash.it/720/450?image=64">
-				</figure>
-				<div class="case__desc">
-					<h3 class="case__desc__title">Vist Twente</h3>
-					<span class="case__desc__excerpt">Twente helps the Randstad with their space time</span>
-				</div>
-			</a>
+			</script><?php 
 
-			<a href="#" class="case">
-				<figure class="case__cover">
-					<img src="https://unsplash.it/720/450?image=65">
-				</figure>
-				<div class="case__desc">
-					<h3 class="case__desc__title">Vist Twente</h3>
-					<span class="case__desc__excerpt">Twente helps the Randstad with their space time</span>
-				</div>
-			</a>	
+            if ( $query->have_posts() ) {
+                while ( $query->have_posts() ) {  $query->the_post();
+                    get_template_part('parts/part', 'case');
+                }
+                wp_reset_postdata(); 
+            } // end if query
+        ?>
 		</div>
 
 		<button class="large-button js-load-cases">
-			<span>More clients</span>
+			<span class="large-button__default-text">More clients</span>
+			<span class="large-button__loading-text">Loading...</span>
+			<span class="large-button__disabled-text">No more cases...</span>
 		</button>
 
 	</section>

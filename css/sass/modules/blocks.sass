@@ -45,10 +45,18 @@
 		padding: 0
 		width: 100%
 		margin: 0
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
 		
 		img
 			display: block
 			width: 100%
+
+		&:before
+			display: block
+			content: ''
+			padding-top: 62.5%
 			
 	&__desc
 		padding: 24px 65px
@@ -95,26 +103,66 @@
 	font-style: italic
 	border: 0
 	line-height: 78px
-	padding: 60px 65px 70px
+	padding: 100px 65px 110px
 	cursor: pointer
 	text-align: center
+	transition: all .6s ease-out
+	&__default-text
+		display: inline-block
+		transition: .2s all .2s ease-out
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+	&__loading-text,
+	&__disabled-text
+			display: inline-block
+			transition: all .2s ease-out
+			opacity: 0
+			visibility: hidden
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+
+	&.loading
+		.large-button__default-text
+			opacity: 0
+			visibility: hidden
+			transition-delay: 0
+		.large-button__loading-text
+			opacity: 1
+			visibility: visible
+			transition-delay: .2s
+
+	&.disabled
+		pointer-events: none
+		.large-button__loading-text,
+		.large-button__default-text
+			opacity: 0
+			visibility: hidden
+			transition-delay: 0
+		.large-button__disabled-text
+			opacity: 1
+			visibility: visible
+			transition-delay: .2s
 	
 	@media (max-width: 1199px)
 		font-size: 60px
 		line-height: 1em
-		padding: 50px
+		padding: 80px 50px
 		
 	@media (max-width: 991px)
 		font-size: 50px
-		padding: 45px   
+		padding: 70px 45px   
 		
 	@media (max-width: 767px)
 		font-size: 45px
-		padding: 40px
+		padding: 65px 40px
 		
 	@media (max-width: 575px)
 		font-size: 40px
-		padding: 35px  
+		padding: 55px 35px  
 		
 	@media (max-width: 420px)
 		font-size: 20px

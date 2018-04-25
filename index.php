@@ -15,79 +15,33 @@ get_header();
 
 
 <div id="main">
-
-	<?php 
-		get_template_part('parts/part', 'flexible-content' ); 
-	?>
-	
-    <section>
-    	<div class="hero-slider">
-
-    		<div class="slide item" style="background-image: url(https://unsplash.it/1400/600?image=114); ">
+<?php
+	if( have_rows('slider') ): ?>
+	<section>
+		<div class="hero-slider"> <?
+		while ( have_rows('slider') ) : the_row(); ?>
+			<div class="slide item" style="background-image: url(<?php echo the_sub_field('image')?>); ">
     			<div class="container">
 	    			<div class="slider-description">
-	                    <div class="slider-title">Magnum</div>
+	                    <div class="slider-title"><?php the_sub_field('title'); ?></div>
 	                    <div class="slider-subtitle">
-	                        Magnum Pyjama Party
+							<?php the_sub_field('subtitle'); ?>
 	                    </div>
 	                </div>	
     			</div>
             </div>
+		<?
+		endwhile; ?>
+		</div> 
+	</section><?
 
-            <div class="slide item" style="background-image: url(https://unsplash.it/1400/600?image=62); ">
-                <div class="container">
-	    			<div class="slider-description">
-	                    <div class="slider-title">Magnum</div>
-	                    <div class="slider-subtitle">
-	                        Magnum Pyjama Party
-	                    </div>
-	                </div>	
-    			</div>
-            </div>
-
-            <div class="slide item" style="background-image: url(https://unsplash.it/1400/600?image=315); ">
-                <div class="container">
-	    			<div class="slider-description">
-	                    <div class="slider-title">Magnum</div>
-	                    <div class="slider-subtitle">
-	                        Magnum Pyjama Party
-	                    </div>
-	                </div>	
-    			</div>
-            </div>
-
-            <div class="slide item" style="background-image: url(https://unsplash.it/1400/600?image=622); ">
-                <div class="container">
-	    			<div class="slider-description">
-	                    <div class="slider-title">Magnum</div>
-	                    <div class="slider-subtitle">
-	                        Magnum Pyjama Party
-	                    </div>
-	                </div>	
-    			</div>
-            </div>
-
-            <div class="slide item" style="background-image: url(https://unsplash.it/1400/600?image=401); ">
-                <div class="container">
-	    			<div class="slider-description">
-	                    <div class="slider-title">Magnum</div>
-	                    <div class="slider-subtitle">
-	                        Magnum Pyjama Party
-	                    </div>
-	                </div>	
-    			</div>
-            </div>
-
-    	</div> <!-- end hero-slider -->
-    </section>
-
+	endif;
+?>
 
     <section class="section">
     	<div class="container">
 	    	<div class="our-story">
-	            <p>Did you ever dare to ask the question:</p>
-	            <p>Does my brand have an interesting story to tell?</p>
-	            <a href="#">See our story</a>
+	            <? the_post(); the_content();?>
 	        </div>	
     	</div>
     </section> <!-- end section -->

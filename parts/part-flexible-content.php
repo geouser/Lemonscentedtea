@@ -1,6 +1,5 @@
 <article>
 
-
 	<?php
 		if ( get_field('content') ):
 
@@ -9,7 +8,7 @@
 				the_row();
 
 				$layout = get_row_layout();
-
+				
 				get_template_part('parts/flexible-content-blocks/block', $layout );
 
 			endwhile;
