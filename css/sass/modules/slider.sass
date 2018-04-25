@@ -138,10 +138,20 @@
 				.fill
 					fill: #fff
 					
+				.permanent-fill
+					fill: #fff
+					transition: all 0.3s ease
+					opacity: 1
+					
 			&.slick-active
 				button
 					&:before
 						transform: translateX(-100%)
+						opacity: 0
+						
+				svg
+					.permanent-fill
+						opacity: 0
 
 
 .gallery-slider 
