@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     // keyup event
     var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-    $('.subscribe-form input').on( "keyup", function(e){
+    $('.mailchimp-form input').on( "keyup", function(e){
         var value = $(this).val(),
             form = $(this).closest('form');
         
@@ -81,11 +81,11 @@ jQuery(document).ready(function($) {
         }
     } )
     // blur
-    $('.subscribe-form input').on( "blur", function(){
+    $('.mailchimp-form input').on( "blur", function(){
         $(this).closest('form').removeClass('typing valid not-valid');
     } )
     // form submit
-    $('.subscribe-form').submit(function(event){
+    $('.mailchimp-form').submit(function(event){
         event.preventDefault();
         var value = $(this).find('input').val();
 
