@@ -40,6 +40,8 @@
 			padding-top: 180px
 			padding-bottom: 210px  
 			text-align: left
+			position: relative
+			transition: all 0.3s ease
 			
 			@media (max-width: 1199px)
 				padding-top: 150px
@@ -57,3 +59,92 @@
 			
 			&.next-case
 				color: #fff
+				
+				&:before
+					content: ''
+					width: 100%
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					background-color: #1c1c1c
+					opacity: 0
+					visibility: visible  
+					transition: all 0.3s ease
+				
+
+			.desc
+				position: absolute
+				bottom: 20px
+				left: 0
+				right: 0
+				width: 100%
+				z-index: 3
+				padding: 20px 65px
+				color: #fff
+				font-size: 16px 
+				opacity: 0
+				visibility: hidden
+				transition: all 0.3s ease
+				
+				@media (max-width: 575px)
+					padding: 20px 30px
+					font-size: 16px 
+				
+				&__main,
+				&__second
+					display: block
+					font-size: 20px
+					line-height: 30px  
+					
+				&__main
+					font-weight: 700 
+					
+				&:before
+					content: ''
+					width: 0
+					height: 0
+					border-style: solid
+					border-width: 25px 0 25px 28px
+					border-color: transparent transparent transparent #fff
+					position: absolute
+					left: 0
+					bottom: 22px
+					z-index: 2
+					
+					@media (max-width: 575px)
+						border-width: 11px 0 11px 9px
+						bottom: 45px
+					
+			.label
+				transition: all 0.2s ease
+					
+
+			@media (min-width: 992px)
+				&.get-in-touch
+					&:hover
+						background-color: #1c1c1c
+						
+						.label
+							opacity: 0
+							visibility: hidden
+							
+						.desc
+							opacity: 1
+							visibility: visible
+							
+
+				&.next-case
+					&:hover
+						&:before
+							opacity: 0.8
+							visibility: visible
+							
+						.label
+							opacity: 0
+							visibility: hidden
+							
+						.desc
+							opacity: 1
+							visibility: visible
