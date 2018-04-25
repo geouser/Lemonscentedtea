@@ -136,7 +136,7 @@
 	
 	img
 		display: block
-		max-width: 100% 
+		width: 100% 
 		
 	figcaption
 		color: #fff
@@ -147,7 +147,7 @@
 		right: 0
 		bottom: 0
 		width: 100%
-		padding: 20px 65px
+		padding: 20px 65px 23px
 		
 		@media (max-width: 575px)
 			padding: 18px 30px
@@ -163,6 +163,11 @@
 	padding: 100px 65px
 	font-size: 16px
 	
+	&.contacts
+		@media (min-width: 1200px)
+			padding-top: 115px
+			padding-bottom: 115px  
+	
 	@media (max-width: 1199px)
 		padding: 80px 50px
 		
@@ -174,8 +179,30 @@
 				margin-bottom: 2em 
 				
 	@media (max-width: 575px)
-		padding: 40px 30px
+		padding: 40px 25px
 		font-size: 12px 
+
+	
+	[class*='col-']
+		&:first-child
+			.text-block-part
+				padding-right: 50px 
+				
+				@media (max-width: 1199px)
+					padding-right: 35px
+					
+				@media (max-width: 991px)
+					padding-right: 0
+				
+		&:last-child
+			.text-block-part
+				padding-left: 50px 
+				
+				@media (max-width: 1199px)
+					padding-left: 35px
+					
+				@media (max-width: 991px)
+					padding-left: 0
 	
 	h3.text-block__title
 		font-size: 23px
@@ -220,7 +247,7 @@
 		column-gap: 130px
 		
 		@media (max-width: 1199px)
-			column-gap: 80px
+			column-gap: 100px
 			
 		@media (max-width: 991px)
 			columns: 1
@@ -236,6 +263,7 @@
 	&__socials
 		list-style: none 
 		color: inherit
+		margin-left: -30px 
 		
 		a
 			color: inherit
@@ -325,6 +353,8 @@
 	position: relative
 	z-index: 1 
 	margin-bottom: 80px 
+	z-index: 1
+	overflow: hidden
 	
 	@media (max-width: 575px)
 		margin-bottom: 50px 
@@ -339,22 +369,24 @@
 	@media (max-width: 767px)
 		&:last-child
 			margin-bottom: 0
-		
-	&:before
+			
+	&:after
 		content: ''
-		width: 0
-		height: 0
-		border-style: solid
-		border-width: 25px 0 25px 28px
-		border-color: transparent transparent transparent #fff
 		position: absolute
+		top: 0
 		left: 0
-		bottom: 22px
-		z-index: 2
+		right: 0
+		bottom: 0
+		background-color: #000
+		opacity: 0
+		visibility: hidden
+		z-index: 1  
+		transition: all 0.3s ease
 		
-		@media (max-width: 575px)
-			border-width: 11px 0 11px 9px
-			bottom: 45px
+	&:hover
+		&:after
+			opacity: 0.3
+			visibility: visible
 	
 	&__image
 		display: block
@@ -369,12 +401,45 @@
 		right: 0
 		width: 100%
 		z-index: 3
-		padding: 20px 65px
+		padding: 26px 65px
 		color: #fff
+		transition: all 0.3s ease
 		
 		@media (max-width: 575px)
-			padding: 20px 30px
+			padding: 20px 40px
 			font-size: 16px 
+			
+		.linkedin
+			content: ''
+			width: 57px
+			height: 57px
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translate(-50%, -50%)
+			z-index: 2
+			transition: all 0.3s ease
+			
+			&:after
+				content: ''
+				width: 20px
+				height: 20px
+				position: absolute
+				top: 50%
+				left: 50%
+				background-color: #fff
+				opacity: 1
+				transform: translate(-50%, -50%) 
+				transition: all 0.3s ease
+			
+			svg
+				path
+					fill: #fff
+			
+			@media (max-width: 575px)
+				border-width: 11px 0 11px 9px
+				bottom: 45px
+		
 		
 		&__name,
 		&__position
@@ -384,7 +449,17 @@
 			
 		&__name
 			font-weight: 700 
-
+			margin-bottom: -2px 
+		
+	&:hover &__desc
+		padding-left: 107px
+		 
+		.linkedin
+			left: 25px
+			transform: translate(0, -50%)
+			
+			&:after
+				opacity: 0
 
 
 
@@ -421,3 +496,7 @@
 	
 	.text-block
 		color: inherit
+		
+		@media (min-width: 1200px)
+			padding-top: 115px
+			padding-bottom: 115px  
