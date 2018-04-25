@@ -1,14 +1,16 @@
 #footer 
     background-color: #a29165
-    padding: 40px 50px
+    padding: 65px 50px
     color: white
     @media (max-width: 1199px)
         padding: 40px 20px
-    @media (max-width: 800px)
-        padding-left: 15px
-        padding-right: 15px
+        
+    @media (max-width: 991px)
+        padding-left: 0
+        padding-right: 0  
+
     @media (max-width: 575px)
-        padding: 25px 0
+        padding: 25px 10px
 
     .container
         max-width: 100% 
@@ -32,21 +34,48 @@
     .contact-info
         font-size: 16px
         font-weight: 300
-        line-height: 2.3   
-        padding-left: 100px     
+        line-height: 2.15em  
+        padding-left: 120px    
+        margin-top: -10px  
+        
         @media (max-width: 1199px)
             padding-left: 60px
-        @media (max-width: 800px)
-            padding-left: 40px
-        @media (max-width: 400px)
+        @media (max-width: 991px)
             padding-left: 15px
+            
+        @media (max-width: 767px)
+            font-size: 14px
+            line-height: 1.5em
+            margin-top: -5px
+            padding-left: 0
+            letter-spacing: -0.015em 
+            
+        @media (max-width: 575px)
+            display: none
+
+        address
+            font-style: normal 
     
     
     .footer-menu 
         list-style-type: none
-        @media (max-width: 767px)
-            ul 
-                padding-top: 40px
+
+        ul
+            padding-left: 50px 
+            margin-top: -10px 
+            
+            @media (max-width: 1199px)
+                padding-left: 35px 
+            
+            @media (max-width: 991px)
+                padding-left: 30px
+         
+            @media (max-width: 767px)
+                padding-left: 0 
+                
+            @media (max-width: 575px)
+                //text-align: right
+                
         li 
             display: block
             a
@@ -55,6 +84,10 @@
                 font-weight: 600
                 line-height: 1.6
                 position: relative
+                
+                @media (max-width: 767px)
+                    font-size: 16px
+                     
                 &:after
                     content: ''
                     display: block
@@ -70,10 +103,16 @@
                 &:hover:after
                     max-width: 100%
 
-    .subscribe-form
-        margin-left: 70px
+    .mailchimp-form
+        margin-left: 87px
         @media (max-width: 1199px)
-            margin-left: 30px
+            margin-left: 0
+            max-width: 100%
+             
         @media (max-width: 991px)
+            display: none
+            
+    @media (max-width: 991px)
+        .form-col
             display: none
     
