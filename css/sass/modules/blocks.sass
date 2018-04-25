@@ -136,7 +136,7 @@
 	
 	img
 		display: block
-		max-width: 100% 
+		width: 100% 
 		
 	figcaption
 		color: #fff
@@ -147,7 +147,7 @@
 		right: 0
 		bottom: 0
 		width: 100%
-		padding: 20px 65px
+		padding: 20px 65px 23px
 		
 		@media (max-width: 575px)
 			padding: 18px 30px
@@ -174,8 +174,30 @@
 				margin-bottom: 2em 
 				
 	@media (max-width: 575px)
-		padding: 40px 30px
+		padding: 40px 25px
 		font-size: 12px 
+
+	
+	[class*='col-']
+		&:first-child
+			.text-block-part
+				padding-right: 50px 
+				
+				@media (max-width: 1199px)
+					padding-right: 35px
+					
+				@media (max-width: 991px)
+					padding-right: 0
+				
+		&:last-child
+			.text-block-part
+				padding-left: 50px 
+				
+				@media (max-width: 1199px)
+					padding-left: 35px
+					
+				@media (max-width: 991px)
+					padding-left: 0
 	
 	h3.text-block__title
 		font-size: 23px

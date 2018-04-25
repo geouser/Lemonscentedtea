@@ -14,12 +14,8 @@ get_header();
 <div id="main">
 	
 	<section class="about-us">
-		
-		<div class="container">
 			
-			<?php get_template_part('parts/part', 'flexible-content'); ?>
-
-		</div> <!-- end container -->
+		<?php get_template_part('parts/part', 'flexible-content'); ?>
 		
 	</section>
 
