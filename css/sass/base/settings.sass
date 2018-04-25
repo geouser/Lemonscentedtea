@@ -1,11 +1,15 @@
 html,
 body
-	height: 100%
+    height: 100%
+    a 
+        text-rendering: geometricprecision
     
 // typography
 body 
     font-size: 18px
     font-family: 'Archer'
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
     &:before
         opacity: 0
         background-color: $black-color
