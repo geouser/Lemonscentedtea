@@ -41,7 +41,7 @@ get_header();
 		</div>
 
 		<button class="large-button js-load-cases">
-			<span class="large-button__default-text">More clients</span>
+			<span class="large-button__default-text">More cases</span>
 			<span class="large-button__loading-text">Loading...</span>
 			<span class="large-button__disabled-text">No more cases...</span>
 		</button>
