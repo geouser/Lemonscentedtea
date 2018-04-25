@@ -1,8 +1,12 @@
 #footer 
     background-color: #a29165
-    padding: 40px 0 40px 0
+    padding: 40px 50px
     color: white
-    
+    @media (max-width: 1199px)
+        padding: 40px 20px
+    @media (max-width: 800px)
+        padding-left: 15px
+        padding-right: 15px
     @media (max-width: 575px)
         padding: 25px 0
 
@@ -25,122 +29,51 @@
                 display: block
                 max-width: 100% 
     
-    .contact-info 
+    .contact-info
         font-size: 16px
-        
-        @media (max-width: 767px)
-            font-size: 14px 
-            
-        @media (max-width: 575px)
-            display: none
-        
-        address
-            font-style: normal 
-        
-        p:not(:last-child)
-            margin-bottom: 0.5em         
+        font-weight: 300
+        line-height: 2.3   
+        padding-left: 100px     
+        @media (max-width: 1199px)
+            padding-left: 60px
+        @media (max-width: 800px)
+            padding-left: 40px
+        @media (max-width: 400px)
+            padding-left: 15px
     
     
     .footer-menu 
-        font-size: 22px
-        
+        list-style-type: none
         @media (max-width: 767px)
-            font-size: 16px 
-        
-        ul
-            list-style: none
-            
+            ul 
+                padding-top: 40px
+        li 
+            display: block
             a
-                &:hover
-                    text-decoration: underline
-    
-    
-    .subscribe 
-        font-size: 16px
-        
+                color: #fff
+                font-size: 22px
+                font-weight: 600
+                line-height: 1.6
+                position: relative
+                &:after
+                    content: ''
+                    display: block
+                    height: 1px
+                    position: absolute
+                    left: 0
+                    right: 0
+                    bottom: -4px
+                    margin: auto
+                    max-width: 0
+                    transition: all .2s ease-out
+                    background: #fff
+                &:hover:after
+                    max-width: 100%
+
+    .subscribe-form
+        margin-left: 70px
+        @media (max-width: 1199px)
+            margin-left: 30px
         @media (max-width: 991px)
             display: none
-        
-        .subcribe-submit 
-            input 
-                background-color: $theme-color
-                border: 1px solid $white-color
-                box-shadow: none
-                padding: 5px 20px
-                border-radius: 4px
-                visibility: hidden
-                opacity: 0
-                transition: opacity 0.5s, visibility 0.5s
-                color: #fff
-                
-        #email
-            color: #fff
-            font-size: 16px 
-            
-        
-        #form_subcribe.error 
-            position: relative
-            &:before 
-                content: "\2718"
-                color: red
-                position: absolute
-                top: 12px
-            
-            #email 
-                padding-left: 20px
-            
-        
-        #form_subcribe.success 
-            position: relative
-            &:before 
-                content: "\2714"
-                color: green
-                position: absolute
-                top: 12px
-            
-            #email 
-                padding-left: 20px
-            
-            .subcribe-submit 
-                input 
-                    visibility: visible
-                    opacity: 1
-                    transition: opacity 0.5s
-                
-            
-        
-        
-        #email 
-            background-color: #a29165
-            border: none
-            border-bottom: white 1px solid
-            font-size: 18px
-            width: 85%
-            max-width: 275px
-            margin: 10px 0 10px 0
-        
-        
-        #email::placeholder  /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: white
-            opacity: 1 /* Firefox */
-        
-        
-        #email:-ms-input-placeholder  /* Internet Explorer 10-11 */
-            color: white
-        
-        
-        #email::-ms-input-placeholder  /* Microsoft Edge */
-            color: white
-        
-        
-        .disclaimer 
-            opacity: 0.4
-        
     
-@media (max-width: 400px)
-    
-    #footer
-
-        .footer-menu 
-            ul
-                padding-left: 0

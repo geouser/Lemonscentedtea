@@ -42,6 +42,50 @@ jQuery(document).ready(function($) {
 		});
     });
 
+    /*---------------------------
+                                  Form validation
+    ---------------------------*/
+    // keyup event
+    var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+    $('.subscribe-form input').on( "keyup", function(e){
+        var value = $(this).val(),
+            form = $(this).closest('form');
+        
+        form.addClass('typing');
+        form.removeClass('not-valid');
+
+        if (testEmail.test(value) ) {
+            form.addClass('valid');
+        } else {
+            form.removeClass('valid');
+        }
+
+        if (e.keyCode === 13)  {
+            form.removeClass('typing');
+            if (testEmail.test(value) ) {
+                form.addClass('valid');
+            } else {
+                form.removeClass('valid');
+                form.addClass('not-valid');
+            }
+        }
+    } )
+    // blur
+    $('.subscribe-form input').on( "blur", function(){
+        $(this).closest('form').removeClass('typing valid not-valid');
+    } )
+    // form submit
+    $('.subscribe-form').submit(function(event){
+        event.preventDefault();
+        var value = $(this).find('input').val();
+
+        if (testEmail.test(value) ) {
+            // console.log('submit');
+        } else {
+            $(this).removeClass('typing');
+            $(this).addClass('not-valid');
+        }
+    });
 
     /*---------------------------
                                   Fancybox
