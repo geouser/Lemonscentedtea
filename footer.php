@@ -1,7 +1,7 @@
         <div id="footer">
             <div class="container-fluid">
 
-                <div class="row">
+                <div class="row align-items-center">
                     
                     <div class="col-6 col-sm-7">
                         <div class="row align-items-center">
@@ -28,12 +28,17 @@
                                 ?>
                             </div>
                             <div class="col-auto text-left">
-                                <div class="title">Subcribe to our newsletter</div>
                                 <form class="subscribe-form" novalidate>
-                                    <input id="email" placeholder="your e-mail" type="email" autocomplete="off">
-                                    <div class="status-message">
-                                        <p class="status-message__success">Press enter to sent</p>
-                                        <p class="status-message__error">Something is wrong</p>
+                                    <p>Subcribe to our newsletter</p>
+                                    <div class="form-group">
+                                        <input id="email" placeholder="your e-mail" type="email" autocomplete="off">
+                                        <div class="status-message">
+                                            <p class="status-message__success">Press enter to sent</p>
+                                            <p class="status-message__error">Something is wrong</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <small>Disclaimer</small>
                                     </div>
                                 </form>
                             </div>
