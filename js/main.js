@@ -125,13 +125,8 @@ jQuery(document).ready(function($) {
 
     $('.hero-slider').on('init', function( event, slick ){
         
-        setTimeout( function(){
-            
-            var dot = slick.$dots.find('li').eq( 0 )
+        slick.$dots.find('li').eq(0).find('.animate-fill')[0].beginElement();
 
-            dot.find('animate')[0].beginElement();
-
-        }, slick.options.speed/2 )
     });
 
     $('.hero-slider').slick({
@@ -145,10 +140,10 @@ jQuery(document).ready(function($) {
         customPaging: function (i) {
             return  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 14 30" style="enable-background:new 0 0 14 30;" xml:space="preserve">' +
                         '<g>' +
+                            '<polygon class="permanent-fill" points="0,0 14,15 14,15 0,30"/>' +
                             '<polygon class="fill" points="0,0 14,15 14,15 0,30">' +
-                                '<animate class="animate-fill" begin="indefinite" attributeName="points" dur="4450ms" from="0,0 0,0 0,30 0,30" to="0,0 14,15 14,15 0,30" />' +
-                                '<animate class="animate-back" begin="indefinite" attributeName="points" dur="450ms" from="0,0 14,15 14,15 0,30" to="0,0 0,0 0,30 0,30" />' +
-                                '<animate class="animate-reset" begin="indefinite" attributeName="points" dur="5ms" from="0,0 0,0 0,30 0,30" to="0,0 14,15 14,15 0,30" />' +
+                                '<animate class="animate-fill" begin="indefinite" attributeName="points" dur="4900ms" from="0,0 0,0 0,30 0,30" to="0,0 14,15 14,15 0,30" />' +
+                                '<animate class="animate-back" begin="indefinite" attributeName="points" dur="5ms" from="0,0 14,15 14,15 0,30" to="0,0 0,0 0,30 0,30" />' +
                             '</polygon>' +
                             '<path class="border" d="M1.5,3.8L11.9,15L1.5,26.2V3.8 M0,0v30l14-15L0,0L0,0z"/>' +
                         '</g>' +
@@ -159,15 +154,8 @@ jQuery(document).ready(function($) {
     // On before slide change
     $('.hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
 
-        slick.$dots.find('li').eq( currentSlide ).find('.animate-reset')[0].beginElement();
-        slick.$dots.find('li').eq( currentSlide ).find('.animate-fill')[0].endElement();
         slick.$dots.find('li').eq( nextSlide ).find('.animate-back')[0].beginElement();
-
-        setTimeout( function(){
-
-            slick.$dots.find('li').eq( nextSlide ).find('.animate-fill')[0].beginElement();
-
-        }, slick.options.speed/2 )
+        slick.$dots.find('li').eq( nextSlide ).find('.animate-fill')[0].beginElement();
 
     });
 
