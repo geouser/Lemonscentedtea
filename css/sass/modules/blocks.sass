@@ -163,6 +163,11 @@
 	padding: 100px 65px
 	font-size: 16px
 	
+	&.contacts
+		@media (min-width: 1200px)
+			padding-top: 115px
+			padding-bottom: 115px  
+	
 	@media (max-width: 1199px)
 		padding: 80px 50px
 		
@@ -242,7 +247,7 @@
 		column-gap: 130px
 		
 		@media (max-width: 1199px)
-			column-gap: 80px
+			column-gap: 100px
 			
 		@media (max-width: 991px)
 			columns: 1
@@ -258,6 +263,7 @@
 	&__socials
 		list-style: none 
 		color: inherit
+		margin-left: -30px 
 		
 		a
 			color: inherit
@@ -391,7 +397,7 @@
 		right: 0
 		width: 100%
 		z-index: 3
-		padding: 20px 65px
+		padding: 20px 65px 26px
 		color: #fff
 		
 		@media (max-width: 575px)
@@ -406,6 +412,7 @@
 			
 		&__name
 			font-weight: 700 
+			margin-bottom: -2px 
 
 
 
@@ -443,3 +450,7 @@
 	
 	.text-block
 		color: inherit
+		
+		@media (min-width: 1200px)
+			padding-top: 115px
+			padding-bottom: 115px  

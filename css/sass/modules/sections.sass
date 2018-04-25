@@ -1,6 +1,5 @@
 .team,
-.cases,
-.vacancies
+.cases
 
 	&-container
 		display: flex
@@ -19,12 +18,26 @@
 		max-width: 100% 
 			
 
+.vacancies
+
+	&-container
+		@extend .container
+		
+		display: flex
+		justify-content: flex-start
+		align-items: stretch
+		flex-wrap: wrap
+		
+		@media (max-width: 1499px)
+			padding: 0
+			
+
 
 .clients
 
 	.container
-		padding-top: 115px
-		padding-bottom: 35px
+		padding-top: 100px
+		padding-bottom: 20px
 		
 		@media (max-width: 1199px)
 			padding-top: 80px
