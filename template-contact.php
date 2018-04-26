@@ -55,31 +55,33 @@ get_header();
 	<section class="vacancies">
 		
 		<div class="vacancies-container">
+
+			<?
+				$args = array(
+					'post_type' => 'vacatures',
+					'posts_per_page' => -1
+				);
+
+				$query = new WP_Query($args);
+
+				if ( $query->have_posts() ) {
+					while ( $query->have_posts() ) {  $query->the_post();?>
+						<a href="<?php echo get_permalink();?>" class="vacancy">
+							<figure class="vacancy__cover" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'case-thumbnail');?>')"></figure>
+
+							<div class="text-block">
+								<h2 class="text-block__title decorated-title">Hiring: <?php the_title(); ?></h2>
+
+								<div class="text-block__content">
+									<p><?php the_excerpt();?></p>
+								</div>
+							</div>
+						</a>
+					<?}
+					wp_reset_postdata(); 
+				} // end if query
+			?>
 			
-			<a href="#" class="vacancy">
-				<img class="vacancy__cover" src="<?php echo get_template_directory_uri(); ?>/assets/jpg/contact-1.png">
-
-				<div class="text-block">
-					<h2 class="text-block__title decorated-title">Hiring: Nerd</h2>
-
-					<div class="text-block__content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic fuga laudantium praesentium, esse voluptatibus natus eum eos tempore sequi commodi, quo temporibus rerum sapiente repellat rem odio. Libero, tempora.</p>
-					</div>
-				</div>
-			</a>
-
-			<a href="#" class="vacancy">
-				<img class="vacancy__cover" src="<?php echo get_template_directory_uri(); ?>/assets/jpg/contact-2.png">
-
-				<div class="text-block">
-					<h2 class="text-block__title decorated-title">Hiring: Nerd</h2>
-
-					<div class="text-block__content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic fuga laudantium praesentium, esse voluptatibus natus eum eos tempore sequi commodi, quo temporibus rerum sapiente repellat rem odio. Libero, tempora.</p>
-					</div>
-				</div>
-			</a>
-
 		</div>
 
 	</section> <!-- end vacancies -->

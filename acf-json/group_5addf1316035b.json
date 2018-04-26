@@ -470,6 +470,13 @@
                 "operator": "==",
                 "value": "cases"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "vacatures"
+            }
         ]
     ],
     "menu_order": 0,
@@ -482,5 +489,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524675851
+    "modified": 1524729184
 }
