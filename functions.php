@@ -26,6 +26,8 @@ remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'wp_generator');
 
+add_theme_support('post-thumbnails');
+
 function my_deregister_scripts() {
     wp_deregister_script('wp-embed');
 }
@@ -88,7 +90,7 @@ function create_posttypes() {
         'public' => true,
         'has_archive' => true,
         'exclude_from_search' => true,
-        'supports' => array('title'),
+        'supports' => array('title', 'thumbnail', 'editor'),
         'menu_icon' => 'dashicons-admin-users',
         'rewrite' => array('slug' => 'team'),
             )
@@ -248,3 +250,45 @@ function load_cases(){
  
 add_action('wp_ajax_loadmorecases', 'load_cases'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmorecases', 'load_cases'); // wp_ajax_nopriv_{action}
+
+
+
+
+
+// load more cases
+function load_team(){
+ 
+    // prepare our arguments for the query
+    $args = array(
+        'post_type'         => $_POST['q']['post_type'],
+        'posts_per_page'    => $_POST['q']['posts_per_page'],
+        'paged'             => $_POST['q']['paged'],
+        'post_status'       => $_POST['q']['post_status']
+    );
+    
+    $query = new WP_Query( $args );
+    
+    ob_start();
+
+        if ( $query -> have_posts() ) :
+     
+            while ( $query -> have_posts() ) : 
+                $query -> the_post();
+                get_template_part( 'parts/part', 'team');
+            endwhile;
+     
+        endif;
+
+    $output = ob_get_contents();
+    ob_end_clean();
+
+    echo $output;
+    die();
+    /*wp_send_json( $query );
+    exit;*/
+}
+ 
+ 
+ 
+add_action('wp_ajax_loadmorelemons', 'load_team'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmorelemons', 'load_team'); // wp_ajax_nopriv_{action}
