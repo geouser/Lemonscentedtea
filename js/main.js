@@ -245,18 +245,16 @@ jQuery(document).ready(function($) {
                 if ( data ) { 
                     $(data).hide().appendTo('.team-container').fadeIn(1000);
 
-                    console.log( data );
-
                     team.paged++;
  
                     if ( team.paged >= team.max_pages ) {
                         setTimeout( function(){ 
                             button.addClass('disabled'); 
-                        }, 800);
+                        }, 400);
                     } else {
                         setTimeout( function(){ 
                             button.removeClass('loading');
-                        }, 800);
+                        }, 400);
                     }
  
                 } else {
