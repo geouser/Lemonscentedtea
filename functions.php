@@ -237,7 +237,6 @@ function load_cases(){
     query_posts( $args );
  
     if( have_posts() ) :
- 
 		// run the loop
         while( have_posts() ): the_post();
 			get_template_part( 'parts/part', 'case');

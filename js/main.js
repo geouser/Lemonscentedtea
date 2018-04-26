@@ -191,8 +191,6 @@ jQuery(document).ready(function($) {
 			'page' : theme.current_page
         };
 
-        console.log(data.query);
-        
 		$.ajax({
 			url : theme.ajax_url, // AJAX handler
 			data : data,
@@ -202,7 +200,6 @@ jQuery(document).ready(function($) {
 			},
 			success : function( data ){
 				if( data ) { 
-                    console.log(data);
                     $(data).hide().appendTo('.cases-container')
                         .css('opacity', 0)
                         .slideDown('fast')
