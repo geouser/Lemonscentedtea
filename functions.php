@@ -92,10 +92,12 @@ function create_posttypes() {
             'add_new' => __('Nieuw teamlid')
         ),
         'public' => true,
-        'has_archive' => true,
-        'exclude_from_search' => true,
+        'has_archive' => false,
+        'exclude_from_search' => false,
+        'capability_type' => 'post',
         'supports' => array('title', 'thumbnail', 'editor'),
         'menu_icon' => 'dashicons-admin-users',
+        'show_in_menu' => true,
         'rewrite' => array('slug' => 'team'),
             )
     );
