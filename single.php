@@ -43,18 +43,31 @@ get_header();
 				<?php 
 					$next_post = get_previous_post( false, '');
 					$next_post_id = $next_post->ID;
+					$post_type = get_post_type();
+					$next_word;
+					switch ($post_type) {
+						case 'post':
+							$next_word = 'post';
+							break;
+						case 'cases':
+							$next_word = 'case';
+							break;
+						case 'vacatures':
+							$next_word = 'vacancy';
+							break;
+					}
 
 					if(!$next_post_id) {
 						$args = array(
 							'numberposts' => 1,
-							'post_type' => 'cases',
+							'post_type' => $post_type,
 						);
 						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 						$next_post_id = $recent_posts[0]['ID'];
 					}
 				?>
 				<a href="<?php echo get_permalink($next_post_id); ?>" class="large-button next-case has-bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($next_post_id)?>);">
-					<span class="label">Next case</span>
+					<span class="label">Next <?php echo $next_word;?></span>
 
 					<span class="desc">
 						<span class="desc__main"><?php echo get_the_title($next_post_id)?></span>

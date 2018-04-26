@@ -107,7 +107,7 @@ function create_posttypes() {
         ),
         'public' => true,
         'has_archive' => true,
-        'supports' => array('title','editor'),
+        'supports' => array('title','excerpt', 'thumbnail'),
         'menu_icon' => 'dashicons-format-aside',
         'rewrite' => array('slug' => 'vacatures'),
             )
@@ -163,7 +163,7 @@ function footersidebars() {
 add_action('widgets_init', 'footersidebars');
 
 
-add_theme_support('post-thumbnails', array('post', 'page', 'cases'));
+add_theme_support('post-thumbnails', array('post', 'page', 'cases', 'vacatures'));
 
 add_theme_support('custom-logo', array(
     'height' => 240,
@@ -245,8 +245,6 @@ function load_cases(){
 	endif;
 	die;
 }
- 
- 
  
 add_action('wp_ajax_loadmorecases', 'load_cases'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmorecases', 'load_cases'); // wp_ajax_nopriv_{action}
