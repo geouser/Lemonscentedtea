@@ -58,6 +58,7 @@ function add_defer_attribute($tag, $handle) {
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 function enqueue_scripts() {
+    global $wp_query; 
     if (is_page_template('template-contact.php')) {
         wp_enqueue_script('GoogleMaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGiM9Lk7ypP5rTKIP-1Dhp78Bd1CEpMgo&v=3', array(), '3.0.0', true);
         wp_enqueue_script('GoogleMapsCustom', get_template_directory_uri() . '/js/map.js', array('GoogleMaps'), '1.0.0', true);
@@ -70,7 +71,10 @@ function enqueue_scripts() {
 
     wp_localize_script('main-js', 'theme', 
         array(
-            'ajax_url' => admin_url('admin-ajax.php')
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+            'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+            'max_page' => $wp_query->max_num_pages
         )
     ); 
 }
@@ -226,14 +230,13 @@ function disable_emojicons_tinymce($plugins) {
 function load_cases(){
  
 	// prepare our arguments for the query
-	$args = array();
+	$args = json_decode( stripslashes( $_POST['query'] ), true );
 	$args['paged'] = $_POST['page'] + 1;
-    $args['post_status'] = 'publish';
-    $args['post_type'] = 'cases';
- 
+	$args['post_status'] = 'publish';
+
     query_posts( $args );
  
-	if( have_posts() ) :
+    if( have_posts() ) :
  
 		// run the loop
         while( have_posts() ): the_post();
