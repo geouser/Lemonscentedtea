@@ -19,15 +19,14 @@ get_header();
 
 
 			<div class="text-block contacts">
-				<h2 class="text-block__title decorated-title">Lemon Scented Tea</h2>
+				<h2 class="text-block__title decorated-title"><?php the_field('address_title');?></h2>
 
 				<div class="text-block__content">
 					<div class="row">
 						<div class="col-12 col-md-6">
 							<div class="text-block-part">
 								<address>
-									<p>Kortre Prinsengracht 26, 1013 GS Amsterdam <br>lemonscentedtea.com <br>+31(0) 206 063 580 <br>Open now: 9AM-7PM</p>
-									<p><strong>New business inquiries</strong> <br>E: gijsbregt@lemonscentedtea.com <br>M: +31(0) 655 123 673</p>
+									<?php the_post(); the_content();?>
 								</address>		
 							</div>
 							
@@ -35,9 +34,12 @@ get_header();
 						<div class="col-12 col-md-6">	
 							<div class="text-block-part">
 								<ul class="text-block__socials">
-									<li><a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/svg/icon-fcb.svg"><span>Facebook/lemonscentedtea</span></a></li>
-									<li><a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/svg/icon-inst.svg"><span>Instgram.com/lemon-scented-tea</span></a></li>
-									<li><a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/svg/icon-twtr.svg"><span>Twitter.com/lemonscentedtea</span></a></li>
+								<?if( have_rows('socail') ):
+									while ( have_rows('socail') ) : the_row(); ?>
+										<li><a href="<?php the_sub_field('link');?>" target="_blank"><img src="<?php the_sub_field('icon');?>"><span><?php the_sub_field('text');?></span></a></li>
+									<?
+									endwhile; 
+								endif; ?>
 								</ul>	
 							</div>
 						</div>

@@ -66,7 +66,7 @@ get_header();
 						$next_post_id = $recent_posts[0]['ID'];
 					}
 				?>
-				<a href="<?php echo get_permalink($next_post_id); ?>" class="large-button next-case has-bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($next_post_id)?>);">
+				<a href="<?php echo get_permalink($next_post_id); ?>" class="large-button next-case has-bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($next_post_id, 'next-preview')?>);">
 					<span class="label">Next <?php echo $next_word;?></span>
 
 					<span class="desc">
