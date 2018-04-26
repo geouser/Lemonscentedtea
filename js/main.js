@@ -210,7 +210,7 @@ jQuery(document).ready(function($) {
                     
                     theme.current_page++;
  
-                    if ( theme.current_page == theme.max_page_cases ) 
+                    if ( theme.current_page >= theme.max_page_cases ) 
                         setTimeout(function(){ button.addClass('disabled'); }, 800);
                     else 
                         setTimeout(function(){ button.removeClass('loading'); }, 800);
@@ -243,7 +243,13 @@ jQuery(document).ready(function($) {
             },
             success : function( data ){
                 if ( data ) { 
-                    $(data).hide().appendTo('.team-container').fadeIn(1000);
+                    $(data).hide().appendTo('.team-container')
+                        .css('opacity', 0)
+                        .slideDown('fast')
+                        .animate(
+                            { opacity: 1 },
+                            { queue: false, duration: 'slow' }
+                        );
 
                     team.paged++;
  
