@@ -187,9 +187,11 @@ jQuery(document).ready(function($) {
 		var button = $(this),
 		    data = {
 			'action': 'loadmorecases',
-			'query': posts_cases, 
-			'page' : current_page_cases
+			'query': theme.posts, 
+			'page' : theme.current_page
         };
+
+        console.log(data.query);
         
 		$.ajax({
 			url : theme.ajax_url, // AJAX handler
@@ -200,10 +202,18 @@ jQuery(document).ready(function($) {
 			},
 			success : function( data ){
 				if( data ) { 
-                    $(data).hide().appendTo('.cases-container').fadeIn(1000);
-                    current_page_cases++;
+                    console.log(data);
+                    $(data).hide().appendTo('.cases-container')
+                        .css('opacity', 0)
+                        .slideDown('fast')
+                        .animate(
+                            { opacity: 1 },
+                            { queue: false, duration: 'slow' }
+                        );
+                    
+                    theme.current_page++;
  
-                    if ( current_page_cases == max_page_cases ) 
+                    if ( theme.current_page == theme.max_page_cases ) 
                         setTimeout(function(){ button.addClass('disabled'); }, 800);
                     else 
                         setTimeout(function(){ button.removeClass('loading'); }, 800);
