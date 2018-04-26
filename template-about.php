@@ -9,6 +9,8 @@
 
 get_header();
 
+$page_id = get_the_ID();
+
 ?>
 
 <div id="main">
@@ -28,7 +30,7 @@ get_header();
 
 				$args = array(
 					'post_type' 		=> 'team',
-					'posts_per_page' 	=> 2,
+					'posts_per_page' 	=> get_field( 'team_posts_per_page', $page_id ),
 					'paged' 			=> 1,
 					'post_status' 		=> 'publish'
 				);
@@ -52,46 +54,71 @@ get_header();
 		</div>
 		
 		<?php if ( $query -> have_posts() ) : ?>
+
 			<script>
 				var team = {
 					post_type: 'team',
-					posts_per_page: 2,
+					posts_per_page: <?php the_field( 'team_posts_per_page', $page_id ); ?>,
 					paged: 2,
 					post_status: 'publish',
 					max_pages: <?php echo $query->max_num_pages; ?>
 				}
 			</script>
-			
-			<button class="large-button js-load-team">
-				<span class="large-button__default-text">More lemons</span>
-				<span class="large-button__loading-text">Loading...</span>
-				<span class="large-button__disabled-text">No more lemons...</span>
-			</button>
+
+			<?php if ( $query->max_num_pages > 1 ) : ?>
+				<button class="large-button js-load-team">
+					<span class="large-button__default-text">More lemons</span>
+					<span class="large-button__loading-text">Loading...</span>
+					<span class="large-button__disabled-text">No more lemons...</span>
+				</button>
+			<?php endif; ?>
+
 		<?php endif; ?>
+
+		<?php wp_reset_postdata(); ?>
 	</section> <!-- end team -->
 		
 
 	
-	<section class="clients">
-		<div class="container">
-			
-			<div class="row justify-content-center align-items-center">
-				<div class="col-6 col-sm-4 col-md-3"><a href="#" target="_blank"><img src="https://placeholdit.co//i/160x60?"></a></div>
-				<div class="col-6 col-sm-4 col-md-3"><a href="#" target="_blank"><img src="https://placeholdit.co//i/160x60?"></a></div>
-				<div class="col-6 col-sm-4 col-md-3"><a href="#" target="_blank"><img src="https://placeholdit.co//i/160x60?"></a></div>
-				<div class="col-6 col-sm-4 col-md-3"><a href="#" target="_blank"><img src="https://placeholdit.co//i/160x60?"></a></div>
-				<div class="col-6 col-sm-4 col-md-3"><a href="#" target="_blank"><img src="https://placeholdit.co//i/160x60?"></a></div>
-				<div class="col-6 col-sm-4 col-md-3"><a href="#" target="_blank"><img src="https://placeholdit.co//i/160x60?"></a></div>
-				<div class="col-6 col-sm-4 col-md-3"><a href="#" target="_blank"><img src="https://placeholdit.co//i/160x60?"></a></div>
-				<div class="col-6 col-sm-4 col-md-3"><a href="#" target="_blank"><img src="https://placeholdit.co//i/160x60?"></a></div>
+	<?php if ( $clients = get_field('clients') ) : ?>
+		<section class="clients">
+			<div class="container">
+				
+				<div class="row justify-content-start align-items-center">
+
+					<?php $counter = 1; ?>
+
+					<?php foreach ( $clients as $client ) : ?>
+
+						<?php 
+							$classes = array( 'col-6', 'col-sm-4', 'col-md-3', 'client-col' );
+
+							if ( $counter > get_field( 'clients_to_show', $page_id ) ) {
+								$classes[] = 'hidden';
+							}
+						?>
+						
+						<div class="<?php echo join( ' ', $classes ); ?>">
+							<span><img src="<?php echo $client['url'] ?>"></span>
+						</div>
+
+						<?php $counter++; ?>
+
+					<?php endforeach; ?>
+
+				</div>
+
 			</div>
+				
+			<?php if ( count($clients) > get_field( 'clients_to_show', $page_id ) ) : ?>
+				<button class="large-button js-load-clients">
+					<span class="large-button__default-text">View all clients</span>
+					<span class="large-button__disabled-text">No more clients...</span>
+				</button>
+			<?php endif; ?>
 
-		</div>
-
-		<a href="#" class="large-button js-load-cases">
-			<span>View all clients</span>
-		</a>
-	</section> <!-- end clients  -->
+		</section> <!-- end clients  -->
+	<?php endif; ?>
 
 
 

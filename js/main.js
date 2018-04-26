@@ -269,4 +269,21 @@ jQuery(document).ready(function($) {
         });
     });
 
+
+
+
+
+    $('.js-load-clients').on('click', function(event) {
+        event.preventDefault();
+
+        var hidden_clients = $('.clients').find('.client-col.hidden');
+
+        hidden_clients.fadeIn('1000', function() {
+            $(this).removeClass('hidden');
+        });
+
+        $(this).addClass('disabled');
+
+    }); 
+
 });
