@@ -40,12 +40,25 @@ get_header();
 						<span class="desc__second">E-mail: info@lemonscentedtea.com</span>
 					</span>
 				</a>
-				<a href="#" class="large-button next-case has-bg" style="background-image: url(https://unsplash.it/720/450?image=64);">
+				<?php 
+					$next_post = get_previous_post( false, '');
+					$next_post_id = $next_post->ID;
+
+					if(!$next_post_id) {
+						$args = array(
+							'numberposts' => 1,
+							'post_type' => 'cases',
+						);
+						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+						$next_post_id = $recent_posts[0]['ID'];
+					}
+				?>
+				<a href="<?php echo get_permalink($next_post_id); ?>" class="large-button next-case has-bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($next_post_id)?>);">
 					<span class="label">Next case</span>
 
 					<span class="desc">
-						<span class="desc__main">Lorem ipsum.</span>
-						<span class="desc__second">Lorem ipsum dolor sit.</span>
+						<span class="desc__main"><?php echo get_the_title($next_post_id)?></span>
+						<span class="desc__second"><?php the_field('subtitle', $next_post_id);?></span>
 					</span>
 				</a>
 			</div>
