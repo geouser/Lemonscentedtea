@@ -222,4 +222,48 @@ jQuery(document).ready(function($) {
 		});
 	});
 
+
+
+    // load more cases
+    $('.js-load-team').click(function(){
+ 
+        var button = $(this),
+            data = {
+            'action': 'loadmorelemons',
+            'q': team
+        };
+
+
+        $.ajax({
+            url : theme.ajax_url, // AJAX handler
+            data : data,
+            type : 'POST',
+            beforeSend : function ( xhr ) {
+                button.addClass('loading'); // change the button text, you can also add a preloader image
+            },
+            success : function( data ){
+                if ( data ) { 
+                    $(data).hide().appendTo('.team-container').fadeIn(1000);
+
+                    console.log( data );
+
+                    team.paged++;
+ 
+                    if ( team.paged >= team.max_pages ) {
+                        setTimeout( function(){ 
+                            button.addClass('disabled'); 
+                        }, 800);
+                    } else {
+                        setTimeout( function(){ 
+                            button.removeClass('loading');
+                        }, 800);
+                    }
+ 
+                } else {
+                    button.addClass('disabled'); // if no data, remove the button as well
+                }
+            }
+        });
+    });
+
 });
