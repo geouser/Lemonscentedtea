@@ -46,6 +46,9 @@ header
         position: absolute
         top: 100px
         right: 30px
+        z-index: 105
+        margin-top: 5px 
+         
         @media (max-width: 767px)
             right: 18px
             top: 70px
@@ -126,7 +129,7 @@ header
             outline-style: none
 
     // navigation
-    #menu-main-menu
+    .main_menu
         list-style: none
         li
             margin-bottom: 40px
@@ -266,7 +269,7 @@ header
             transition: .4s all 1s ease-out
             
     
-    #menu-main-menu
+    .main_menu
         li.list-menu-visible
             opacity: 1
             transform: translateX(0%)

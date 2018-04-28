@@ -28,17 +28,18 @@
                                 ?>
                             </div>
                             <div class="col-auto text-left form-col">
-                                <form class="mailchimp-form" novalidate>
-                                    <p>Subcribe to our newsletter</p>
+                                <form class="mailchimp-form js-mailchimp-form" novalidate>
+                                    <p><?php _e('Subcribe to our newsletter', 'lemonscentedtea'); ?></p>
                                     <div class="form-group">
-                                        <input id="email" placeholder="your e-mail" type="email" autocomplete="off">
+                                        <input id="email" placeholder="<?php _e('your e-mail', 'lemonscentedtea'); ?>" type="email" autocomplete="off">
                                         <div class="status-message">
-                                            <p class="status-message__success">Press enter to sent</p>
-                                            <p class="status-message__error">Something is wrong</p>
+                                            <p class="status-message__success"><?php _e('Press enter to sent', 'lemonscentedtea'); ?></p>
+                                            <p class="status-message__error"><?php _e('Something is wrong', 'lemonscentedtea'); ?></p>
                                         </div>
                                     </div>
+                                    <div class="alerts"></div>
                                     <div>
-                                        <a href="#">Disclaimer</a>
+                                        <a href="#"><?php _e('Disclaimer'); ?></a>
                                     </div>
                                 </form>
                             </div>

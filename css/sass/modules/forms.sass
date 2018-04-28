@@ -1,79 +1,101 @@
 .mailchimp-form
-    font-size: 16px
-    font-weight: 600
-    p 
-        margin-bottom: 10px
-    .form-group
-        position: relative
-        margin-bottom: 10px
-        &:last-child
-            margin-bottom: 0
-    input
-        width: 250px
-        padding-bottom: 8px
-        font-size: 16px
-        font-weight: 300
-        color: #ffffff
-        background-color: transparent 
-        border: none
-        border-bottom: 1px solid #fff
-        background-repeat: no-repeat
-        background-position: 100% 50%
-        padding-right: 20px
+	font-size: 16px
+	font-weight: 600
+	width: 100%
+	max-width: 250px 
+	p 
+		margin-bottom: 10px
+	.form-group
+		position: relative
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+	input
+		display: block
+		width: 100%
+		padding-bottom: 8px
+		font-size: 16px
+		font-weight: 300
+		color: #ffffff
+		background-color: transparent 
+		border: none
+		border-bottom: 1px solid #fff
+		background-repeat: no-repeat
+		background-position: 100% 50%
+		padding-right: 20px
 
-    &.typing
-        .status-message__success
-            opacity: 1
-            visibility: visible
-            transform: none
-            max-height: 100px
-            color: #fff
+	&.typing
+		.status-message__success
+			opacity: 1
+			visibility: visible
+			transform: none
+			max-height: 100px
+			color: #fff
 
-    &.not-valid
-        input
-            background-image: url('../assets/svg/error.svg')
-        .status-message__error
-            opacity: 1
-            visibility: visible
-            transform: none
-            max-height: 100px
+	&.not-valid
+		input
+			background-image: url('../assets/svg/error.svg')
+		.status-message__error
+			opacity: 1
+			visibility: visible
+			transform: none
+			max-height: 100px
 
-    &.valid
-        input 
-            background-image: url('../assets/svg/success.svg')
-        .status-message__success
-            opacity: 1
-            visibility: visible
-            transform: none
-            max-height: 100px
-            color: #00DA83
+	&.valid
+		input 
+			background-image: url('../assets/svg/success.svg')
+		.status-message__success
+			opacity: 1
+			visibility: visible
+			transform: none
+			max-height: 100px
+			color: #00DA83
 
-    a
-        color: rgba(255,255,255,0.5)
-        font-style: italic
-        font-weight: 300
-        line-height: 28px
-        font-size: 16px
-        transition: all .2s
-        &:hover
-            color: #fff
+	a
+		color: rgba(255,255,255,0.5)
+		font-style: italic
+		font-weight: 300
+		line-height: 28px
+		font-size: 16px
+		transition: all .2s
+		&:hover
+			color: #fff
 
 
 .status-message
-    position: absolute
-    top: 100%
-    right: 0
-    padding-top: 10px
-    text-align: right
-    p 
-        max-height: 0
-        opacity: 0
-        visibility: hidden
-        transform: translateY(10px)
-        transition: all .4s ease-out
-        font-weight: 700
-        margin: 0
-    .status-message__error
-        color: #DB0000
-    .status-message__success
-        color: #00DA83
+	position: absolute
+	top: 100%
+	right: 0
+	padding-top: 10px
+	text-align: right
+	p 
+		max-height: 0
+		opacity: 0
+		visibility: hidden
+		transform: translateY(10px)
+		transition: all .4s ease-out
+		font-weight: 700
+		margin: 0
+	.status-message__error
+		color: #DB0000
+	.status-message__success
+		color: #00DA83
+		
+
+.alert
+	position: relative
+	padding: .75rem 1.25rem
+	margin-bottom: 1rem
+	border: 1px solid transparent
+	border-radius: .25rem
+	font-size: 14px
+	
+	&-danger
+		color: #721c24
+		background-color: #f8d7da
+		border-color: #f5c6cb
+		
+	&-success
+		color: #155724
+		background-color: #d4edda
+		border-color: #c3e6cb

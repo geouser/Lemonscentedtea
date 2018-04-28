@@ -67,9 +67,9 @@ $page_id = get_the_ID();
 
 			<?php if ( $query->max_num_pages > 1 ) : ?>
 				<button class="large-button js-load-team">
-					<span class="large-button__default-text">More lemons</span>
-					<span class="large-button__loading-text">Loading...</span>
-					<span class="large-button__disabled-text">No more lemons...</span>
+					<span class="large-button__default-text"><?php _e('More lemons', 'lemonscentedtea'); ?></span>
+					<span class="large-button__loading-text"><?php _e('Loading', 'lemonscentedtea'); ?>...</span>
+					<span class="large-button__disabled-text"><?php _e('No more lemons', 'lemonscentedtea'); ?>...</span>
 				</button>
 			<?php endif; ?>
 
@@ -112,8 +112,8 @@ $page_id = get_the_ID();
 				
 			<?php if ( count($clients) > get_field( 'clients_to_show', $page_id ) ) : ?>
 				<button class="large-button js-load-clients">
-					<span class="large-button__default-text">View all clients</span>
-					<span class="large-button__disabled-text">No more clients...</span>
+					<span class="large-button__default-text"><?php _e('View all clients', 'lemonscentedtea'); ?></span>
+					<span class="large-button__disabled-text"><?php _e('No more clients', 'lemonscentedtea'); ?>...</span>
 				</button>
 			<?php endif; ?>
 

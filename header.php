@@ -53,10 +53,31 @@
                     </button>
 
                     <div class="background-block-menu">
-                        <ul class="languages">
-                            <li><a href="#">NL</a></li>
-                            <li class="current"><a href="#">EN</a></li>
-                        </ul>
+                        <?php 
+                            $langs = array();
+
+                            if ( function_exists( 'icl_get_languages' ) ) {
+                                $langs = icl_get_languages();
+                            }
+
+                            //print_r( $langs );
+
+                        ?>
+
+                        <?php if ( !empty( $langs ) ) : ?>
+                            <ul class="languages">
+
+                                <?php foreach ( $langs as $option ) : ?>
+
+                                    <?php $current = $option['active'] ? 'class="current"' : ''; ?>
+                                    
+                                    <li <?php echo $current; ?>><a href="<?php echo $option['url']; ?>"><?php echo $option['language_code'] ?></a></li>
+
+                                <?php endforeach; ?>
+                                
+                            </ul>
+                        <?php endif; ?>
+
                         <div class="list-menu-block">
                             <?php
                             if ( has_nav_menu( 'main_menu' ) ) {

@@ -2,6 +2,8 @@
 show_admin_bar( false );
 define('SITEURL', site_url());
 define('THEMEURL', get_template_directory_uri());
+
+
 register_nav_menus(
         array(
             'main_menu' => __('Main menu', 'lemonscentedtea'),
@@ -295,3 +297,17 @@ function load_team(){
  
 add_action('wp_ajax_loadmorelemons', 'load_team'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmorelemons', 'load_team'); // wp_ajax_nopriv_{action}
+
+
+
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+}

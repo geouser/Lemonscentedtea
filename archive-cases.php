@@ -26,9 +26,9 @@ get_header();
         </div>
 
 		<button class="large-button js-load-cases">
-			<span class="large-button__default-text">More cases</span>
-			<span class="large-button__loading-text">Loading...</span>
-			<span class="large-button__disabled-text">No more cases...</span>
+			<span class="large-button__default-text"><?php _e('More cases', 'lemonscentedtea'); ?></span>
+			<span class="large-button__loading-text"><?php _e('Loading', 'lemonscentedtea'); ?>...</span>
+			<span class="large-button__disabled-text"><?php _e('No more cases', 'lemonscentedtea'); ?>...</span>
 		</button>
 
 	</section>

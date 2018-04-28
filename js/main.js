@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 	    $(".background-block-menu").toggleClass("menu-open");
 	    $("body").toggleClass("body-fixed");
 
-	    var $target = $('#menu-main-menu >li ');
+	    var $target = $('.main_menu >li ');
 		var hold = 100;
 		$.fn.reverse = [].reverse;
 
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
         $(".background-block-menu").removeClass("menu-open");
         $("body").removeClass("body-fixed");
         $(".hamburger").removeClass("is-active");
-        $('#menu-main-menu >li ').removeClass('list-menu-visible')
+        $('.main_menu >li ').removeClass('list-menu-visible')
     });
     $( ".background-block-menu, .hamburger" ).click(function( event ) {
         event.stopPropagation();
@@ -286,5 +286,72 @@ jQuery(document).ready(function($) {
         $(this).addClass('disabled');
 
     }); 
+
+
+
+
+
+    $.ajaxChimp.translations.es = {
+        'submit': 'Grabación en curso...',
+        0: 'Te hemos enviado un email de confirmación',
+        1: 'Por favor, introduzca un valor',
+        2: 'Una dirección de correo electrónico debe contener una sola @',
+        3: 'La parte de dominio de la dirección de correo electrónico no es válida (la parte después de la @:)',
+        4: 'La parte de usuario de la dirección de correo electrónico no es válida (la parte antes de la @:)',
+        5: 'Esta dirección de correo electrónico se ve falso o no válido. Por favor, introduce una dirección de correo electrónico real'
+    }
+
+
+    $('.js-mailchimp-form').each(function(index, el) {
+        var form = $(this);
+
+        form.ajaxChimp({
+            url: 'https://digibuild.us18.list-manage.com/subscribe/post?u=dd2f0a374fc774288639544ad&id=fc17172c4b',
+            language: 'es',
+            callback: function(result){
+
+                console.log( result );
+
+                form.find('input').removeClass('error');
+
+                var inputs = ['EMAIL'];
+
+                var info = result.msg.split(' - ');
+
+                if ( result.result == 'error' ) {
+                    var message = info[1];
+
+                    if ( !message ) {
+                        message = info[0];
+                    }
+
+                    form.find('input[name='+ inputs[ info[0] ] + ']').addClass('error');
+                    var alert = $('<div class="alert alert-danger" style="display: none;">'+message+'</div>');
+
+                    form.find('.alerts').html('').append( alert );
+                    alert.fadeIn(500, function(){
+                        setTimeout( function(){
+                            alert.fadeOut(500);
+                        }, 5000)
+                    });
+                } else {
+                    var message = info[0];
+                    var alert = $('<div class="alert alert-success" style="display: none;">'+message+'</div>');
+
+                    form.find('.alerts').html('').append( alert );
+                    alert.fadeIn(500, function(){
+                        setTimeout( function(){
+                            alert.fadeOut(500);
+                        }, 5000)
+                    });
+                    
+                    form[0].reset();
+                }
+            }
+        });
+
+    });
+
+
 
 });

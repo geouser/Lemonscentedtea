@@ -72,7 +72,7 @@ get_header();
 							<figure class="vacancy__cover" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'case-thumbnail');?>')"></figure>
 
 							<div class="text-block">
-								<h2 class="text-block__title decorated-title">Hiring: <?php the_title(); ?></h2>
+								<h2 class="text-block__title decorated-title"><?php _e('Hiring', 'lemonscentedtea'); ?>: <?php the_title(); ?></h2>
 
 								<div class="text-block__content">
 									<p><?php the_excerpt();?></p>
