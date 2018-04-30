@@ -300,9 +300,9 @@ mymap = new google.maps.Map(document.getElementById('google-map'),
 
 var image = {
       url: templateurl+'/assets/jpg/Icon_maps_pointer.png',
-      size: new google.maps.Size(68, 68),
+      size: new google.maps.Size(60, 59),
       origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(34, 0)
+      anchor: new google.maps.Point(30, 0)
     };
 
 var smitwolf = new google.maps.Marker({
