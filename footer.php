@@ -29,7 +29,7 @@
                             </div>
                             <div class="col-auto text-left form-col">
                                 <form class="mailchimp-form js-mailchimp-form" novalidate>
-                                    <p><?php _e('Subcribe to our newsletter', 'lemonscentedtea'); ?></p>
+                                    <p><?php _e('Subscribe to our newsletter', 'lemonscentedtea'); ?></p>
                                     <div class="form-group">
                                         <input id="email" placeholder="<?php _e('your e-mail', 'lemonscentedtea'); ?>" type="email" autocomplete="off">
                                         <div class="status-message">

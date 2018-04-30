@@ -181,10 +181,19 @@
 	display: block
 	margin: 0 auto
 	position: relative
+	overflow: hidden
+
+	&:after
+		content: ''
+		display: block
+		padding-top: 41.7%
 	
 	img
 		display: block
 		width: 100% 
+		position: absolute
+		left: 0
+		top: 0
 		
 	figcaption
 		color: #fff
@@ -196,12 +205,24 @@
 		bottom: 0
 		width: 100%
 		padding: 20px 65px 23px
+		z-index: 2
 		
 		@media (max-width: 575px)
 			padding: 18px 30px
 			font-size: 12px 
 			line-height: 1em 
-		
+
+
+	&.placeholder
+		img 
+			opacity: 0
+			transition: opacity 1s linear
+			&.loaded
+				opacity: 1
+
+			&.img-small
+				filter: blur(80px)
+				transform: scale(1)
 		
 
 

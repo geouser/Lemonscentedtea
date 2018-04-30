@@ -190,6 +190,7 @@ add_filter('upload_mimes', 'cc_mime_types');
 
 
 add_image_size('figure', 1440, 600);
+add_image_size('figure_preview', 240, 100);
 add_image_size('case-thumbnail', 952, 595);
 add_image_size('next-preview', 952, 468);
 
