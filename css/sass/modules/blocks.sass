@@ -340,7 +340,9 @@
 		@media (min-width: 1500px)
 			padding-left: 0
 			padding-right: 0
-			padding-left: calc((100vw - 1470px + 65px) / 2)
+			&.text-block__content,
+			&.text-block__title
+				padding-left: calc((100vw - 1470px + 65px) / 2)
 			.text-block__image
 				transform: translateX(50%)
 				margin-right: calc((100vw / 2) / 2)
