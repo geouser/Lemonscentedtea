@@ -8,8 +8,13 @@
 		</div>
 	<?php } else { ?>
 		<div class="vimeo-container">
-			<?php the_sub_field('vimeo_content'); ?>
+			<div data-vimeo-url="<?php the_sub_field('vimeo_url'); ?>" data-vimeo-width="100vw" id="vimeo"></div>
 		</div>
+
+		<script src="https://player.vimeo.com/api/player.js"></script>
+		<script>
+			var handstickPlayer = new Vimeo.Player('vimeo');
+		</script>
 	<?php }
 ?>
 

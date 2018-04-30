@@ -3,7 +3,10 @@
 		<?php 
 			$title = get_sub_field('title');
 			$title_tag = get_sub_field('title_tag');
-			$image = get_sub_field('image');
+
+			$imageID = get_sub_field('image');
+			$image = wp_get_attachment_image_src( $imageID, 'full' );
+			$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
 		?>
 		
 		<div class="row align-items-center">
@@ -19,9 +22,9 @@
 
 			<div class="col-12 col-lg-6">
 
-				<?php if ( $image['url'] ) : ?>
+				<?php if ( $image ) : ?>
 					<div class="text-block__image">
-						<img src="<?php echo $image['url']; ?>">
+						<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>" />
 					</div>
 				<?php endif; ?>
 			</div>

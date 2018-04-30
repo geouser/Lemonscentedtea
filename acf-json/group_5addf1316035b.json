@@ -35,7 +35,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
+                            "return_format": "id",
                             "preview_size": "medium",
                             "library": "all",
                             "min_width": "",
@@ -107,7 +107,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url",
+                                    "return_format": "id",
                                     "preview_size": "medium",
                                     "library": "all",
                                     "min_width": "",
@@ -375,7 +375,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
+                            "return_format": "id",
                             "preview_size": "medium",
                             "library": "all",
                             "min_width": "",
@@ -492,12 +492,20 @@
                         },
                         {
                             "key": "field_5ae6dddd06f30",
-                            "label": "Vimeo content",
-                            "name": "vimeo_content",
-                            "type": "textarea",
-                            "instructions": "Vimeo video -> Share -> Embed. (Open \"Show options\" -> remove \"Show text link underneath this video.\")",
+                            "label": "Video Vimeo url",
+                            "name": "vimeo_url",
+                            "type": "text",
+                            "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5ae6db9f14151",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -505,9 +513,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": ""
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -562,5 +570,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1525082164
+    "modified": 1525101653
 }

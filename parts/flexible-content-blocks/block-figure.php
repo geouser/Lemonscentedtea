@@ -1,16 +1,16 @@
-<?php 
-	$image_array = get_sub_field('image');
-
-	$image_url = $image_array['url'];
-
+<?php
 	$image_caption = get_sub_field('image_caption');
+
+	$imageID = get_sub_field('image');
+	$image = wp_get_attachment_image_src( $imageID, 'full' );
+	$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
 ?>
 
-<?php if ( $image_url ) : ?>
+<?php if ( $image ) : ?>
 
 	<figure class="figure">
 		
-		<img src="<?php echo $image_url; ?>" alt="">
+		<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>" />
 
 		<?php if ( $image_caption ) : ?>
 			<figcaption><?php echo $image_caption; ?></figcaption>
