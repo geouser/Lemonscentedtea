@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="text-block">
+	<div class="text-block <?php if(get_sub_field('center_image')) { echo 'centered-image'; } ?>">
 		<?php 
 			$title = get_sub_field('title');
 			$title_tag = get_sub_field('title_tag');

@@ -17,6 +17,7 @@ get_header();
 
         
         <?
+		global $wp_query;
         if ( have_posts() ) : while ( have_posts() ) : the_post(); 
             get_template_part('parts/part', 'case');    
             endwhile; // end while
@@ -24,12 +25,15 @@ get_header();
         ?>
 
         </div>
-
-		<button class="large-button js-load-cases">
-			<span class="large-button__default-text"><?php _e('More cases', 'lemonscentedtea'); ?></span>
-			<span class="large-button__loading-text"><?php _e('Loading', 'lemonscentedtea'); ?>...</span>
-			<span class="large-button__disabled-text"><?php _e('No more cases', 'lemonscentedtea'); ?>...</span>
-		</button>
+		<?php
+			if (  $wp_query->max_num_pages > 1 && $wp_query->max_num_pages  ) { ?>
+				<button class="large-button js-load-cases">
+					<span class="large-button__default-text"><?php _e('More cases', 'lemonscentedtea'); ?></span>
+					<span class="large-button__loading-text"><?php _e('Loading', 'lemonscentedtea'); ?>...</span>
+					<span class="large-button__disabled-text"><?php _e('No more cases', 'lemonscentedtea'); ?>...</span>
+				</button>
+			<?php }
+		?>
 
 	</section>
 

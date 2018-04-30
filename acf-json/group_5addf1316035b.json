@@ -385,6 +385,25 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_5ae6e821c9a85",
+                            "label": "Center Image",
+                            "name": "center_image",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -397,13 +416,40 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5ae6db9f14151",
+                            "label": "Video type",
+                            "name": "youtube__vimeo",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "YouTube",
+                            "ui_off_text": "Vimeo"
+                        },
+                        {
                             "key": "field_5addf33e88a0d",
                             "label": "Video YouTube url",
                             "name": "video_url",
                             "type": "url",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5ae6db9f14151",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -419,7 +465,15 @@
                             "type": "image",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5ae6db9f14151",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -435,6 +489,25 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_5ae6dddd06f30",
+                            "label": "Vimeo content",
+                            "name": "vimeo_content",
+                            "type": "textarea",
+                            "instructions": "Vimeo video -> Share -> Embed. (Open \"Show options\" -> remove \"Show text link underneath this video.\")",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
                         }
                     ],
                     "min": "",
@@ -489,5 +562,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524729184
+    "modified": 1525082163
 }

@@ -278,7 +278,7 @@
 	
 
 	&__content
-		line-height: 1.9em 
+		line-height: 1.9em
 		
 		a
 			color: inherit
@@ -310,8 +310,8 @@
 		img
 			display: block
 			max-width: 100%
-			margin: 0 auto 
-		
+			margin: 0 auto
+
 
 
 	&__socials
@@ -335,6 +335,16 @@
 				left: 0
 				top: 10px
 				transform: translateY(-50%) 
+
+	&.centered-image
+		padding-left: 0
+		padding-right: 0
+		@media (min-width: 1500px)
+			padding-left: calc((100vw - 1470px) / 2)
+		.text-block__image
+			transform: translateX(50%)
+			margin-right: calc((100vw / 2))
+
 	
 
 
@@ -565,3 +575,7 @@
 		@media (min-width: 1200px)
 			padding-top: 115px
 			padding-bottom: 115px  
+
+.vimeo-container
+	& > div 
+		padding: 56.26% 0 0 0 !important

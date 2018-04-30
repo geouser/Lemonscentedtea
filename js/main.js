@@ -209,11 +209,13 @@ jQuery(document).ready(function($) {
                         );
                     
                     theme.current_page++;
- 
-                    if ( theme.current_page >= theme.max_page_cases ) 
+                    console.log(theme.current_page);
+                    console.log( theme.max_page);
+                    if ( theme.current_page >= theme.max_page ) {
                         setTimeout(function(){ button.addClass('disabled'); }, 800);
-                    else 
+                    } else {
                         setTimeout(function(){ button.removeClass('loading'); }, 800);
+                    }
  
 				} else {
 					button.addClass('disabled'); // if no data, remove the button as well
@@ -224,7 +226,7 @@ jQuery(document).ready(function($) {
 
 
 
-    // load more cases
+    // load more workers
     $('.js-load-team').click(function(){
  
         var button = $(this),
