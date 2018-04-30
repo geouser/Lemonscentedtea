@@ -1,6 +1,17 @@
 // Document Events
 jQuery(document).ready(function($) {
 
+
+    function fix_page_height() {
+        $('#main').css('min-height', $( window ).height() - ( $('.mainheader').outerHeight() + $('#footer').outerHeight() ) );
+    }
+    fix_page_height();
+    $(window).on('resize', function(event) {
+        event.preventDefault();
+        fix_page_height();
+    });
+
+
 	// hamburger menu
 	$(".hamburger").on("click", function(e) {
 	    $(this).toggleClass("is-active");
