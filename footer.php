@@ -37,10 +37,11 @@
                                             <p class="status-message__error"><?php _e('Something is wrong', 'lemonscentedtea'); ?></p>
                                         </div>
                                     </div>
-                                    <div class="alerts"></div>
+
                                     <div>
                                         <a href="#"><?php _e('Disclaimer'); ?></a>
                                     </div>
+                                    <div class="alerts"></div>
                                 </form>
                             </div>
                         </div>

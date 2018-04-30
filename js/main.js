@@ -288,67 +288,99 @@ jQuery(document).ready(function($) {
     }); 
 
 
+    console.log( $.ajaxChimp.responses );
+
+    
 
 
+    function translate_message ( str, lang ) {
 
-    $.ajaxChimp.translations.es = {
-        'submit': 'Grabación en curso...',
-        0: 'Te hemos enviado un email de confirmación',
-        1: 'Por favor, introduzca un valor',
-        2: 'Una dirección de correo electrónico debe contener una sola @',
-        3: 'La parte de dominio de la dirección de correo electrónico no es válida (la parte después de la @:)',
-        4: 'La parte de usuario de la dirección de correo electrónico no es válida (la parte antes de la @:)',
-        5: 'Esta dirección de correo electrónico se ve falso o no válido. Por favor, introduce una dirección de correo electrónico real'
+        if ( ~str.indexOf("Please enter a value") ) {
+            return messages[0][lang];
+        } else if ( ~str.indexOf("An email address must contain a single @") ) {
+            return messages[1][lang];
+        } else if ( ~str.indexOf("The domain portion of the email address is invalid (the portion after the @:") ) {
+            return str.replace( 'The domain portion of the email address is invalid (the portion after the @:', messages[2][lang] );
+        } else if ( ~str.indexOf("The username portion of the email address is empty") ) {
+            return messages[3][lang];
+        } else if ( ~str.indexOf("Thank you for subscribing!") ) {
+            return messages[4][lang];
+        } else if ( ~str.indexOf("is already subscribed to list") ) {
+            str = str.replace( 'is already subscribed to list', messages[5][lang][0]);
+            str = str.replace( 'Click here to update your profile', messages[5][lang][1]);
+            return str;
+        }
+
     }
 
 
     $('.js-mailchimp-form').each(function(index, el) {
         var form = $(this);
 
-        form.ajaxChimp({
-            url: 'https://digibuild.us18.list-manage.com/subscribe/post?u=dd2f0a374fc774288639544ad&id=fc17172c4b',
-            language: 'es',
-            callback: function(result){
+        console.log( theme.mailchimp_url );
 
-                console.log( result );
+        if ( theme.mailchimp_url !== null ) {
+            form.ajaxChimp({
+                url: theme.mailchimp_url,
+                language: 'de',
+                callback: function(result){
 
-                form.find('input').removeClass('error');
+                    form.find('input').removeClass('error');
 
-                var inputs = ['EMAIL'];
+                    var inputs = ['EMAIL'];
 
-                var info = result.msg.split(' - ');
+                    var info = result.msg.split(' - ');
 
-                if ( result.result == 'error' ) {
-                    var message = info[1];
 
-                    if ( !message ) {
-                        message = info[0];
+                    if ( result.result == 'error' ) {
+                        var message = info[1]
+
+                        if ( !message ) {
+                            message = info[0];
+                        }
+
+                        message = translate_message ( message, theme.lang );
+                        
+
+                        form.find('input[name='+ inputs[ info[0] ] + ']').addClass('error');
+                        var alert = $('<div class="alert alert-danger" style="display: none;">'+message+'</div>');
+
+                        form.find('.alerts').html('').append( alert );
+                        alert.fadeIn(500, function(){
+                            setTimeout( function(){
+                                alert.fadeOut(500);
+                            }, 5000)
+                        });
+                    } else {
+                        var message = info[1]
+
+                        if ( !message ) {
+                            message = info[0];
+                        }
+
+                        message = translate_message ( message, theme.lang );
+
+                        var alert = $('<div class="alert alert-success" style="display: none;">'+message+'</div>');
+
+                        form.find('.alerts').html('').append( alert );
+                        form.removeClass('not-valid valid typing');
+                        alert.fadeIn(500, function(){
+                            setTimeout( function(){
+                                alert.fadeOut(500);
+                            }, 5000)
+                        });
+                        
+                        form[0].reset();
                     }
-
-                    form.find('input[name='+ inputs[ info[0] ] + ']').addClass('error');
-                    var alert = $('<div class="alert alert-danger" style="display: none;">'+message+'</div>');
-
-                    form.find('.alerts').html('').append( alert );
-                    alert.fadeIn(500, function(){
-                        setTimeout( function(){
-                            alert.fadeOut(500);
-                        }, 5000)
-                    });
-                } else {
-                    var message = info[0];
-                    var alert = $('<div class="alert alert-success" style="display: none;">'+message+'</div>');
-
-                    form.find('.alerts').html('').append( alert );
-                    alert.fadeIn(500, function(){
-                        setTimeout( function(){
-                            alert.fadeOut(500);
-                        }, 5000)
-                    });
-                    
-                    form[0].reset();
                 }
-            }
-        });
+            });    
+        } else {
+            var alert = $('<div class="alert alert-danger">Please, provide correnct subscribe url in your theme settings.</div>');
+
+            form.find('.alerts').html('').append( alert );
+        }
+
+        
 
     });
 

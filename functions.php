@@ -63,6 +63,8 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 function enqueue_scripts() {
     global $wp_query; 
+    $lang = apply_filters( 'wpml_current_language', NULL );
+
     if (is_page_template('template-contact.php')) {
         wp_enqueue_script('GoogleMaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGiM9Lk7ypP5rTKIP-1Dhp78Bd1CEpMgo&v=3', array(), '3.0.0', true);
         wp_enqueue_script('GoogleMapsCustom', get_template_directory_uri() . '/js/map.js', array('GoogleMaps'), '1.0.0', true);
@@ -78,7 +80,9 @@ function enqueue_scripts() {
             'ajax_url' => admin_url('admin-ajax.php'),
             'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
             'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-            'max_page' => $wp_query->max_num_pages
+            'max_page' => $wp_query->max_num_pages,
+            'lang' => $lang ? $lang : 'en',
+            'mailchimp_url' => get_field('mailchimp_subscribe_url', 'option')
         )
     ); 
 }

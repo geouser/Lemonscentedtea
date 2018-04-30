@@ -14,6 +14,36 @@
         })(window,document,'script','dataLayer','GTM-MNTW5L7');</script>
         <!-- End Google Tag Manager -->
         <?php wp_head(); ?>
+
+        <script>
+            var messages = [
+                {
+                    en: 'Please enter a value',
+                    nl: '<?php _e('Please enter a value', 'lemonscentedtea'); ?>',
+                },
+                {
+                    en: 'An email address must contain a single @',
+                    nl: '<?php _e('An email address must contain a single @', 'lemonscentedtea'); ?>',
+                },
+                {
+                    en: 'The domain portion of the email address is invalid (the portion after the @:',
+                    nl: '<?php _e('The domain portion of the email address is invalid (the portion after the @:', 'lemonscentedtea'); ?>',
+                },
+                {
+                    en: 'The username portion of the email address is empty',
+                    nl: '<?php _e('The username portion of the email address is empty', 'lemonscentedtea'); ?>',
+                },
+                {
+                    en: 'Thank you for subscribing!',
+                    nl: '<?php _e('Thank you for subscribing!', 'lemonscentedtea'); ?>',
+                },
+                {
+                    en: [ 'is already subscribed to list', 'Click here to update your profile' ],
+                    nl: [ '<?php _e('is already subscribed to list', 'lemonscentedtea'); ?>', '<?php _e('Click here to update your profile', 'lemonscentedtea'); ?>' ]
+                }
+            ];
+        </script>
+
     </head>
 
     <body <?php body_class(); ?>>
