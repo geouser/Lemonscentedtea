@@ -39,7 +39,14 @@
                                     </div>
 
                                     <div>
-                                        <a href="#"><?php _e('Disclaimer'); ?></a>
+                                        <?php $disclaimer_id = get_field('disclaimer_page', 'option'); ?>
+
+                                        <?php if ( $disclaimer_id ) : ?>
+                                            <a href="<?php echo get_permalink($disclaimer_id); ?>"><?php _e('Disclaimer'); ?></a>
+                                        <?php else: ?>
+                                            <div class="alert alert-danger">Please select Disclaimer page in Theme settings.</div>
+                                        <?php endif; ?>
+                                        
                                     </div>
                                     <div class="alerts"></div>
                                 </form>

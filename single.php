@@ -32,14 +32,14 @@ get_header();
 
 			
 			<div class="single-case__footer">
-				<a href="#" class="large-button get-in-touch">
+				<div href="#" class="large-button get-in-touch">
 					<span class="label"><?php _e('Get in touch', 'lemonscentedtea'); ?></span>
 
 					<span class="desc">
-						<span class="desc__main"><?php _e('Call', 'lemonscentedtea'); ?>: <?php the_field('phone_number', 'option'); ?></span>
-						<span class="desc__second"><?php _e('E-mail', 'lemonscentedtea'); ?>: <?php the_field('email_address', 'option'); ?></span>
+						<span class="desc__main"><?php _e('Call', 'lemonscentedtea'); ?>: <a href="tel:<?php the_field('phone_number', 'option'); ?>"><?php the_field('phone_number', 'option'); ?></a></span>
+						<span class="desc__second"><?php _e('E-mail', 'lemonscentedtea'); ?>: <a href="mailto:<?php the_field('email_address', 'option'); ?>"><?php the_field('email_address', 'option'); ?></a></span>
 					</span>
-				</a>
+				</div>
 				<?php 
 					$next_post = get_previous_post( false, '');
 					$next_post_id = $next_post->ID;
