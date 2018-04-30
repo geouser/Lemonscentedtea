@@ -4,7 +4,7 @@
                 <div class="row">
                     
                     <div class="col-6">
-                        <div class="row">
+                        <div class="row align-items-center">
                             <div class="col-auto logo">
                                 <?php the_custom_logo(); ?>
                             </div>
