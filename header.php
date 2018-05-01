@@ -40,6 +40,10 @@
                 {
                     en: [ 'is already subscribed to list', 'Click here to update your profile' ],
                     nl: [ '<?php _e('is already subscribed to list', 'lemonscentedtea'); ?>', '<?php _e('Click here to update your profile', 'lemonscentedtea'); ?>' ]
+                },
+                {
+                    en: 'This email cannot be added to this list. Please enter a different email address',
+                    nl: '<?php _e('This email cannot be added to this list. Please enter a different email address', 'lemonscentedtea'); ?>',
                 }
             ];
         </script>

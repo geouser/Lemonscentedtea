@@ -319,6 +319,8 @@ jQuery(document).ready(function ($) {
             str = str.replace('is already subscribed to list', messages[5][lang][0]);
             str = str.replace('Click here to update your profile', messages[5][lang][1]);
             return str;
+        } else if ( ~str.indexOf("This email cannot be added to this list. Please enter a different email address") ) {
+            return messages[6][lang];
         }
 
     }
