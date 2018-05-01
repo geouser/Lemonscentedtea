@@ -234,11 +234,6 @@
 	padding: 100px 65px
 	font-size: 16px
 	
-	&.contacts
-		@media (min-width: 1200px)
-			padding-top: 115px
-			padding-bottom: 115px  
-	
 	@media (max-width: 1199px)
 		padding: 80px 50px
 		
@@ -605,9 +600,10 @@
 	.text-block
 		color: inherit
 		
-		@media (min-width: 1200px)
-			padding-top: 115px
-			padding-bottom: 115px  
+		&__content
+			@media (min-width: 1200px)
+				padding-top: 40px 
+		
 
 .vimeo-container
 	& > div 

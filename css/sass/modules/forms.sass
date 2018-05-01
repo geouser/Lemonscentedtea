@@ -7,13 +7,13 @@
 		margin-bottom: 10px
 	.form-group
 		position: relative
-		margin-bottom: 10px
+		margin-bottom: 15px
 		&:last-child
 			margin-bottom: 0
 	input
 		display: block
 		width: 100%
-		padding-bottom: 8px
+		padding-bottom: 4px
 		font-size: 16px
 		font-weight: 300
 		color: #ffffff
@@ -28,12 +28,11 @@
 		color: #fff
 		
 	&.typing
-		.status-message__success
+		.status-message__typing
 			opacity: 1
 			visibility: visible
 			transform: none
 			max-height: 100px
-			color: #fff
 
 	&.not-valid
 		input
@@ -52,7 +51,6 @@
 			visibility: visible
 			transform: none
 			max-height: 100px
-			color: #00DA83
 
 	a
 		color: rgba(255,255,255,0.5)
@@ -69,7 +67,7 @@
 	position: absolute
 	top: 100%
 	right: 0
-	padding-top: 15px
+	padding-top: 20px
 	text-align: right
 	max-width: 160px
 	line-height: 1em  
@@ -83,8 +81,10 @@
 		margin: 0
 	.status-message__error
 		color: #DB0000
-	.status-message__success
+	.status-message__typing
 		color: #fff
+	.status-message__success
+		color: #00DA83
 		
 
 .alert

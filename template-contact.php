@@ -75,7 +75,7 @@ get_header();
 								<h2 class="text-block__title decorated-title"><?php _e('Hiring', 'lemonscentedtea'); ?>: <?php the_title(); ?></h2>
 
 								<div class="text-block__content">
-									<p><?php the_excerpt();?></p>
+									<?php the_excerpt();?>
 								</div>
 							</div>
 						</a>
