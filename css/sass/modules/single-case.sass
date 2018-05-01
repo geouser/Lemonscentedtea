@@ -4,7 +4,7 @@
 		font-size: 30px
 		line-height: 40px
 		
-		@media (max-width: 767px)
+		@media (max-width: 991px)
 			font-size: 26px
 			line-height: 1.2em  
 			
@@ -21,9 +21,12 @@
 		margin-bottom: 26px 
 		padding-left: 65px 
 		
+		@media (max-width: 991px)
+			padding-left: 50px 
+		
 		@media (max-width: 767px)
-			padding-left: 15px
-			padding-right: 15px  
+			padding-left: 35px
+			padding-right: 35px  
 			padding-top: 40px 
 		
 
@@ -89,6 +92,12 @@
 				transition: all 0.3s ease
 				font-style: normal 
 				
+				@media (max-width: 991px)
+					padding: 15px 50px
+					
+				@media (max-width: 767px)
+					padding: 15px 40px
+				
 				@media (max-width: 575px)
 					padding: 20px 30px
 					font-size: 16px 
@@ -98,6 +107,13 @@
 					display: block
 					font-size: 20px
 					line-height: 30px 
+					
+					@media (max-width: 991px)
+						font-size: 16px
+						line-height: normal 
+						
+					@media (max-width: 767px)
+						font-size: 14px 
 					
 
 					a
@@ -116,31 +132,35 @@
 					border-color: transparent transparent transparent #fff
 					position: absolute
 					left: 0
-					bottom: 22px
+					top: 50%
+					transform: translateY(-50%)
 					z-index: 2
+					
+					@media (max-width: 767px)
+						border-width: 15px 0 15px 11px
 					
 					@media (max-width: 575px)
 						border-width: 11px 0 11px 9px
-						bottom: 45px
+
 					
 			.label
 				transition: all 0.2s ease
+				
+
 					
-
-			@media (min-width: 992px)
-				&.get-in-touch
-					&:hover
-						background-color: #1c1c1c
+			&.get-in-touch
+				&:hover
+					background-color: #1c1c1c
+					
+					.label
+						opacity: 0
+						visibility: hidden
 						
-						.label
-							opacity: 0
-							visibility: hidden
+					.desc
+						opacity: 1
+						visibility: visible
 							
-						.desc
-							opacity: 1
-							visibility: visible
-							
-
+			@media (min-width: 992px)
 				&.next-case
 					&:hover
 						&:before
@@ -154,3 +174,18 @@
 						.desc
 							opacity: 1
 							visibility: visible
+							
+
+			@media (max-width: 991px)
+				&.next-case
+					&:before
+						opacity: 0.8
+						visibility: visible
+						
+					.label
+						opacity: 0
+						visibility: hidden
+						
+					.desc
+						opacity: 1
+						visibility: visible
