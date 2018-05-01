@@ -92,7 +92,7 @@ $page_id = get_the_ID();
 					<?php foreach ( $clients as $client ) : ?>
 
 						<?php 
-							$classes = array( 'col-6', 'col-sm-4', 'col-md-3', 'client-col' );
+							$classes = array( 'col-12', 'col-sm-6', 'col-md-6', 'col-lg-3', 'client-col' );
 
 							if ( $counter > get_field( 'clients_to_show', $page_id ) ) {
 								$classes[] = 'hidden';
