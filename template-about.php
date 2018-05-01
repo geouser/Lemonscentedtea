@@ -100,12 +100,12 @@ $page_id = get_the_ID();
 						?>
 						
 						<div class="<?php echo join( ' ', $classes ); ?>">
-							<?php if ( $client['link_type'] ) : ?>
-								<a href="<?php echo get_permalink( $client['case_link'] ); ?>">
-									<img src="<?php echo $client['logo']['url'] ?>">
-								</a>
-							<?php else : ?>
-								<?php if ( $client['custom_link'] ) : ?>
+
+								<?php if ( $client['case_link'] ) : ?>
+									<a href="<?php echo get_permalink( $client['case_link'] ); ?>">
+										<img src="<?php echo $client['logo']['url'] ?>">
+									</a>
+								<?php elseif ( $client['custom_link'] ) : ?>
 									<a href="<?php echo $client['custom_link']; ?>" target="_blank">
 										<img src="<?php echo $client['logo']['url'] ?>">
 									</a>
@@ -114,7 +114,7 @@ $page_id = get_the_ID();
 										<img src="<?php echo $client['logo']['url'] ?>">
 									</span>
 								<?php endif; ?>
-							<?php endif; ?>
+
 						</div>
 
 						<?php $counter++; ?>
