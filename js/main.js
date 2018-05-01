@@ -5,11 +5,21 @@ jQuery(document).ready(function ($) {
     function fix_page_height() {
         $('#main').css('min-height', $(window).height() - ($('.mainheader').outerHeight() + $('#footer').outerHeight()));
     }
+<<<<<<< HEAD
     fix_page_height();
     $(window).on('resize', function (event) {
         event.preventDefault();
+=======
+
+    if ( $('#main').length > 0 ) {
+>>>>>>> d278257ce93bb5c31ed4cde31092008bbd0e3ae7
         fix_page_height();
-    });
+        $(window).on('resize', function(event) {
+            event.preventDefault();
+            fix_page_height();
+        });    
+    }
+    
 
 
     // hamburger menu
@@ -254,6 +264,7 @@ jQuery(document).ready(function ($) {
             beforeSend: function (xhr) {
                 button.addClass('loading'); // change the button text, you can also add a preloader image
             },
+<<<<<<< HEAD
             success: function (data) {
                 if (data) {
                     $(data).hide().appendTo('.team-container')
@@ -263,6 +274,13 @@ jQuery(document).ready(function ($) {
                             { opacity: 1 },
                             { queue: false, duration: 'slow' }
                         );
+=======
+            success : function( data ){
+                console.log( data );
+
+                if ( data ) { 
+                    $(data).hide().appendTo('.team-container').fadeIn();
+>>>>>>> d278257ce93bb5c31ed4cde31092008bbd0e3ae7
 
                     team.paged++;
 
@@ -301,9 +319,13 @@ jQuery(document).ready(function ($) {
     });
 
 
+<<<<<<< HEAD
     console.log($.ajaxChimp.responses);
 
 
+=======
+   
+>>>>>>> d278257ce93bb5c31ed4cde31092008bbd0e3ae7
 
 
     function translate_message(str, lang) {
@@ -330,9 +352,7 @@ jQuery(document).ready(function ($) {
     $('.js-mailchimp-form').each(function (index, el) {
         var form = $(this);
 
-        console.log(theme.mailchimp_url);
-
-        if (theme.mailchimp_url !== null) {
+        if ( theme.mailchimp_url !== null ) {
             form.ajaxChimp({
                 url: theme.mailchimp_url,
                 language: 'de',

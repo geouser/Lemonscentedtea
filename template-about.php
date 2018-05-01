@@ -81,6 +81,7 @@ $page_id = get_the_ID();
 
 	
 	<?php if ( $clients = get_field('clients') ) : ?>
+		
 		<section class="clients">
 			<div class="container">
 				
@@ -99,7 +100,21 @@ $page_id = get_the_ID();
 						?>
 						
 						<div class="<?php echo join( ' ', $classes ); ?>">
-							<span><img src="<?php echo $client['url'] ?>"></span>
+							<?php if ( $client['link_type'] ) : ?>
+								<a href="<?php echo get_permalink( $client['case_link'] ); ?>">
+									<img src="<?php echo $client['logo']['url'] ?>">
+								</a>
+							<?php else : ?>
+								<?php if ( $client['custom_link'] ) : ?>
+									<a href="<?php echo $client['custom_link']; ?>" target="_blank">
+										<img src="<?php echo $client['logo']['url'] ?>">
+									</a>
+								<?php else : ?>
+									<span>
+										<img src="<?php echo $client['logo']['url'] ?>">
+									</span>
+								<?php endif; ?>
+							<?php endif; ?>
 						</div>
 
 						<?php $counter++; ?>
