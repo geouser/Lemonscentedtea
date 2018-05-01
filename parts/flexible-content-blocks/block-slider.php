@@ -7,7 +7,7 @@
 			$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
 		?>
             <figure class="figure gallery-slider__slide">
-				<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>" />
+				<img data-lazy="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>" />
                 <figcaption class="gallery-slider__slide__text"><?php the_sub_field('placeholder'); ?></figcaption>
             </figure>
 		<?
