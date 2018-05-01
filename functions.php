@@ -294,8 +294,7 @@ function load_team(){
 
     echo $output;
     die();
-    /*wp_send_json( $query );
-    exit;*/
+
 }
  
  

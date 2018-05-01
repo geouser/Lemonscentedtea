@@ -33,8 +33,9 @@
                                     <div class="form-group">
                                         <input id="email" placeholder="<?php _e('your e-mail', 'lemonscentedtea'); ?>" type="email" autocomplete="off">
                                         <div class="status-message">
-                                            <p class="status-message__success"><?php _e('Press enter to sent', 'lemonscentedtea'); ?></p>
-                                            <p class="status-message__error"><?php _e('Something is wrong', 'lemonscentedtea'); ?></p>
+                                            <p class="status-message__typing"><?php _e('Press enter to sent', 'lemonscentedtea'); ?></p>
+                                            <p class="status-message__success"><?php _e('Thanks, we have sent you an e-mail', 'lemonscentedtea'); ?></p>
+                                            <p class="status-message__error"><?php _e('Please check e-mail address', 'lemonscentedtea'); ?></p>
                                         </div>
                                     </div>
 

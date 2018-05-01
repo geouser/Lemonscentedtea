@@ -5,14 +5,8 @@ jQuery(document).ready(function ($) {
     function fix_page_height() {
         $('#main').css('min-height', $(window).height() - ($('.mainheader').outerHeight() + $('#footer').outerHeight()));
     }
-<<<<<<< HEAD
-    fix_page_height();
-    $(window).on('resize', function (event) {
-        event.preventDefault();
-=======
 
     if ( $('#main').length > 0 ) {
->>>>>>> d278257ce93bb5c31ed4cde31092008bbd0e3ae7
         fix_page_height();
         $(window).on('resize', function(event) {
             event.preventDefault();
@@ -85,13 +79,13 @@ jQuery(document).ready(function ($) {
         form.addClass('typing');
         form.removeClass('not-valid');
 
-        if (testEmail.test(value)) {
+        /*if (testEmail.test(value)) {
             form.addClass('valid');
         } else {
             form.removeClass('valid');
-        }
+        }*/
 
-        if (e.keyCode === 13) {
+        /*if (e.keyCode === 13) {
             form.removeClass('typing');
             if (testEmail.test(value)) {
                 form.addClass('valid');
@@ -99,24 +93,24 @@ jQuery(document).ready(function ($) {
                 form.removeClass('valid');
                 form.addClass('not-valid');
             }
-        }
+        }*/
     })
     // blur
     $('.mailchimp-form input').on("blur", function () {
         $(this).closest('form').removeClass('typing valid not-valid');
     })
     // form submit
-    $('.mailchimp-form').submit(function (event) {
+    /*$('.mailchimp-form').submit(function (event) {
         event.preventDefault();
         var value = $(this).find('input').val();
 
         if (testEmail.test(value)) {
-            // console.log('submit');
+
         } else {
             $(this).removeClass('typing');
             $(this).addClass('not-valid');
         }
-    });
+    });*/
 
     /*---------------------------
                                   Fancybox
@@ -264,23 +258,11 @@ jQuery(document).ready(function ($) {
             beforeSend: function (xhr) {
                 button.addClass('loading'); // change the button text, you can also add a preloader image
             },
-<<<<<<< HEAD
-            success: function (data) {
-                if (data) {
-                    $(data).hide().appendTo('.team-container')
-                        .css('opacity', 0)
-                        .slideDown('fast')
-                        .animate(
-                            { opacity: 1 },
-                            { queue: false, duration: 'slow' }
-                        );
-=======
             success : function( data ){
-                console.log( data );
 
                 if ( data ) { 
                     $(data).hide().appendTo('.team-container').fadeIn();
->>>>>>> d278257ce93bb5c31ed4cde31092008bbd0e3ae7
+
 
                     team.paged++;
 
@@ -319,13 +301,6 @@ jQuery(document).ready(function ($) {
     });
 
 
-<<<<<<< HEAD
-    console.log($.ajaxChimp.responses);
-
-
-=======
-   
->>>>>>> d278257ce93bb5c31ed4cde31092008bbd0e3ae7
 
 
     function translate_message(str, lang) {
@@ -358,15 +333,21 @@ jQuery(document).ready(function ($) {
                 language: 'de',
                 callback: function (result) {
 
+                    console.log( result );
+
                     form.find('input').removeClass('error');
 
                     var inputs = ['EMAIL'];
 
-                    var info = result.msg.split(' - ');
+                    form.removeClass('not-valid valid typing');
+
+                    //var info = result.msg.split(' - ');
 
 
                     if (result.result == 'error') {
-                        var message = info[1]
+
+                        form.addClass('not-valid');
+                        /*var message = info[1]
 
                         if (!message) {
                             message = info[0];
@@ -383,9 +364,10 @@ jQuery(document).ready(function ($) {
                             setTimeout(function () {
                                 alert.fadeOut(500);
                             }, 5000)
-                        });
+                        });*/
                     } else {
-                        var message = info[1]
+                        form.addClass('valid');
+                        /*var message = info[1]
 
                         if (!message) {
                             message = info[0];
@@ -403,7 +385,7 @@ jQuery(document).ready(function ($) {
                             }, 5000)
                         });
 
-                        form[0].reset();
+                        form[0].reset();*/
                     }
                 }
             });
