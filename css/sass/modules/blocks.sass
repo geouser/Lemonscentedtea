@@ -366,6 +366,11 @@
 		list-style: none 
 		color: inherit
 		margin-left: -30px 
+		@media (max-width: 991px)
+			margin-left: 0
+			margin-left: 70px
+		@media (max-width: 767px)
+			margin-left: 0
 		
 		a
 			color: inherit
@@ -602,7 +607,7 @@
 		display: none!important
 		
 	@media (max-width: 991px)
-		height: 500px
+		height: 390px
 	
 	@media (max-width: 575px)
 		height: 200px
@@ -634,7 +639,9 @@
 	
 	.text-block
 		color: inherit
-		
+		@media (max-width: 991px)
+			padding-top: 21px
+			padding-bottom: 52px
 		&__content
 			@media (min-width: 1200px)
 				padding-top: 40px 
