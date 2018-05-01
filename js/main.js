@@ -227,13 +227,17 @@ jQuery(document).ready(function ($) {
                     console.log(theme.current_page);
                     console.log(theme.max_page);
                     if (theme.current_page >= theme.max_page) {
-                        setTimeout(function () { button.addClass('disabled'); }, 800);
+                        setTimeout(function () { 
+                            button.remove();
+                        }, 800);
                     } else {
-                        setTimeout(function () { button.removeClass('loading'); }, 800);
+                        setTimeout(function () { 
+                            button.removeClass('loading'); 
+                        }, 800);
                     }
 
                 } else {
-                    button.addClass('disabled'); // if no data, remove the button as well
+                    button.remove();
                 }
             }
         });
@@ -267,7 +271,7 @@ jQuery(document).ready(function ($) {
 
                     if (team.paged >= team.max_pages) {
                         setTimeout(function () {
-                            button.addClass('disabled');
+                            button.remove();
                         }, 400);
                     } else {
                         setTimeout(function () {
@@ -276,7 +280,7 @@ jQuery(document).ready(function ($) {
                     }
 
                 } else {
-                    button.addClass('disabled'); // if no data, remove the button as well
+                    button.remove();
                 }
             }
         });
@@ -295,7 +299,7 @@ jQuery(document).ready(function ($) {
             $(this).removeClass('hidden');
         });
 
-        $(this).addClass('disabled');
+        $(this).remove();
 
     });
 

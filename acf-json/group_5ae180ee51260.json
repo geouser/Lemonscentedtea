@@ -136,7 +136,7 @@
                     "default_value": 0,
                     "ui": 1,
                     "ui_on_text": "Case link",
-                    "ui_off_text": "Castom"
+                    "ui_off_text": "Custom"
                 },
                 {
                     "key": "field_5ae7fddc55b8d",
@@ -212,5 +212,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1525153325
+    "modified": 1525166793
 }
