@@ -399,7 +399,7 @@ jQuery(document).ready(function ($) {
 
 
 
-    var figure = $('.placeholder');
+    var figure = $('.placeholder').not( ".loaded" );
     figure.each(function () {
 
         var self = $(this);
@@ -421,8 +421,9 @@ jQuery(document).ready(function ($) {
                     imgLarge.classList.add('loaded');
                 };
                 self.append(imgLarge);
+                this.destroy()
             }, 
-            offset: '50%'
+            offset: '60%'
         });
     })
 

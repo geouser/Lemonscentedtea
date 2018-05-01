@@ -7,6 +7,7 @@
 	$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
 ?>
 
+
 <?php if ( $image ) : ?>
 
 	<figure class="figure placeholder" data-large="<?php echo $image_full[0]; ?>">
