@@ -183,16 +183,16 @@
 		padding: 80px 50px
 		
 	@media (max-width: 991px)
-		font-size: 50px
-		padding: 70px 45px   
+		font-size: 35px
+		padding: 57.5px 45px   
 		
 	@media (max-width: 767px)
-		font-size: 45px
-		padding: 65px 40px
+		font-size: 35px
+		padding: 50px 40px
 		
 	@media (max-width: 575px)
-		font-size: 40px
-		padding: 55px 35px  
+		font-size: 35px
+		padding: 50px 35px  
 		
 	@media (max-width: 420px)
 		font-size: 20px
@@ -268,11 +268,11 @@
 		padding: 80px 50px
 		
 	@media (max-width: 991px)
-		padding: 65px 60px
+		padding: 66px 50px
 		
 		[class*='col-']
 			&:not(:last-child)
-				margin-bottom: 2em 
+				margin-bottom: 66px 
 				
 	@media (max-width: 575px)
 		padding: 40px 25px
@@ -478,19 +478,20 @@
 	overflow: hidden
 	display: block 
 	
-	@media (max-width: 575px)
-		margin-bottom: 50px 
 	
-	@media (max-width: 767px)
-		width: 100%
-	
-	@media (min-width: 768px)
+	@media (min-width: 992px)
 		&:nth-last-of-type(-n+2)
-			margin-bottom: 0 
-			
-	@media (max-width: 767px)
+			margin-bottom: 0
+	
+	@media (max-width: 991px)
+		width: 100%
+		margin-bottom: 60px 
+		
 		&:last-child
 			margin-bottom: 0
+			
+	@media (max-width: 575px)
+		margin-bottom: 50px 
 			
 	&:after
 		content: ''
@@ -526,6 +527,10 @@
 		padding: 26px 65px
 		color: #fff
 		transition: all 0.3s ease
+		
+		@media (max-width: 991px)
+			padding-left: 50px 
+			padding-bottom: 23px 
 		
 		@media (max-width: 575px)
 			padding: 20px 40px
