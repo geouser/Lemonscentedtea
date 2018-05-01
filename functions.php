@@ -64,16 +64,17 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 function enqueue_scripts() {
     global $wp_query; 
     $lang = apply_filters( 'wpml_current_language', NULL );
+    $theme = wp_get_theme();
 
     if (is_page_template('template-contact.php')) {
         wp_enqueue_script('GoogleMaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCGiM9Lk7ypP5rTKIP-1Dhp78Bd1CEpMgo&v=3', array(), '3.0.0', true);
-        wp_enqueue_script('GoogleMapsCustom', get_template_directory_uri() . '/js/map.js', array('GoogleMaps'), '1.0.0', true);
+        wp_enqueue_script('GoogleMapsCustom', get_template_directory_uri() . '/js/map.js', array('GoogleMaps'), $theme->get( 'Version' ), true);
     }
 
-    wp_enqueue_style('main-css', get_template_directory_uri().'/css/main.css');
+    wp_enqueue_style('main-css', get_template_directory_uri().'/css/main.css', array(), $theme->get( 'Version' ), 'all' );
     /* Custom scripts */
-    wp_enqueue_script('plugins-js', get_template_directory_uri() . '/js/plugins.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('plugins-js', get_template_directory_uri() . '/js/plugins.js', array('jquery'), $theme->get( 'Version' ), true);
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), $theme->get( 'Version' ), true);
 
     wp_localize_script('main-js', 'theme', 
         array(
