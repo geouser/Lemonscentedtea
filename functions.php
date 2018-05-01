@@ -189,11 +189,11 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 
-add_image_size('figure', 1440, 600);
+add_image_size('figure_1600', 1600, 9999);
 add_image_size('figure_1100', 1100, 9999);
 add_image_size('figure_800', 800, 9999);
 add_image_size('figure_500', 500, 9999);
-add_image_size('figure_preview', 240, 100);
+add_image_size('figure_preview', 240, 9999);
 add_image_size('case-thumbnail', 952, 595);
 add_image_size('next-preview', 952, 468);
 

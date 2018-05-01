@@ -4,10 +4,11 @@
 	$imageID = get_sub_field('image');
 	$image_small = wp_get_attachment_image_src( $imageID, 'figure_preview' );
 
+	$image_1600 = wp_get_attachment_image_src( $imageID, 'figure_1600' );
 	$image_1100 = wp_get_attachment_image_src( $imageID, 'figure_1100' );
 	$image_800 = wp_get_attachment_image_src( $imageID, 'figure_800' );
 	$image_500 = wp_get_attachment_image_src( $imageID, 'figure_500' );
-	$image_full = wp_get_attachment_image_src( $imageID, 'figure' );
+	$image_full = wp_get_attachment_image_src( $imageID, 'full' );
 
 	$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
 ?>
@@ -17,6 +18,7 @@
 
 	<figure class="figure placeholder" 
 		data-full="<?php echo $image_full[0]; ?>"
+		data-1600="<?php echo $image_1600[0]; ?>"
 		data-1100="<?php echo $image_1100[0]; ?>"
 		data-800="<?php echo $image_800[0]; ?>"
 		data-500="<?php echo $image_500[0]; ?>">

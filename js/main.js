@@ -1,19 +1,35 @@
 // Document Events
 jQuery(document).ready(function ($) {
 
+    var img_width = 'full',
+        win_width = $(window).width();
+
+    if (win_width <= 1600) {
+        img_width = '1600'
+    }
+    if (win_width <= 1100) {
+        img_width = '1100'
+    }
+    if (win_width <= 800) {
+        img_width = '800'
+    }
+    if (win_width <= 500) {
+        img_width = '500'
+    }
+
 
     function fix_page_height() {
         $('#main').css('min-height', $(window).height() - ($('.mainheader').outerHeight() + $('#footer').outerHeight()));
     }
 
-    if ( $('#main').length > 0 ) {
+    if ($('#main').length > 0) {
         fix_page_height();
-        $(window).on('resize', function(event) {
+        $(window).on('resize', function (event) {
             event.preventDefault();
             fix_page_height();
-        });    
+        });
     }
-    
+
 
 
     // hamburger menu
@@ -185,6 +201,12 @@ jQuery(document).ready(function ($) {
     });
 
 
+    $('.gallery-slider .gallery-slider__slide').each(function(){
+        var image = $(this).find('img'),
+            neededSize = image.data(img_width);
+        image.attr('data-lazy', neededSize);
+    });
+
     $('.gallery-slider').slick({
         arrows: true,
         fade: true,
@@ -193,8 +215,12 @@ jQuery(document).ready(function ($) {
         autoplaySpeed: 4000,
         speed: 900,
         pauseOnHover: false,
-        lazyLoad: 'ondemand'
-    })
+        lazyLoad: 'ondemand',
+        adaptiveHeight: true
+    });
+
+
+
 
 
     // load more cases
@@ -259,10 +285,10 @@ jQuery(document).ready(function ($) {
             beforeSend: function (xhr) {
                 button.addClass('loading'); // change the button text, you can also add a preloader image
             },
-            success : function( data ){
-                console.log( data );
+            success: function (data) {
+                console.log(data);
 
-                if ( data ) { 
+                if (data) {
                     $(data).hide().appendTo('.team-container').fadeIn();
 
                     team.paged++;
@@ -302,7 +328,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-   
+
 
 
     function translate_message(str, lang) {
@@ -329,7 +355,7 @@ jQuery(document).ready(function ($) {
     $('.js-mailchimp-form').each(function (index, el) {
         var form = $(this);
 
-        if ( theme.mailchimp_url !== null ) {
+        if (theme.mailchimp_url !== null) {
             form.ajaxChimp({
                 url: theme.mailchimp_url,
                 language: 'de',
@@ -396,23 +422,11 @@ jQuery(document).ready(function ($) {
 
 
     // Lazy load images
-    var figure = $('.placeholder').not( ".loaded" );
+    var figure = $('.placeholder').not(".loaded");
     figure.each(function () {
 
         var self = $(this),
-            small = self.find('.img-small'),
-            img_width = 'full',
-            win_width = $( window ).width();
-            
-            if (win_width <= 1100) {
-                img_width = '1100'
-            }
-            if (win_width <= 800) {
-                img_width = '800'
-            }
-            if (win_width <= 500) {
-                img_width = '500'
-            }
+            small = self.find('.img-small');
 
         // 1: load small image and show it
         var img = new Image();
@@ -431,7 +445,7 @@ jQuery(document).ready(function ($) {
                 };
                 self.append(imgLarge);
                 this.destroy()
-            }, 
+            },
             offset: '60%'
         });
     })
