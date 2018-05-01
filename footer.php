@@ -1,9 +1,9 @@
         <div id="footer">
             <div class="container-fluid">
 
-                <div class="row justify-content-between">
+                <div class="row justify-content-between justify-content-center-lg">
                     
-                    <div class="col-auto">
+                    <div class="col-auto col-lg-6">
                         <div class="row">
                             <div class="col-auto logo">
                                 <?php the_custom_logo(); ?>
@@ -17,7 +17,7 @@
                         </div>
                     </div>
 
-                    <div class="col-auto">
+                    <div class="col-auto col-lg-6">
                         <div class="row justify-content-end justify-content-start-sm">
                             <div class="col-auto footer-menu text-left">
                                 <?php
