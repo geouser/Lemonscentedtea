@@ -5,11 +5,15 @@ jQuery(document).ready(function($) {
     function fix_page_height() {
         $('#main').css('min-height', $( window ).height() - ( $('.mainheader').outerHeight() + $('#footer').outerHeight() ) );
     }
-    fix_page_height();
-    $(window).on('resize', function(event) {
-        event.preventDefault();
+
+    if ( $('#main').length > 0 ) {
         fix_page_height();
-    });
+        $(window).on('resize', function(event) {
+            event.preventDefault();
+            fix_page_height();
+        });    
+    }
+    
 
 
 	// hamburger menu
@@ -255,14 +259,10 @@ jQuery(document).ready(function($) {
                 button.addClass('loading'); // change the button text, you can also add a preloader image
             },
             success : function( data ){
+                console.log( data );
+
                 if ( data ) { 
-                    $(data).hide().appendTo('.team-container')
-                        .css('opacity', 0)
-                        .slideDown('fast')
-                        .animate(
-                            { opacity: 1 },
-                            { queue: false, duration: 'slow' }
-                        );
+                    $(data).hide().appendTo('.team-container').fadeIn();
 
                     team.paged++;
  
@@ -300,10 +300,7 @@ jQuery(document).ready(function($) {
 
     }); 
 
-
-    console.log( $.ajaxChimp.responses );
-
-    
+   
 
 
     function translate_message ( str, lang ) {
@@ -329,8 +326,6 @@ jQuery(document).ready(function($) {
 
     $('.js-mailchimp-form').each(function(index, el) {
         var form = $(this);
-
-        console.log( theme.mailchimp_url );
 
         if ( theme.mailchimp_url !== null ) {
             form.ajaxChimp({
