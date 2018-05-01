@@ -48,6 +48,7 @@
 		background-repeat: no-repeat
 		background-position: center center
 		background-size: cover
+		transition: all .2s ease-out
 		
 		img
 			display: block
@@ -57,6 +58,8 @@
 			display: block
 			content: ''
 			padding-top: 62.5%
+			transition: all .2s ease-out
+		
 			
 	&__desc
 		padding: 24px 65px
@@ -89,8 +92,35 @@
 		&__title
 			font-weight: 700 
 			font-size: 20px 
-			
+			position: relative
+			&:before
+				content: ''
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 10px 0 10px 9px
+				border-color: transparent transparent transparent #000000
+				position: absolute
+				left: -25px
+				top: 0.4em
+				-webkit-transform: translateY(-50%)
+				-ms-transform: translateY(-50%)
+				transform: translateY(-50%)
+				opacity: 0
+				transform: translateX(-20px)
+				transition: all .2s ease-out
+				@media (max-width: 575px)
+					display: none
 
+	&:hover
+		.case__cover
+			background-position: center 60%
+			&:before
+				background-color: rgba(0,0,0,.2)
+		.case__desc__title
+			&:before
+				opacity: 1
+				transform: translateX(0px)
 
 
 .large-button
