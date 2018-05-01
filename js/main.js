@@ -187,12 +187,13 @@ jQuery(document).ready(function ($) {
 
     $('.gallery-slider').slick({
         arrows: true,
-        fade: false,
+        fade: true,
         dots: false,
         autoplay: true,
         autoplaySpeed: 4000,
         speed: 900,
         pauseOnHover: false,
+        lazyLoad: 'ondemand'
     })
 
 
@@ -394,12 +395,24 @@ jQuery(document).ready(function ($) {
     });
 
 
-
+    // Lazy load images
     var figure = $('.placeholder').not( ".loaded" );
     figure.each(function () {
 
-        var self = $(this);
-        var small = self.find('.img-small');
+        var self = $(this),
+            small = self.find('.img-small'),
+            img_width = 'full',
+            win_width = $( window ).width();
+            
+            if (win_width <= 1100) {
+                img_width = '1100'
+            }
+            if (win_width <= 800) {
+                img_width = '800'
+            }
+            if (win_width <= 500) {
+                img_width = '500'
+            }
 
         // 1: load small image and show it
         var img = new Image();
@@ -412,7 +425,7 @@ jQuery(document).ready(function ($) {
             handler: function () {
                 // 2: load large image
                 var imgLarge = new Image();
-                imgLarge.src = self.data('large');
+                imgLarge.src = self.data(img_width);
                 imgLarge.onload = function () {
                     imgLarge.classList.add('loaded');
                 };
