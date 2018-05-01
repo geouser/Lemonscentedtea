@@ -91,8 +91,8 @@
 		
 		&__title
 			font-weight: 700 
-			font-size: 20px 
 			position: relative
+			
 			&:before
 				content: ''
 				width: 0
@@ -196,7 +196,6 @@
 		
 	@media (max-width: 420px)
 		font-size: 20px
-		padding: 30px 15px 
 	
 	&.has-bg
 		background-position: 50%
@@ -234,7 +233,7 @@
 			padding: 18px 50px
 		
 		@media (max-width: 575px)
-			padding: 18px 30px
+			padding: 18px 35px
 			font-size: 12px 
 			line-height: 1em 
 
@@ -537,16 +536,20 @@
 		width: 100%
 		z-index: 3
 		padding: 26px 65px
+		font-size: 20px
 		color: #fff
 		transition: all 0.3s ease
+		font-size: 20px
+		line-height: 30px 
 		
 		@media (max-width: 991px)
 			padding-left: 50px 
 			padding-bottom: 23px 
 		
 		@media (max-width: 575px)
-			padding: 20px 40px
+			padding: 20px 35px
 			font-size: 16px 
+			line-height: normal 
 			
 		.linkedin
 			content: ''
@@ -559,6 +562,10 @@
 			transform: translate(-50%, -50%)
 			z-index: 2
 			transition: all 0.3s ease
+			
+			@media (max-width: 767px)
+				width: 46px
+				height: 46px
 			
 			&:after
 				content: ''
@@ -584,8 +591,8 @@
 		&__name,
 		&__position
 			display: block
-			font-size: 20px
-			line-height: 30px  
+			 
+				
 			
 		&__name
 			font-weight: 700 
