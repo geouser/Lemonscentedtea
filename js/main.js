@@ -163,7 +163,12 @@ jQuery(document).ready(function ($) {
                 '</g>' +
                 '</svg>';
         },
-    })
+    }).slick("slickPause");
+
+    var initialDelay = 3000;
+    setTimeout(function() {
+        $(".hero-slider").slick("slickPlay");
+    }, initialDelay);
 
     // On before slide change
     $('.hero-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
