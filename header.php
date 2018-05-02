@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-auto">
 
-                    <button class="hamburger hamburger--spin" type="button">
+                    <button class="hamburger hamburger--squeeze" type="button">
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>
                         </span>

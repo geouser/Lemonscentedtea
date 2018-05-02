@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
         $("body").toggleClass("body-fixed");
 
         var $target = $('.main_menu >li ');
-        var hold = 100;
+        var hold = 60;
         $.fn.reverse = [].reverse;
 
         if ($(".background-block-menu").hasClass("menu-open")) {
@@ -163,7 +163,12 @@ jQuery(document).ready(function ($) {
                 '</g>' +
                 '</svg>';
         },
-    })
+    }).slick("slickPause");
+
+    var initialDelay = 3000;
+    setTimeout(function() {
+        $(".hero-slider").slick("slickPlay");
+    }, initialDelay);
 
     // On before slide change
     $('.hero-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {

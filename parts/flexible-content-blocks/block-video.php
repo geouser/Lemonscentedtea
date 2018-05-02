@@ -9,12 +9,12 @@
 	<?php } else { 
 		if (get_sub_field('vimeo_url')) { ?>
 			<div class="vimeo-container">
-				<div data-vimeo-url="<?php the_sub_field('vimeo_url'); ?>" data-vimeo-width="100vw" id="vimeo"></div>
+				<div data-vimeo-url="<?php the_sub_field('vimeo_url'); ?>" data-vimeo-width="100vw" id="vimeo_<?php the_sub_field('vimeo_url'); ?>"></div>
 			</div>
-
+			
 			<script src="https://player.vimeo.com/api/player.js"></script>
 			<script>
-				var handstickPlayer = new Vimeo.Player('vimeo');
+				var handstickPlayer = new Vimeo.Player('vimeo_<?php the_sub_field('vimeo_url'); ?>');
 			</script>
 		<?php }
 	}
