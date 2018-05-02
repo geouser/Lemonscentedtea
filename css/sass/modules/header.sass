@@ -134,8 +134,10 @@ header
         li
             margin-bottom: 40px
             opacity: 0
-            transition: opacity .4s, transform .6s
+            transition: opacity .4s, transform .4s
             transition-delay: 0s
+            position: relative
+            right: -50px
             @media (min-width: 991px) and (max-height: 700px)
                 margin-bottom: 30px
             @media (max-width: 767px)
@@ -195,9 +197,9 @@ header
         height: 82px
         padding: 0px
         transform: rotate(45deg)
-        transition: .4s, .6s, .6s, .6s, .6s, .6s
+        transition: .2s, .6s, .6s, .6s, .6s, .6s
         transition-property: transform, width, height, right, top, padding
-        transition-delay: 1.2s, .6s, .6s, .6s, .6s, .6s
+        transition-delay: 1s, .4s, .4s, .4s, .4s, .4s
         transform-origin: center center
         overflow: hidden
         z-index: 101
@@ -235,9 +237,9 @@ header
         padding-left: 80px
         padding-top: 200px
         transform: rotate(0deg)
-        transition: .4s, .6s, .6s, .6s, .6s, .6s
+        transition: .2s, .6s, .6s, .6s, .6s, .6s
         transition-property: transform, width, height, right, top, padding
-        transition-delay: 0s, .4s, .4s, .4s, .4s, .4s
+        transition-delay: 0s, .2s, .2s, .2s, .2s, .2s
         @media (max-width: 991px)
             width: 320px
             padding-left: 60px
@@ -269,6 +271,6 @@ header
     .main_menu
         li.list-menu-visible
             opacity: 1
-            transition: 0.4s ease-out
-            transition-delay: .6s
-            transform: matrix(1, 0, 0, 1, -85, 0)
+            transition: opacity .3s, transform .3s ease-out
+            transition-delay: .4s
+            transform: matrix(1, 0, 0, 1, -45, 0)
