@@ -391,4 +391,26 @@ jQuery(document).ready(function ($) {
         });
     })
 
+    // Lazy load vimeo video
+    var video = $('.vimeo-video');
+    video.each(function () {
+
+        var self = $(this),
+            self_id = self.attr('id'),
+            video_id = self.data('id');
+
+        $(this).waypoint({
+            handler: function () {
+                var options = {
+                    id: video_id,
+                    loop: true
+                };
+            
+                var player = new Vimeo.Player(self_id, options);
+                setTimeout(function(){ self.addClass('show-video'); }, 700);
+            },
+            offset: '60%'
+        });
+    })
+
 });
