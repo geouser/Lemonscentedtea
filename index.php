@@ -29,7 +29,7 @@ get_header();
 			}
 
 			$attachment_id = get_sub_field('image');
-			$image = wp_get_attachment_image_src( $attachment_id, '2000' );
+			$image = wp_get_attachment_image_src( $attachment_id, 'figure_2000' );
 			
 			$image_1600 = wp_get_attachment_image_src( $attachment_id, 'figure_1600' );
 			$image_800 = wp_get_attachment_image_src( $attachment_id, 'figure_800' );
