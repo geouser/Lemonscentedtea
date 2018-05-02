@@ -66,7 +66,8 @@ get_header();
 						$next_post_id = $recent_posts[0]['ID'];
 					}
 				?>
-				<a href="<?php echo get_permalink($next_post_id); ?>" class="large-button next-case has-bg" style="background-image: url(<?php echo get_the_post_thumbnail_url($next_post_id, 'next-preview')?>);">
+				<a href="<?php echo get_permalink($next_post_id); ?>" class="large-button next-case has-bg">
+					<span class="background" style="background-image: url(<?php echo get_the_post_thumbnail_url($next_post_id, 'next-preview')?>);"></span>
 					<span class="label"><?php _e('Next', 'lemonscentedtea'); ?> <?php echo $next_word;?></span>
 
 					<span class="desc">

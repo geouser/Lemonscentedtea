@@ -45,6 +45,7 @@
 			text-align: left
 			position: relative
 			transition: all 0.3s ease
+			overflow: hidden
 			
 			@media (max-width: 1199px)
 				padding-top: 150px
@@ -74,7 +75,24 @@
 					background-color: #1c1c1c
 					opacity: 0
 					visibility: visible  
-					transition: all 0.3s ease
+					transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+					z-index: 2 
+					
+			.background
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				z-index: 0
+				background-position: 50% 50% 
+				background-repeat: no-repeat 
+				background-size: cover 
+				transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+				
+			&:hover
+				.background
+					transform: scale(1.05)
 				
 
 			.desc
@@ -127,6 +145,13 @@
 					
 				&__main
 					font-weight: 700 
+					transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+					transform: matrix(1, 0, 0, 1, 0, 0)
+					
+				&__second
+					transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1)
+					transform: matrix(1, 0, 0, 1, 0, 0)
+					transitio-delay: 0.15s!important
 					
 				&:before
 					content: ''
@@ -134,12 +159,15 @@
 					height: 0
 					border-style: solid
 					border-width: 25px 0 25px 28px
-					border-color: transparent transparent transparent #fff
+					border-color: transparent transparent transparent #f6f6f6
 					position: absolute
 					left: 0
 					top: 50%
-					transform: translateY(-50%)
+					transform: translate(-100%, -50%)
 					z-index: 2
+					transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)
+					opacity: 0
+					transition-delay: 0.15s
 					
 					@media (max-width: 767px)
 						border-width: 15px 0 15px 11px
@@ -151,8 +179,18 @@
 			.label
 				transition: all 0.2s ease
 				white-space: nowrap
+				position: relative
+				z-index: 1 
 				
 
+			&:hover .desc
+				&:before
+					transform: translate(0, -50%)
+					opacity: 1
+					
+				&__main,
+				&__second
+					transform: matrix(1, 0, 0, 1, 20, 0)
 					
 			&.get-in-touch
 				&:hover
