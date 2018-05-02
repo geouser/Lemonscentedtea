@@ -375,6 +375,9 @@
 	&__content
 		line-height: 1.9em
 		
+		@media (max-width: 575px)
+			line-height: normal 
+		
 		a
 			color: inherit
 			
@@ -384,6 +387,9 @@
 		
 		p:not(:last-child)
 			margin-bottom: 1.9em 
+			
+			@media (max-width: 575px)
+				margin-bottom: 1em 
 			
 
 		address
