@@ -36,6 +36,7 @@
 .case
 	width: 50%
 	display: block
+	overflow: hidden
 	
 	@media (max-width: 991px)
 		width: 100%
@@ -48,17 +49,24 @@
 		background-repeat: no-repeat
 		background-position: center center
 		background-size: cover
-		transition: all .2s ease-out
+		transition: all 5s ease-out
+		
+		&__wrap
+			overflow: hidden
 		
 		img
 			display: block
 			width: 100%
+			
 
 		&:before
 			display: block
 			content: ''
 			padding-top: 62.5%
 			transition: all .2s ease-out
+			
+	&:hover &__cover
+		transform: scale(1.1)
 		
 			
 	&__desc
