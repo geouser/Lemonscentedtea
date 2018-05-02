@@ -139,7 +139,11 @@ jQuery(document).ready(function ($) {
 
     $('.hero-slider').on('init', function (event, slick) {
 
-        slick.$dots.find('li').eq(0).find('.animate-fill')[0].beginElement();
+        var item = slick.$dots.find('li').eq(0).find('.animate-fill')[0];
+
+        if ('beginElement' in item) {
+            item.beginElement();
+        }
 
     });
 
@@ -173,8 +177,13 @@ jQuery(document).ready(function ($) {
     // On before slide change
     $('.hero-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 
-        slick.$dots.find('li').eq(nextSlide).find('.animate-back')[0].beginElement();
-        slick.$dots.find('li').eq(nextSlide).find('.animate-fill')[0].beginElement();
+        var item1 = slick.$dots.find('li').eq(nextSlide).find('.animate-back')[0];
+        var item2 = slick.$dots.find('li').eq(nextSlide).find('.animate-fill')[0];
+
+        if ('beginElement' in item1) {
+            item1.beginElement();
+            item2.beginElement();
+        }
 
     });
 
