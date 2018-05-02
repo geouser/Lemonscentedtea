@@ -387,6 +387,27 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_5ae9ac1de081b",
+                            "label": "Max image width",
+                            "name": "image_width",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "px",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        },
+                        {
                             "key": "field_5ae6e821c9a85",
                             "label": "Center Image",
                             "name": "center_image",
@@ -570,5 +591,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1525101653
+    "modified": 1525263438
 }

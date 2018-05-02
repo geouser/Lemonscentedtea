@@ -59,7 +59,9 @@
 			@media (max-width: 575px)
 				padding-top: 45px
 				padding-bottom: 45px
-				font-size: 20px     
+				font-size: 20px    
+				padding-left: 15px
+				padding-right: 15px   
 			
 			&.next-case
 				color: #fff
@@ -89,6 +91,7 @@
 				background-repeat: no-repeat 
 				background-size: cover 
 				transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+				-webkit-backface-visibility: hidden
 				
 			&:hover
 				.background
@@ -181,6 +184,10 @@
 				white-space: nowrap
 				position: relative
 				z-index: 1 
+				display: block
+				
+				@media (max-width: 575px)
+					text-align: center
 				
 
 			&:hover .desc
@@ -190,7 +197,8 @@
 					
 				&__main,
 				&__second
-					transform: matrix(1, 0, 0, 1, 20, 0)
+					@media (min-width: 992px)
+						transform: matrix(1, 0, 0, 1, 20, 0)
 					
 			&.get-in-touch
 				&:hover

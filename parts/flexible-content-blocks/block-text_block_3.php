@@ -24,7 +24,7 @@
 
 				<?php if ( $image ) : ?>
 					<div class="text-block__image">
-						<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>" />
+						<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>" style="max-width: <?php the_sub_field('image_width'); ?>px;"/>
 					</div>
 				<?php endif; ?>
 			</div>
