@@ -102,6 +102,8 @@
 		&__title
 			font-weight: 700 
 			position: relative
+			transition: all 0.4s ease-out
+			transform: matrix(1, 0, 0, 1, 0, 0)
 			
 			&:before
 				content: ''
@@ -112,15 +114,24 @@
 				border-color: transparent transparent transparent #000000
 				position: absolute
 				left: -25px
-				top: 0.4em
+				top: 7.5px
 				-webkit-transform: translateY(-50%)
 				-ms-transform: translateY(-50%)
 				transform: translateY(-50%)
 				opacity: 0
 				transform: translateX(-20px)
 				transition: all .2s ease-out
+				
+				@media (max-width: 1199px)
+					top: 6.5px
+					
 				@media (max-width: 575px)
 					display: none
+					
+		&__excerpt
+			transition: all 0.2s ease-out
+			transform: matrix(1, 0, 0, 1, 0, 0)
+			display: block
 
 	&:hover
 		.case__cover
@@ -129,9 +140,16 @@
 				opacity: 0
 				
 		.case__desc__title
+			transition: all 0.2s ease-out
+			transform: matrix(1, 0, 0, 1, 15, 0)
+			
 			&:before
 				opacity: 1
 				transform: translateX(0px)
+				
+		.case__desc__excerpt
+			transform: matrix(1, 0, 0, 1, 15, 0)
+			transition-delay: 0.1s 
 
 
 .large-button
