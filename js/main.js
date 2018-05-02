@@ -175,7 +175,12 @@ jQuery(document).ready(function ($) {
                 '</g>' +
                 '</svg>';
         },
-    });
+    }).slick("slickPause");
+
+    setTimeout(function() {
+        $('.hero-slider').slick("slickPlay");
+        $('.hero-slider').addClass('first-start');
+    },1500);
 
     // On before slide change
     $('.hero-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
@@ -368,6 +373,7 @@ jQuery(document).ready(function ($) {
                 imgLarge.src = self.data(img_width);
                 imgLarge.onload = function () {
                     imgLarge.classList.add('loaded');
+                    setTimeout(function(){ small.addClass('hide'); }, 700);
                 };
                 self.append(imgLarge);
                 this.destroy()

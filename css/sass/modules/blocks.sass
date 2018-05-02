@@ -247,6 +247,7 @@
 	img
 		display: block
 		width: 100% 
+		height: auto
 		position: static
 		
 	figcaption
@@ -276,19 +277,20 @@
 			transition: opacity 1s linear
 			position: absolute
 			left: 0
-			top: 0
+			top: 0px
 			width: 100%
 			&.loaded
 				opacity: 1
 
 			&.img-small
-				filter: blur(80px)
 				transform: scale(1)
 				position: static
-				@media (max-width: 991px)
-					filter: blur(40px)
-				@media (max-width: 500px)
-					filter: blur(30px)
+				&.hide
+					opacity: 0
+				// @media (max-width: 991px)
+				// 	filter: blur(40px)
+				// @media (max-width: 500px)
+				// 	filter: blur(30px)
 		
 
 

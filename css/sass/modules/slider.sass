@@ -5,7 +5,7 @@
 	height: calc(100vh - 300px)
 	max-height: 800px
 	min-height: 400px
-	transition: all 3s ease-out
+	transition: 3s all 1s ease-out
 	@media (max-width: 1400px)
 		height: calc(100vh - 170px)
 	@media (max-width: 1199px)
@@ -26,6 +26,7 @@
 		position: relative
 		display: flex
 		align-items: center
+		overflow: hidden
 		justify-content: flex-start
 
 		img 
@@ -80,8 +81,8 @@
 					font-size: 18px
 				@media (max-width: 400px)
 					font-size: 14px
-
-		&.slick-active
+	&.first-start
+		.slick-active
 			.slider-description 
 
 				.slider-title
