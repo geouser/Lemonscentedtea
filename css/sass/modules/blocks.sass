@@ -554,11 +554,7 @@
 		visibility: hidden
 		z-index: 1  
 		transition: all 0.3s ease
-		
-	&:hover
-		&:after
-			opacity: 0.3
-			visibility: visible
+
 	
 	&__image
 		display: block
@@ -645,6 +641,10 @@
 			
 			&:after
 				opacity: 0
+				
+	&.hovered:hover:after
+			opacity: 0.3
+			visibility: visible
 
 
 
