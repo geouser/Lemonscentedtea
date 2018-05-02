@@ -29,15 +29,21 @@ get_header();
 			}
 
 			$attachment_id = get_sub_field('image');
-			$size = "2000";
-			$image = wp_get_attachment_image_src( $attachment_id, $size );
+			$image = wp_get_attachment_image_src( $attachment_id, '2000' );
+			
+			$image_1600 = wp_get_attachment_image_src( $attachment_id, 'figure_1600' );
+			$image_800 = wp_get_attachment_image_src( $attachment_id, 'figure_800' );
 			// url = $image[0];
 			// width = $image[1];
 			// height = $image[2];
 
 			if (get_sub_field('slide_link')) {?>
 				<a href="<?php echo $link; ?>" class="slide item">
-					<img data-lazy="<?php echo $image[0]; ?>" alt="">
+					<img
+						data-1600="<?php echo $image_1600[0]; ?>"
+						data-800="<?php echo $image_800[0]; ?>"
+
+						data-lazy="<?php echo $image[0]; ?>" alt="">
 					<div class="container">
 						<div class="slider-description">
 							<div class="slider-title"><?php the_sub_field('title'); ?></div>
@@ -49,7 +55,11 @@ get_header();
 				</a>
 			<?php } else { ?>
 				<div class="slide item">
-					<img data-lazy="<?php echo $image[0]; ?>" alt="">
+					<img
+						data-1600="<?php echo $image_1600[0]; ?>"
+						data-800="<?php echo $image_800[0]; ?>" 
+
+						data-lazy="<?php echo $image[0]; ?>" alt="">
 					<div class="container">
 						<div class="slider-description">
 							<div class="slider-title"><?php the_sub_field('title'); ?></div>

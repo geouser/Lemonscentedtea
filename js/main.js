@@ -143,6 +143,18 @@ jQuery(document).ready(function ($) {
 
     });
 
+    $('.hero-slider .slide').each(function(){
+        var image = $(this).find('img');
+        if (win_width <= 1100) {
+            neededSize = image.data('1600')
+            image.attr('data-lazy', neededSize);
+        }
+        if (win_width <= 400) {
+            neededSize = image.data('800')
+            image.attr('data-lazy', neededSize);
+        }
+    });
+
     $('.hero-slider').slick({
         arrows: false,
         fade: true,
@@ -172,6 +184,7 @@ jQuery(document).ready(function ($) {
         slick.$dots.find('li').eq(nextSlide).find('.animate-fill')[0].beginElement();
 
     });
+    
 
 
     $('.gallery-slider .gallery-slider__slide').each(function(){
