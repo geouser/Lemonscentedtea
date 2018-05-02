@@ -36,7 +36,8 @@ get_header();
 			// height = $image[2];
 
 			if (get_sub_field('slide_link')) {?>
-				<a href="<?php echo $link; ?>" class="slide item" style="background-image: url(<?php echo $image[0]; ?>); ">
+				<a href="<?php echo $link; ?>" class="slide item">
+					<img data-lazy="<?php echo $image[0]; ?>" alt="">
 					<div class="container">
 						<div class="slider-description">
 							<div class="slider-title"><?php the_sub_field('title'); ?></div>
@@ -47,7 +48,8 @@ get_header();
 					</div>
 				</a>
 			<?php } else { ?>
-				<div class="slide item" style="background-image: url(<?php echo $image[0]; ?>); ">
+				<div class="slide item">
+					<img data-lazy="<?php echo $image[0]; ?>" alt="">
 					<div class="container">
 						<div class="slider-description">
 							<div class="slider-title"><?php the_sub_field('title'); ?></div>
