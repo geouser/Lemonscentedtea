@@ -205,7 +205,15 @@ function my_remove_menu_pages() {
     remove_menu_page('edit-comments.php');
 }
 
+/*  Custom thumbnail quality
+  /* ------------------------------------ */
 
+function alx_thumbnail_quality($quality) {
+    return 100;
+}
+
+add_filter('jpeg_quality', 'alx_thumbnail_quality');
+add_filter('wp_editor_set_quality', 'alx_thumbnail_quality');
 
 /* Disable stupid emojis
   /* ------------------------------------ */
