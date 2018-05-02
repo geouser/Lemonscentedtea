@@ -41,6 +41,7 @@ get_header();
 					</span>
 				</div>
 				<?php 
+					$this_id = get_the_ID();
 					$next_post = get_previous_post( false, '');
 					$next_post_id = $next_post->ID;
 					$post_type = get_post_type();
@@ -59,8 +60,9 @@ get_header();
 
 					if(!$next_post_id) {
 						$args = array(
-							'numberposts' => 1,
-							'post_type' => $post_type,
+							'numberposts' 	=> 1,
+							'post_type' 	=> $post_type,
+							'exclude'     	=> array( $this_id )
 						);
 						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 						$next_post_id = $recent_posts[0]['ID'];

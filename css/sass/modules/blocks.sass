@@ -9,7 +9,7 @@
 		padding: 100px 0 
 	@media (max-width: 576px)
 		padding: 80px 0
-		max-width: 235px
+		max-width: 230px
 		margin-left: auto
 		margin-right: auto
 	
@@ -23,12 +23,32 @@
 			font-size: 20px
 	a 
 		font-size: 20px
+		line-height: normal 
 		text-decoration: none
 		font-style: normal 
 		font-weight: 600
 		display: inline-block
 		margin-top: 15px
 		color: #000
+		position: relative
+		
+		&:after
+			content: ''
+			width: 100%
+			height: 1px 
+			background-color: #000
+			position: absolute
+			top: 100%
+			left: 0
+			right: 0
+			transition: all 0.2s ease
+			opacity: 0
+			visibility: hidden
+			
+		&:hover:after
+			opacity: 1
+			visibility: visible
+
 		@media (max-width: 991px)
 			font-size: 20px
 		@media (max-width: 576px)
@@ -94,12 +114,11 @@
 			padding: 18px 50px
 			
 		@media (max-width: 575px)
-			padding: 10px 35px
+			padding: 13px 35px
 			font-size: 16px
 			line-height: 20px
 			
 		@media (max-width: 420px)
-			padding: 5px 35px
 			font-size: 12px
 			line-height: 16px  
 		
@@ -108,6 +127,7 @@
 			position: relative
 			transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1)
 			transform: matrix(1, 0, 0, 1, 0, 0)
+			font-size: inherit 
 			
 			&:before
 				content: ''
@@ -224,7 +244,7 @@
 		padding: 50px 40px
 		
 	@media (max-width: 575px)
-		padding: 50px 35px  
+		padding: 47.5px 35px  
 
 	
 	&.has-bg
@@ -233,7 +253,7 @@
 		background-size: cover  
 
 	&:hover
-		background-color:  #c5c5c5 
+		background-color:  #e5e5e5
 	
 
 
@@ -317,7 +337,7 @@
 		
 		[class*='col-']
 			&:not(:last-child)
-				margin-bottom: 40px 
+				margin-bottom: 28px 
 
 	
 	[class*='col-']
@@ -345,7 +365,9 @@
 		font-size: 23px
 		
 		@media (max-width: 575px)
-			font-size: 12px 
+			font-size: 16px 
+			
+			line-height: 1.4em 
 		
 	h2.text-block__title,
 	h1.text-block__title
@@ -359,6 +381,8 @@
 			
 		@media (max-width: 575px)
 			font-size: 16px 
+			
+			line-height: 1.4em 
 		
 
 	&__title + &__content
@@ -424,12 +448,18 @@
 			margin-left: 0
 			margin-left: 70px
 		@media (max-width: 767px)
-			margin-left: -15px
+			margin-left: -30px
+			
+		@media (max-width: 575px)
+			margin-left: -22px 
 		
 		a
 			color: inherit
 			position: relative
 			padding-left: 30px 
+			
+			@media (max-width: 575px)
+				padding-left: 22px
 			
 			&:hover
 				text-decoration: underline
@@ -442,6 +472,9 @@
 				left: 0
 				top: 10px
 				transform: translateY(-50%) 
+				
+				@media (max-width: 575px)
+					max-width: 13px 
 
 	&.centered-image
 		@media (min-width: 1500px)
@@ -486,7 +519,7 @@
 		
 		@media (max-width: 575px)
 			border-width: 8px 0 8px 8px
-			left: -15px
+			left: -16px
 		
 
 
@@ -642,21 +675,54 @@
 		&__name
 			font-weight: 700 
 			margin-bottom: -2px 
-		
-	&.hovered:hover &__desc
-		padding-left: 107px
-		 
-		.linkedin
-			left: 25px
-			transform: translate(0, -50%)
+			transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+			transform: matrix(1, 0, 0, 1, 0, 0)
 			
-			&:after
-				opacity: 0
-				
-	&.hovered:hover:after
-			opacity: 0.3
-			visibility: visible
+		&__position
+			transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1)
+			transform: matrix(1, 0, 0, 1, 0, 0)
+			transitio-delay: 0.15s!important
+			
+	@media (min-width: 576px)
+		
+		&.hovered:hover &__desc
+			//padding-left: 92px
+			
+			&__name,
+			&__position
+				transform: matrix(1, 0, 0, 1, 40, 0)
 
+			 
+			.linkedin
+				left: 25px
+				transform: translate(0, -50%)
+				
+				&:after
+					opacity: 0
+					
+		&.hovered:hover:after
+				opacity: 0.3
+				visibility: visible
+			
+	@media (max-width: 575px)
+		&.hovered &__desc
+		
+			&__name,
+			&__position
+				transform: matrix(1, 0, 0, 1, 40, 0)
+
+			 
+			.linkedin
+				left: 15px
+				transform: translate(0, -50%)
+				
+				&:after
+					opacity: 0
+					
+		&.hovered
+			&:after
+				opacity: 0.3
+				visibility: visible
 
 
 
@@ -702,9 +768,15 @@
 	
 	.text-block
 		color: inherit
+		
 		@media (max-width: 991px)
 			padding-top: 21px
 			padding-bottom: 52px
+			
+		@media (max-width: 575px)
+			padding-top: 47px
+			padding-bottom: 80px  
+			
 		&__content
 			@media (min-width: 1200px)
 				padding-top: 40px 
