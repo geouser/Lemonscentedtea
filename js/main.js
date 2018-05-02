@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
         $("body").toggleClass("body-fixed");
 
         var $target = $('.main_menu >li ');
-        var hold = 100;
+        var hold = 60;
         $.fn.reverse = [].reverse;
 
         if ($(".background-block-menu").hasClass("menu-open")) {
