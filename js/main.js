@@ -227,7 +227,7 @@ jQuery(document).ready(function ($) {
         autoplaySpeed: 4000,
         speed: 900,
         pauseOnHover: false,
-        lazyLoad: 'progressive',
+        lazyLoad: 'ondemand',
         adaptiveHeight: true
     });
 
