@@ -204,12 +204,9 @@ jQuery(document).ready(function ($) {
     $('.gallery-slider .gallery-slider__slide').each(function( index, value ){
         var image = $(this).find('img'),
             neededSize = image.data(img_width);
-            
-        if ( index == 0 ) {
-            image.attr('src', neededSize);
-        } else {
+
             image.attr('data-lazy', neededSize);
-        }
+
     });
 
     $('.gallery-slider').slick({
