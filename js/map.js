@@ -314,7 +314,7 @@ var smitwolf = new google.maps.Marker({
 
 
 mymap.addListener('tilesloaded', function () {
-    console.log(mymap);
+    document.getElementById('google-map').classList.add('loaded');
 });
 
 //Associate the styled map with the MapTypeId and set it to display.

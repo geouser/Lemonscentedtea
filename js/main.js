@@ -417,7 +417,10 @@ jQuery(document).ready(function ($) {
                 };
             
                 var player = new Vimeo.Player(self_id, options);
-                setTimeout(function(){ self.addClass('show-video'); }, 700);
+                setTimeout(function(){ 
+                    self.addClass('show-video'); 
+                    self.find('.vimeo-video__preview').addClass('hide');
+                }, 700);
             },
             offset: '60%'
         });
