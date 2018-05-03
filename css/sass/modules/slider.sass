@@ -144,11 +144,15 @@
 
 
 .gallery-slider 
-	opacity: 0
+	background-color: #f4f4f4 
+	
+	.slick-list
+		opacity: 0
 
 	&.loaded
-		transition: opacity 2s ease
-		opacity: 1
+		.slick-list
+			transition: opacity 2s ease
+			opacity: 1
 
 	&__title
 		@extend .single-case__title
@@ -184,6 +188,9 @@
 				opacity: 1
 				visibility: visible
 				transform: translateY(0px)
+				
+	&.loaded &__slide
+		height: auto!important
 				
 				
 
