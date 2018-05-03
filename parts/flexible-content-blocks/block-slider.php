@@ -14,8 +14,9 @@
 
 				$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
 				$src = $image_500[0];
+
 			?>
-            <figure class="figure gallery-slider__slide">
+            <figure class="figure gallery-slider__slide" data-width="<?php echo $image_full[1]; ?>" data-height="<?php echo $image_full[2]; ?>">
 				<img 
 					data-full="<?php echo $image_full[0]; ?>"
 					data-1600="<?php echo $image_1600[0]; ?>"
