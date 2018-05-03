@@ -196,7 +196,9 @@ add_image_size('figure_1100', 1100, 9999);
 add_image_size('figure_800', 800, 9999);
 add_image_size('figure_500', 500, 9999);
 add_image_size('figure_preview', 240, 9999);
-add_image_size('case-thumbnail', 1428, 983);
+add_image_size('case-thumbnail', 1428, 983, true);
+add_image_size('case-thumbnail__800', 800, 550, true);
+add_image_size('case-thumbnail_preview', 200, 138, true);
 add_image_size('next-preview', 1428, 702);
 
 

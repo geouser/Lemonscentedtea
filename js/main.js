@@ -263,6 +263,8 @@ jQuery(document).ready(function ($) {
             },
             success: function (data) {
                 if (data) {
+                    console.log($(data));
+                    createWaypoints($(data));
                     $(data).hide().appendTo('.cases-container')
                         .css('opacity', 0)
                         .slideDown('fast')
@@ -272,8 +274,6 @@ jQuery(document).ready(function ($) {
                         );
 
                     theme.current_page++;
-                    console.log(theme.current_page);
-                    console.log(theme.max_page);
                     if (theme.current_page >= theme.max_page) {
                         setTimeout(function () { 
                             button.remove();
@@ -381,6 +381,34 @@ jQuery(document).ready(function ($) {
 
     });
 
+    // create cases Waypoints after AJAX
+    var createWaypoints = function(elements) {
+        elements.each(function () {
+            var self = $(this).find('.case__cover'),
+            small = self.find('.img-small');
+
+            $(this).waypoint({
+                handler: function () {
+                    // 2: load large image
+                    var imgLarge = new Image();
+                    if (win_width <= 800) {
+                        imgLarge.src = self.data('800');
+                    } else {
+                        imgLarge.src = self.data('full');
+                    }
+                    imgLarge.onload = function () {
+                        imgLarge.classList.add('loaded');
+                        setTimeout(function(){ small.addClass('hide'); }, 700);
+                    };
+                    console.log(imgLarge);
+                    self.prepend('csdcsdcsdcsdcsd');
+                    this.destroy()
+                },
+                offset: '60%'
+            });
+        })
+    }
+
 
     // Lazy load images
     var figure = $('.placeholder').not(".loaded");
@@ -411,6 +439,10 @@ jQuery(document).ready(function ($) {
             offset: '60%'
         });
     })
+
+    // Lazy load cases
+    var cases = $('.case');
+    createWaypoints(cases);
 
     // Lazy load vimeo video
     var video = $('.vimeo-video');
