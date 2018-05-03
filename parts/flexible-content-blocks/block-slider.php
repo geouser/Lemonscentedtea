@@ -1,17 +1,20 @@
-<?php
-	if( have_rows('slides') ): ?>
-	<div class="gallery-slider"> <?
-		while ( have_rows('slides') ) : the_row(); 
-			$imageID = get_sub_field('image');
+<?php $counter = 0; ?>
 
-			$image_full = wp_get_attachment_image_src( $imageID, 'full' );
-			$image_1600 = wp_get_attachment_image_src( $imageID, 'figure_1600' );
-			$image_1100 = wp_get_attachment_image_src( $imageID, 'figure_1100' );
-			$image_800 = wp_get_attachment_image_src( $imageID, 'figure_800' );
-			$image_500 = wp_get_attachment_image_src( $imageID, 'figure_500' );
+<?php if ( have_rows('slides') ) : ?>
+	<div class="gallery-slider"> 
+		<? while ( have_rows('slides') ) : the_row(); ?>
+			<?php 
+				$imageID = get_sub_field('image');
 
-			$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
-		?>
+				$image_full = wp_get_attachment_image_src( $imageID, 'full' );
+				$image_1600 = wp_get_attachment_image_src( $imageID, 'figure_1600' );
+				$image_1100 = wp_get_attachment_image_src( $imageID, 'figure_1100' );
+				$image_800 = wp_get_attachment_image_src( $imageID, 'figure_800' );
+				$image_500 = wp_get_attachment_image_src( $imageID, 'figure_500' );
+
+				$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+				$src = $image_500[0];
+			?>
             <figure class="figure gallery-slider__slide">
 				<img 
 					data-full="<?php echo $image_full[0]; ?>"
@@ -23,9 +26,6 @@
 					data-lazy="<?php echo $image_full[0]; ?>" alt="<?php echo $alt_text; ?>" />
                 <figcaption class="gallery-slider__slide__text"><?php the_sub_field('placeholder'); ?></figcaption>
             </figure>
-		<?
-		endwhile; ?>
-	</div><?
-
-	endif;
-?>
+		<? endwhile; ?>
+	</div>
+<? endif; ?>
