@@ -201,10 +201,15 @@ jQuery(document).ready(function ($) {
     
 
 
-    $('.gallery-slider .gallery-slider__slide').each(function(){
+    $('.gallery-slider .gallery-slider__slide').each(function( index, value ){
         var image = $(this).find('img'),
             neededSize = image.data(img_width);
-        image.attr('data-lazy', neededSize);
+            
+        if ( index == 0 ) {
+            image.attr('src', neededSize);
+        } else {
+            image.attr('data-lazy', neededSize);
+        }
     });
 
     $('.gallery-slider').slick({
@@ -217,6 +222,11 @@ jQuery(document).ready(function ($) {
         pauseOnHover: false,
         lazyLoad: 'ondemand',
         adaptiveHeight: true
+    });
+
+    // On before slide change
+    $('.gallery-slider').on('lazyLoaded', function(event, slick, image, imageSource){
+        slick.$slider.addClass('loaded');
     });
 
 
