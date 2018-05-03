@@ -408,6 +408,9 @@ jQuery(document).ready(function ($) {
         })
     }
 
+    var insertEl = function(el, child){
+        el.append(child);
+    }
 
     // Lazy load images
     var figure = $('.placeholder').not(".loaded");
