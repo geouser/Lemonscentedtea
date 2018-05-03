@@ -400,8 +400,7 @@ jQuery(document).ready(function ($) {
                         imgLarge.classList.add('loaded');
                         setTimeout(function(){ small.addClass('hide'); }, 700);
                     };
-                    console.log(imgLarge);
-                    self.prepend('csdcsdcsdcsdcsd');
+                    self.append(imgLarge);
                     this.destroy()
                 },
                 offset: '60%'
