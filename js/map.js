@@ -273,25 +273,25 @@ var styles = [
 // Create a new StyledMapType object, passing it the array of styles,
 // as well as the name to be displayed on the map type control.
 var styledMap = new google.maps.StyledMapType(styles,
-    {name: "Styled Map"});
+    { name: "Styled Map" });
 
 // Create a map object, and include the MapTypeId to add
 // to the map type control.
 var mapOptions = {
-  zoom: 15,
-  minZoom: 6,
-  fullscreenControl: false,
-  center: new google.maps.LatLng(52.381722, 4.888941),
-  zoomControl: false,
-  mapTypeControl: false,
-  scaleControl: true,
-  draggable: true,
-  scrollwheel: false,
-  streetViewControl: false,
-  rotateControl: false,
-  mapTypeControlOptions: {
-    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-  }
+    zoom: 15,
+    minZoom: 6,
+    fullscreenControl: false,
+    center: new google.maps.LatLng(52.381722, 4.888941),
+    zoomControl: false,
+    mapTypeControl: false,
+    scaleControl: true,
+    draggable: true,
+    scrollwheel: false,
+    streetViewControl: false,
+    rotateControl: false,
+    mapTypeControlOptions: {
+        mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
 };
 
 mymap = new google.maps.Map(document.getElementById('google-map'),
@@ -299,19 +299,23 @@ mymap = new google.maps.Map(document.getElementById('google-map'),
 
 
 var image = {
-      url: templateurl+'/assets/jpg/Icon_maps_pointer.png',
-      size: new google.maps.Size(60, 59),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(30, 0)
-    };
+    url: templateurl + '/assets/jpg/Icon_maps_pointer.png',
+    size: new google.maps.Size(60, 59),
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(30, 0)
+};
 
 var smitwolf = new google.maps.Marker({
-  position: {lat: 52.381722, lng: 4.888941},
-  map: mymap,
-  icon: image,
-  title: 'Lemon Scented Tea'
+    position: { lat: 52.381722, lng: 4.888941 },
+    map: mymap,
+    icon: image,
+    title: 'Lemon Scented Tea'
 });
 
+
+mymap.addListener('tilesloaded', function () {
+    console.log(mymap);
+});
 
 //Associate the styled map with the MapTypeId and set it to display.
 mymap.mapTypes.set('map_style', styledMap);
