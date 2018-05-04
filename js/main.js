@@ -263,8 +263,6 @@ jQuery(document).ready(function ($) {
             },
             success: function (data) {
                 if (data) {
-                    console.log($(data));
-                    createWaypoints($(data));
                     $(data).hide().appendTo('.cases-container')
                         .css('opacity', 0)
                         .slideDown('fast')
@@ -272,6 +270,9 @@ jQuery(document).ready(function ($) {
                             { opacity: 1 },
                             { queue: false, duration: 'slow' }
                         );
+                    
+                    
+                    createWaypoints($('.case'));
 
                     theme.current_page++;
                     if (theme.current_page >= theme.max_page) {
