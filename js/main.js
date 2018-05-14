@@ -1,3 +1,9 @@
+// Global parameters
+window.params = {
+    isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+    isIOS: /iPhone|iPad|iPod/i.test(navigator.userAgent)
+};
+
 // Document Events
 jQuery(document).ready(function ($) {
 
@@ -482,5 +488,11 @@ jQuery(document).ready(function ($) {
     $('.get-in-touch a').click(function( event ) {
         event.stopPropagation();
     });
+
+    if(window.params.isMobile) {
+        $('.get-in-touch, .next-case').each(function(){
+            $(this).addClass('mobile');
+        });
+    }
 
 });

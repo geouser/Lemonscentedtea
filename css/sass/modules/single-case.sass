@@ -122,9 +122,8 @@
 					bottom: 0
 					
 				@media (max-width: 575px)
-					padding-left: 20px
-					padding-right: 20px  
-					display: none
+					padding-left: 15px
+					padding-right: 10px  
 
 				
 				&__main,
@@ -220,7 +219,7 @@
 						transform: matrix(1, 0, 0, 1, 20, 0)
 					
 			&.get-in-touch
-				&:hover
+				&:not(.mobile):hover
 					background-color: #1c1c1c
 					
 					.label
@@ -230,6 +229,7 @@
 					.desc
 						opacity: 1
 						visibility: visible
+
 							
 			@media (min-width: 992px)
 				&.next-case
@@ -247,16 +247,16 @@
 							visibility: visible
 							
 
-			@media (max-width: 991px)
-				&.next-case
-					&:before
-						opacity: 0.1
-						visibility: visible
+			// @media (max-width: 991px)
+			// 	&.next-case
+			// 		&:before
+			// 			opacity: 0.1
+			// 			visibility: visible
 						
-					.label
-						opacity: 0
-						visibility: hidden
+			// 		.label
+			// 			opacity: 0
+			// 			visibility: hidden
 						
-					.desc
-						opacity: 1
-						visibility: visible
+			// 		.desc
+			// 			opacity: 1
+			// 			visibility: visible
