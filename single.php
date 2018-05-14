@@ -32,7 +32,10 @@ get_header();
 
 			
 			<div class="single-case__footer">
-				<div href="#" class="large-button get-in-touch">
+				<?php
+					$original_ct = get_field('contact_page', 'options');
+				?>
+				<div href="<?php echo get_permalink($original_ct);?>" class="large-button get-in-touch">
 					<span class="label"><?php _e('Get in touch', 'lemonscentedtea'); ?></span>
 
 					<span class="desc">
@@ -40,8 +43,8 @@ get_header();
 						<span class="desc__second"><?php _e('E-mail', 'lemonscentedtea'); ?>: <a href="mailto:<?php the_field('email_address', 'option'); ?>"><?php the_field('email_address', 'option'); ?></a></span>
 					</span>
 				</div>
-				<?php 
-					$this_id = get_the_ID();
+				<?php
+					$this_id = icl_object_id(get_the_ID(), 'post',TRUE);
 					$next_post = get_previous_post( false, '');
 					$next_post_id = $next_post->ID;
 					$post_type = get_post_type();
@@ -62,6 +65,7 @@ get_header();
 						$args = array(
 							'numberposts' 	=> 1,
 							'post_type' 	=> $post_type,
+							'suppress_filters' => false,
 							'exclude'     	=> array( $this_id )
 						);
 						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );

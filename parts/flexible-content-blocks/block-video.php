@@ -16,7 +16,7 @@
 
 			<div class="vimeo-container">
 				<div class="vimeo-video" data-id="<?php echo $video_id; ?>" id="vimeo<?php echo $v_id;?>">
-					<img class="vimeo-video__preview" src="<?php echo $hash[0]['thumbnail_large'];?>" alt="">
+					<!-- <img class="vimeo-video__preview" src="<?php echo $hash[0]['thumbnail_large'];?>" alt=""> -->
 				</div>
 			</div>
 

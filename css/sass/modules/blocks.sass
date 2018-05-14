@@ -86,7 +86,7 @@
 			position: absolute
 			left: 0
 			top: 0
-			transition: opacity 1s linear
+			transition: opacity .25s linear
 			&.loaded
 				opacity: 1
 			&.img-small
@@ -319,7 +319,7 @@
 	&.placeholder
 		img 
 			opacity: 0
-			transition: opacity 1s linear
+			transition: opacity .25s linear
 			position: absolute
 			left: 0
 			top: 0px
@@ -819,6 +819,7 @@
 .vimeo-container
 	position: relative
 	overflow: hidden
+	background-color: #f4f4f4
 	.vimeo-video__preview 
 		position: absolute
 		left: 0
@@ -838,7 +839,7 @@
 		left: 0
 		width: 100%
 		height: 100%
-		transition: all 2s ease-out
+		transition: all .25s ease-out
 		opacity: 0
 		visibility: hidden
 	.show-video

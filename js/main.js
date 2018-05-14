@@ -472,4 +472,15 @@ jQuery(document).ready(function ($) {
         });
     })
 
+
+    // open contact page
+    $('.get-in-touch').click(function(){
+        var target = $(this).attr('href');
+        window.location.href = target;
+    });
+
+    $('.get-in-touch a').click(function( event ) {
+        event.stopPropagation();
+    });
+
 });
