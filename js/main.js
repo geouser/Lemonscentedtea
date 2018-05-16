@@ -317,7 +317,7 @@ jQuery(document).ready(function ($) {
 
                     team.paged++;
 
-                    if (team.paged >= team.max_pages) {
+                    /*if (team.paged >= team.max_pages) {
                         setTimeout(function () {
                             button.remove();
                         }, 400);
@@ -325,7 +325,10 @@ jQuery(document).ready(function ($) {
                         setTimeout(function () {
                             button.removeClass('loading');
                         }, 400);
-                    }
+                    }*/
+                    setTimeout(function () {
+                        button.remove();
+                    }, 400);
 
                 } else {
                     button.remove();

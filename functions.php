@@ -278,10 +278,14 @@ function load_team(){
  
     // prepare our arguments for the query
     $args = array(
-        'post_type'         => $_POST['q']['post_type'],
+        /*'post_type'         => $_POST['q']['post_type'],
         'posts_per_page'    => $_POST['q']['posts_per_page'],
         'paged'             => $_POST['q']['paged'],
-        'post_status'       => $_POST['q']['post_status']
+        'post_status'       => $_POST['q']['post_status']*/
+        'post_type'         => $_POST['q']['post_type'],
+        'posts_per_page'    => 50,
+        'post_status'       => $_POST['q']['post_status'],
+        'offset'            => $_POST['q']['posts_per_page'],
     );
     
     $query = new WP_Query( $args );
