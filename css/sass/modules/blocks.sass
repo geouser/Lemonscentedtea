@@ -595,20 +595,19 @@
 	overflow: hidden
 	display: block 
 	
-	
-	@media (min-width: 992px)
-		&:nth-last-of-type(-n+2)
-			margin-bottom: 0
-	
 	@media (max-width: 991px)
 		width: 100%
 		margin-bottom: 60px 
-		
-		&:last-child
-			margin-bottom: 0
 			
 	@media (max-width: 575px)
 		margin-bottom: 50px 
+
+	.large-button
+		margin-top: -80px
+		@media (max-width: 991px)
+			margin-top: -60px
+		@media (max-width: 575px)
+			margin-top: -50px
 			
 	&:after
 		content: ''
